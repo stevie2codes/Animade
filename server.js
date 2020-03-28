@@ -1,7 +1,7 @@
 const express = require("express");
 
 const mongoose = require("mongoose");
-//const routes = require("./routes");
+const admin_router = require("./routes/adminPostRoute");
 const app = express();
 const PORT = process.env.PORT || 8080;
 
@@ -13,9 +13,9 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 
-//app.use(routes);
+app.use(admin_router);
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/reactreadinglist");
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/animade_db");
 
 
 app.listen(PORT, function() {
