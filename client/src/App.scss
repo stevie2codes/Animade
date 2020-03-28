@@ -1,0 +1,21 @@
+$backgroundColor: rgb(22, 21, 21);
+$primary-color: rgb(102, 40, 102);
+
+
+/* Color Theme Swatches in RGBA */
+$Purple-Rain-1-rgba: rgba(36, 5, 75, 1);
+$Purple-Rain-2-rgba: rgba(54, 23, 93, 1);
+$Purple-Rain-3-rgba: rgba(84, 49, 133, 1);
+$Purple-Rain-4-rgba: rgba(123, 82, 170, 1);
+$Purple-Rain-5-rgba: rgba(151, 103, 209, 1);
+
+
+
+.logo {
+    position: absolute;
+    left: 55px;
+    color: $primary-color;
+    font-size: 4vmin;
+    margin-top: 20px;
+
+}

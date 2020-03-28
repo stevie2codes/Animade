@@ -15,7 +15,7 @@ function App() {
       <BrowserRouter>
         <div className="nav nav-pills d-flex justify-content-end">
           <div className="navigation">
-            <h1 className="logo">Animade</h1>
+            <h1 className="logo d-flex flex-start">Animade</h1>
             <div className="nav-items d-flex">
               <Link to="/" className="nav-link ">
                 Home
