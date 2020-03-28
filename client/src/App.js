@@ -5,7 +5,7 @@ import SignIn from "./pages/signIn";
 import animations from "./pages/animations";
 import Contact from "./pages/contact";
 import Nav from "./components/nav/nav";
-import { sign } from "crypto";
+import "./App.scss";
 
 // import "./App.css";
 
