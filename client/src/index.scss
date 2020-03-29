@@ -1,0 +1,12 @@
+$white: rgba(242, 242, 242, 1);
+$primary-font:'Poiret One',
+cursive;
+
+
+body {
+  margin: 0;
+  background: $white;
+  font-family: $primary-font;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
