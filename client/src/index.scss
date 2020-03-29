@@ -1,11 +1,12 @@
-$backgroundColor: #090B0D;
+$white: rgba(242, 242, 242, 1);
+$primary-font:'Poiret One',
+cursive;
+
 
 body {
   margin: 0;
-  background-color: $backgroundColor;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  background: $white;
+  font-family: $primary-font;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

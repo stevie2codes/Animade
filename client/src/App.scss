@@ -1,21 +1,49 @@
-$backgroundColor: rgb(22, 21, 21);
-$primary-color: rgb(102, 40, 102);
+// Fonts
+$primary-font: 'Poiret One',
+cursive;
+$logo-font:'Wendy One',
+sans-serif;
+
 
 
 /* Color Theme Swatches in RGBA */
-$Purple-Rain-1-rgba: rgba(36, 5, 75, 1);
-$Purple-Rain-2-rgba: rgba(54, 23, 93, 1);
-$Purple-Rain-3-rgba: rgba(84, 49, 133, 1);
-$Purple-Rain-4-rgba: rgba(123, 82, 170, 1);
-$Purple-Rain-5-rgba: rgba(151, 103, 209, 1);
-
+$purple: rgba(156, 26, 242, 1);
+$black: rgb(11, 12, 15);
+$green: rgba(4, 216, 57, 1);
+$orange: rgba(242, 115, 4, 1);
+$white: rgba(242, 242, 242, 1);
 
 
 .logo {
     position: absolute;
-    left: 55px;
-    color: $primary-color;
-    font-size: 4vmin;
+    left: 20px;
+    color: $white;
+    font-size: 3vmin;
     margin-top: 20px;
+    font-family: $logo-font;
+    letter-spacing: 5px;
+}
 
+.nav {
+    position: absolute;
+    ;
+    top: 0;
+    width: 100%;
+
+}
+
+.nav-items {
+    font-size: 3.5vmin;
+    margin-top: 10px;
+    position: sticky;
+}
+
+.nav-link {
+    color: $white;
+    padding: 1.2vmin;
+
+    &:hover {
+        color: $green;
+        transform: scale(1.1);
+    }
 }
