@@ -1,10 +1,6 @@
 // Fonts
-$primary-font: 'Poiret One',
-cursive;
-$logo-font:'Wendy One',
-sans-serif;
-
-
+$primary-font: "Poiret One", cursive;
+$logo-font: "Wendy One", sans-serif;
 
 /* Color Theme Swatches in RGBA */
 $purple: rgba(156, 26, 242, 1);
@@ -13,37 +9,33 @@ $green: rgba(4, 216, 57, 1);
 $orange: rgba(242, 115, 4, 1);
 $white: rgba(242, 242, 242, 1);
 
-
-.logo {
-    position: absolute;
-    left: 20px;
-    color: $white;
-    font-size: 3vmin;
-    margin-top: 20px;
-    font-family: $logo-font;
-    letter-spacing: 5px;
+#logoSvg {
+  //   display: flex;
+  //   justify-content: flex-start;
+  position: absolute;
+  left: 15px;
+  width: 17vmin;
+  margin-top: -10px;
 }
 
 .nav {
-    position: absolute;
-    ;
-    top: 0;
-    width: 100%;
-
+  position: absolute;
+  top: 0;
+  width: 100%;
 }
 
 .nav-items {
-    font-size: 3.5vmin;
-    margin-top: 10px;
-    position: sticky;
+  font-size: 3.5vmin;
+  margin-top: 10px;
+  position: sticky;
 }
 
 .nav-link {
-    color: $white;
-    padding: 1.2vmin;
+  color: $white;
+  padding: 1.2vmin;
 
-    &:hover {
-        color: $green;
-        transform: scale(1.1);
-    }
+  &:hover {
+    color: $green;
+    transform: scale(1.1);
+  }
 }
