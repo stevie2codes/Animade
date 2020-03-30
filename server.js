@@ -1,7 +1,7 @@
 const express = require("express");
 
 const mongoose = require("mongoose");
-const admin_router = require("./routes/adminPostRoute");
+const admin_router = require("./routes/adminAPIRoute");
 const app = express();
 const PORT = process.env.PORT || 8080;
 
