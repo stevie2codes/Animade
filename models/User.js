@@ -15,7 +15,7 @@ const UserSchema = new Schema({
         required: "Must enter a password"
         //set up some type of length verification here maybe
         //still need to figure out how to hash password
-    },
+    }
 
     //maybe add email verification and such here, unsure yet
 });
