@@ -1,3 +1,3 @@
 module.exports = {
-    admin_animation: require("./adminAnimations.js")
+    admin_Animation: require("./adminAnimations.js")
   };

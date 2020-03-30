@@ -26,6 +26,6 @@ const adminAnimation = new Schema({
 
 });
 
-const admin_animation = mongoose.model("admin_animation", adminAnimation);
+const admin_Animation = mongoose.model("admin_Animation", adminAnimation);
 
-module.exports = admin_animation;
+module.exports = admin_Animation;
