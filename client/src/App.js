@@ -6,6 +6,7 @@ import animations from "./pages/animations";
 import Contact from "./pages/contact";
 import NavBar from "./components/nav/nav";
 import "./App.scss";
+import "./sass/navbar.scss";
 import logo from "./logo.svg";
 
 // import "./App.css";
@@ -17,8 +18,10 @@ function App() {
         <NavBar />
 
         <div className="nav nav-pills d-flex justify-content-end">
-          <img src={logo} className="iconAbove" id="logoSvg" alt="logo" />
-          {/* <h1 className="logo d-flex justify-content-start">ANiMaDE</h1> */}
+          <Link to="/">
+            <img src={logo} className="iconAbove" id="logoSvg" alt="logo" />
+          </Link>
+
           <div className="navigation">
             <div className="nav-items d-flex">
               <Link to="/" className="nav-link ">

@@ -1,0 +1,34 @@
+// Fonts
+$primary-font: "Poiret One",
+cursive;
+$logo-font: 'Coiny',
+cursive;
+
+/* Color Theme Swatches in RGBA */
+$Primary-color: #ad54a4;
+$Secondary-color: #db6c6d;
+$black: rgb(33, 33, 33);
+$white: rgba(242, 242, 242, 1);
+$gradient: linear-gradient(90deg, #ad54a4 0%, #db6c6d 64%);
+
+
+
+.homeLogo {
+    display: flex;
+    width: 60vmin;
+    margin: -10vh auto;
+}
+
+.readyText {
+    display: flex;
+    position: sticky;
+    justify-content: center;
+    font-family: $logo-font;
+    font-size: 6vmin;
+
+    &.animations {
+
+        font-family: $primary-font
+    }
+
+}
