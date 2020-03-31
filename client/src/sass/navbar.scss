@@ -3,6 +3,8 @@ $primary-font: "Poiret One",
 cursive;
 $logo-font: 'Coiny',
 cursive;
+$secondary-font: 'Montserrat',
+sans-serif;
 
 /* Color Theme Swatches in RGBA */
 $Primary-color: #ad54a4;
@@ -17,8 +19,10 @@ $gradient: linear-gradient(90deg, #ad54a4 0%, #db6c6d 64%);
     width: 12vmin;
 
     &:hover {
-        cursor: pointer;
+        cursor: pointer !important;
         transform: scale(1.1);
+        transition-duration: 0.2s;
+        transition-timing-function: ease-in-out;
     }
 }
 

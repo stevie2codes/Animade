@@ -3,32 +3,79 @@ $primary-font: "Poiret One",
 cursive;
 $logo-font: 'Coiny',
 cursive;
+$secondary-font: 'Montserrat',
+sans-serif;
 
 /* Color Theme Swatches in RGBA */
 $Primary-color: #ad54a4;
 $Secondary-color: #db6c6d;
-$black: rgb(33, 33, 33);
+$black: rgb(11, 11, 11);
 $white: rgba(242, 242, 242, 1);
 $gradient: linear-gradient(90deg, #ad54a4 0%, #db6c6d 64%);
 
 
 
+
 .homeLogo {
     display: flex;
-    width: 60vmin;
-    margin: -10vh auto;
+    width: 50vh;
+    margin: -0vh auto;
+    animation: zoomIn 1s ease-in-out alternate;
+    box-shadow: -4px -4px 10px rgb(203, 110, 139), 4px 4px 10px rgb(193, 96, 98);
+    border-radius: 30%;
+    background-color: rgba(255, 255, 255, 0.036);
+
+    &:hover {
+        cursor: auto !important;
+    }
+
+}
+
+
+
+#animations {
+    font-family: $logo-font;
+    color: $black;
+    font-size: 6vmin;
+    margin-left: 30px;
+    font-weight: lighter;
+    animation: slideUp 1.7s ease-in-out alternate;
 }
 
 .readyText {
     display: flex;
     position: sticky;
+    font-weight: lighter;
     justify-content: center;
     font-family: $logo-font;
+    color: $black;
     font-size: 6vmin;
+    animation: slideUp 1.5s ease-in-out alternate;
 
-    &.animations {
+}
 
-        font-family: $primary-font
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: scale(0);
     }
 
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(500px);
+        opacity: 0;
+
+    }
+
+    to {
+        transform: translateY(0px);
+        opacity: 1;
+
+    }
 }
