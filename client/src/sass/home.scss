@@ -1,36 +1,31 @@
 // Fonts
 $primary-font: "Poiret One",
 cursive;
-$logo-font: 'Coiny',
+$logo-font: "Coiny",
 cursive;
-$secondary-font: 'Montserrat',
+$secondary-font: "Montserrat",
 sans-serif;
 
 /* Color Theme Swatches in RGBA */
 $Primary-color: #ad54a4;
 $Secondary-color: #db6c6d;
-$black: rgb(11, 11, 11);
+$black: #212121;
 $white: rgba(242, 242, 242, 1);
 $gradient: linear-gradient(90deg, #ad54a4 0%, #db6c6d 64%);
-
-
-
 
 .homeLogo {
     display: flex;
     width: 50vh;
     margin: -0vh auto;
     animation: zoomIn 1s ease-in-out alternate;
-    box-shadow: -4px -4px 10px rgb(203, 110, 139), 4px 4px 10px rgb(193, 96, 98);
-    border-radius: 30%;
-    background-color: rgba(255, 255, 255, 0.036);
+    box-shadow: -4px -4px 14px rgba(13, 13, 13, 0.474), 4px 4px 14px rgba(13, 13, 13, 0.687);
+    border-radius: 50%;
+    border: 2px solid #ad54a425;
 
     &:hover {
         cursor: auto !important;
     }
-
 }
-
 
 
 #animations {
@@ -51,7 +46,6 @@ $gradient: linear-gradient(90deg, #ad54a4 0%, #db6c6d 64%);
     color: $black;
     font-size: 6vmin;
     animation: slideUp 1.5s ease-in-out alternate;
-
 }
 
 @keyframes zoomIn {
@@ -70,12 +64,10 @@ $gradient: linear-gradient(90deg, #ad54a4 0%, #db6c6d 64%);
     from {
         transform: translateY(500px);
         opacity: 0;
-
     }
 
     to {
         transform: translateY(0px);
         opacity: 1;
-
     }
 }
