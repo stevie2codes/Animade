@@ -1,6 +1,6 @@
 import React from "react";
 import "../sass/home.scss";
-import logo from "../logoPng.png";
+import logo from "../logo.svg";
 
 const Home = () => {
   return (

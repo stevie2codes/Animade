@@ -1,56 +1,58 @@
 // Fonts
 $primary-font: "Poiret One",
 cursive;
-$logo-font: 'Coiny',
+$logo-font: "Coiny",
 cursive;
-$secondary-font: 'Montserrat',
+$secondary-font: "Montserrat",
 sans-serif;
 
 /* Color Theme Swatches in RGBA */
 $Primary-color: #ad54a4;
 $Secondary-color: #db6c6d;
-$black: rgb(33, 33, 33);
+$black: #212121;
 $white: rgba(242, 242, 242, 1);
 $gradient: linear-gradient(90deg, #ad54a4 0%, #db6c6d 64%);
 
 #logoSvg {
-    position: absolute;
-    left: 25px;
-    width: 12vmin;
+  position: absolute;
+  left: 20px;
+  width: 12vmin;
+  border-radius: 50%;
 
-    &:hover {
-        cursor: pointer !important;
-        transform: scale(1.1);
-        transition-duration: 0.2s;
-        transition-timing-function: ease-in-out;
-    }
+  &:hover {
+    cursor: pointer !important;
+    transform: scale(1.1);
+    transition-duration: 0.2s;
+    transition-timing-function: ease-in-out;
+  }
 }
 
 .nav {
-    position: absolute;
-    top: 0;
-    width: 100%;
-    right: 10px;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  right: 10px;
 }
 
 .nav-items {
-    font-size: 3vmin;
-    margin-top: 10px;
-    position: sticky;
+  font-size: 3vmin;
+  margin-top: 10px;
+  position: sticky;
+  font-family: $primary-font;
 }
 
 .nav-link {
-    color: $white;
-    padding: 1.2vmin;
-    font-weight: bold;
+  color: $white;
+  padding: 1.2vmin;
+  font-weight: bold;
 
-    &:hover {
-        background: -webkit-linear-gradient(90deg, #ad54a4 0%, #db6c6d 64%);
-        background-clip: text;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        transform: scale(1.1);
-        transition: ease-in-out;
-        transition-duration: 0.2s;
-    }
+  &:hover {
+    background: -webkit-linear-gradient(90deg, #ad54a4 0%, #db6c6d 64%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transform: scale(1.1);
+    transition: ease-in-out;
+    transition-duration: 0.2s;
+  }
 }
