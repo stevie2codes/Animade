@@ -28,13 +28,13 @@ function App() {
                 Home
               </Link>
               <Link to="/animations" className="nav-link ">
-                animations
+                Animations
               </Link>
               <Link to="/Contact" className="nav-link ">
                 Contact
               </Link>
               <Link to="/SignIn" className="nav-link ">
-                Sign In
+                Sign-In
               </Link>
             </div>
           </div>

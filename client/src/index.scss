@@ -1,11 +1,11 @@
-$white: rgb(233, 233, 233);
+$white: rgb(232, 232, 232);
 $primary-font:'Poiret One',
 cursive;
 
 
 body {
   margin: 0;
-  background: $white;
+  background: linear-gradient(90deg, #ad54a4 0%, #db6c6d 64%);
   font-family: $primary-font;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
