@@ -1,7 +1,13 @@
 import React from "react";
+import AnimationContainer from "../components/animationContainer";
 
 const animations = props => {
-  return <h1>Animations</h1>;
+  return (
+    <React.Fragment>
+      <h1 className="readyText">Animations</h1>
+      <AnimationContainer />
+    </React.Fragment>
+  );
 };
 
 export default animations;

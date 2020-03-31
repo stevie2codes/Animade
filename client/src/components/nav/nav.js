@@ -10,8 +10,8 @@ function NavBar() {
       >
         <defs>
           <linearGradient id="gradient" x1="20%" y1="50%" x2="70%" y2="40%">
-            <stop offset="0%" stopColor="#ad54a4" />
-            <stop offset="100%" stopColor="#db6c6d" />
+            <stop offset="0%" stopColor="#db6c6d" />
+            <stop offset="100%" stopColor=" #ad54a4" />
           </linearGradient>
         </defs>
         <path
