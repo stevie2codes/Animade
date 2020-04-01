@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const bcrypt = require("bcryptjs");
 
 const Schema = mongoose.Schema;
 
@@ -34,6 +35,20 @@ const UserSchema = new Schema({
     //maybe add email verification and such here, unsure yet
 });
 
+//hashes password everytime the save function is called, before user data is stored
+UserSchema.pre("save", function(next) {
+    if(!this.isModified("password")) {
+        return next();
+    }
+    this.password = bcrypt.hashSync(this.password, 10);
+    next();
+});
+
+UserSchema.methods.comparePassword = function(plaintext, callback) {
+    return callback(null, bcrypt.compareSync(plaintext, this.password));
+};
+
 const User = mongoose.model("User", UserSchema);
+
 
 module.exports = User;
