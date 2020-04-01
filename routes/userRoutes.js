@@ -10,7 +10,6 @@ user_router.post("/api/createUser", (req, res) => {
     .catch(err => console.log(err));
 });
 
-
 user_router.get("/api/Users", (req, res) => {
     db.User.find({}).then(data => {
         console.log(`This is from Users route: ${data}`);
