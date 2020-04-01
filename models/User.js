@@ -29,6 +29,7 @@ const UserSchema = new Schema({
         default: Date.now
     }
 
+    //maybe add a saved animations property to this model here
 
 
     //maybe add email verification and such here, unsure yet
