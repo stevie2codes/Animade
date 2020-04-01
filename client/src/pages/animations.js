@@ -1,11 +1,12 @@
 import React from "react";
 import AnimationContainer from "../components/animationContainer";
+import Dropdown from "../components/dropdown";
 
 const animations = props => {
   return (
     <React.Fragment>
-      <h1 className="readyText">Animations</h1>
       <AnimationContainer />
+      <Dropdown />
     </React.Fragment>
   );
 };

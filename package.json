@@ -27,6 +27,7 @@
     "if-env": "^1.0.4",
     "mongoose": "^5.3.16",
     "node-sass": "^4.13.1",
-    "react-router-dom": "^5.1.2"
+    "react-router-dom": "^5.1.2",
+    "react-widgets": "^4.5.0"
   }
 }
