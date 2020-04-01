@@ -9,7 +9,6 @@ const UserSchema = new Schema({
         required: "Must enter a username"
     },
 
-    
     password: {
         type: String,
         trim: true,
@@ -18,19 +17,19 @@ const UserSchema = new Schema({
         //set up some type of length verification here maybe
         //still need to figure out how to hash password
     },
+
     email: {
         type: String,
         unique: true,
         match: [/.+@.+\..+/, "Please enter a valid e-mail address"]
     },
 
-    userCreated: {
+    user_created: {
         type: Date,
         default: Date.now
     }
 
     //maybe add a saved animations property to this model here
-
 
     //maybe add email verification and such here, unsure yet
 });

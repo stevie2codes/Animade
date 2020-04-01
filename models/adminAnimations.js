@@ -20,7 +20,7 @@ const adminAnimation = new Schema({
         required: "Must provide code for animation"
     },
 
-    date: {
+    animation_created: {
         type: Date,
         default: Date.now
     }
