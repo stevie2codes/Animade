@@ -8,9 +8,10 @@ const adminAnimation = new Schema({
         required: "Must have a username"
     },
 
-    id: {
-        type: Number,
-        unique: true,
+    animation_name: {
+        type: String,
+        trim: true, 
+        unique: true, 
         required: true
     },
 
