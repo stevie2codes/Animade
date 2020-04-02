@@ -10,6 +10,7 @@ const UserSchema = new Schema({
         required: "Must enter a username"
     },
 
+
     password: {
         type: String,
         trim: true,
@@ -32,7 +33,7 @@ const UserSchema = new Schema({
 
     //maybe add a saved animations property to this model here
 
-    //maybe add email verification and such here, unsure yet
+    
 });
 
 //hashes password everytime the save function is called, before user data is stored
