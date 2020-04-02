@@ -1,9 +1,11 @@
 import React from "react";
+import "../../sass/navbar.scss";
 
 function NavBar() {
   return (
     <div style={{ height: "30vmin" }} overflow="hidden">
       <svg
+        className="my-line"
         preserveAspectRatio="none"
         viewBox="5 5 493 150"
         style={{ height: "100%", width: "100%" }}
@@ -19,6 +21,7 @@ function NavBar() {
           d="M-1.41 132.72c112.3-242.75 359.48 193.42 501.68-70.06L500 0H0z"
           stroke="url(#gradient)"
           strokeWidth="4"
+          fillRule="nonzero"
         ></path>
       </svg>
     </div>

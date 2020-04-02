@@ -1,10 +1,7 @@
 // Fonts
-$primary-font: "Poiret One",
-cursive;
-$logo-font: "Coiny",
-cursive;
-$secondary-font: "Montserrat",
-sans-serif;
+$primary-font: "Poiret One", cursive;
+$logo-font: "Coiny", cursive;
+$secondary-font: "Montserrat", sans-serif;
 
 /* Color Theme Swatches in RGBA */
 $Primary-color: #ad54a4;
@@ -14,60 +11,60 @@ $white: rgba(242, 242, 242, 1);
 $gradient: linear-gradient(90deg, #ad54a4 0%, #db6c6d 64%);
 
 .homeLogo {
-    display: flex;
-    width: 50vh;
-    margin: -0vh auto;
-    animation: zoomIn 1s ease-in-out alternate;
-    box-shadow: -4px -4px 14px rgba(13, 13, 13, 0.474), 4px 4px 14px rgba(13, 13, 13, 0.687);
-    border-radius: 50%;
-    border: 2px solid #ad54a425;
+  display: flex;
+  width: 50vh;
+  margin: -0vh auto;
+  animation: zoomIn 1s ease-in-out alternate;
+  box-shadow: -4px -4px 14px rgba(13, 13, 13, 0.474),
+    4px 4px 14px rgba(13, 13, 13, 0.687);
+  border-radius: 50%;
+  border: 2px solid #ad54a425;
 
-    &:hover {
-        cursor: auto !important;
-    }
+  &:hover {
+    cursor: auto !important;
+  }
 }
 
-
 #animations {
-    font-family: $logo-font;
-    color: $black;
-    font-size: 6vmin;
-    margin-left: 30px;
-    font-weight: lighter;
-    animation: slideUp 1.7s ease-in-out alternate;
+  font-family: $logo-font;
+  color: $black;
+  font-size: 6vmin;
+  margin-left: 30px;
+  font-weight: lighter;
+  animation: slideUp 1.7s ease-in-out alternate;
 }
 
 .readyText {
-    display: flex;
-    position: sticky;
-    font-weight: lighter;
-    justify-content: center;
-    font-family: $logo-font;
-    color: $black;
-    font-size: 6vmin;
-    animation: slideUp 1.5s ease-in-out alternate;
+  display: flex;
+  position: sticky;
+  font-weight: lighter;
+  justify-content: center;
+  font-family: $logo-font;
+  color: $black;
+  font-size: 6vmin;
+  animation: slideUp 1.5s ease-in-out alternate;
 }
 
 @keyframes zoomIn {
-    from {
-        opacity: 0;
-        transform: scale(0);
-    }
+  from {
+    opacity: 0;
+    transform: scale(0);
+  }
 
-    to {
-        transform: scale(1);
-        opacity: 1;
-    }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
 @keyframes slideUp {
-    from {
-        transform: translateY(500px);
-        opacity: 0;
-    }
+  from {
+    transform: translateY(500px);
+    opacity: 0;
+  }
 
-    to {
-        transform: translateY(0px);
-        opacity: 1;
-    }
+  to {
+    transform: translateY(0px);
+    opacity: 1;
+  }
 }

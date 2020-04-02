@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { render } from "react-dom";
 import DropdownList from "react-widgets/lib/DropdownList";
 import "react-widgets/dist/css/react-widgets.css";
+
 const animations = ["inYoFace", "outYoFace", "flipX", "flipY"];
 
 class Dropdown extends Component {
