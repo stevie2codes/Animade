@@ -28,6 +28,7 @@ $gradient: linear-gradient(90deg, #ad54a4 0%, #db6c6d 64%);
 }
 
 
+
 #animations {
     font-family: $logo-font;
     color: $black;
@@ -70,4 +71,12 @@ $gradient: linear-gradient(90deg, #ad54a4 0%, #db6c6d 64%);
         transform: translateY(0px);
         opacity: 1;
     }
+}
+
+#logoSvg svg path {
+    stroke-dashoffset: 200;
+    stroke-dasharray: 200;
+    animation: draw 2s forwards;
+
+
 }

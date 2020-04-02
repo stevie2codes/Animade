@@ -13,11 +13,14 @@ $black: #212121;
 $white: rgba(242, 242, 242, 1);
 $gradient: linear-gradient(90deg, #ad54a4 0%, #db6c6d 64%);
 
+
+
 #logoSvg {
   position: absolute;
   left: 20px;
   width: 12vmin;
   border-radius: 50%;
+
 
   &:hover {
     cursor: pointer !important;
@@ -54,5 +57,32 @@ $gradient: linear-gradient(90deg, #ad54a4 0%, #db6c6d 64%);
     transform: scale(1.1);
     transition: ease-in-out;
     transition-duration: 0.2s;
+  }
+}
+
+@keyframes draw_in {
+  from {
+    stroke-dashoffset: 0%;
+  }
+
+  to {
+    stroke-dashoffset: 100%;
+  }
+}
+
+svg path {
+  stroke-dashoffset: 600;
+  stroke-dasharray: 600;
+  animation: draw 2s forwards;
+
+}
+
+// svg g {
+//   fill-opacity: 0;
+// }
+
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0;
   }
 }
