@@ -1,21 +1,39 @@
 const express = require("express");
 const user_router = express.Router();
-const db = require("../models");
+const { User } = require("../models");
+const bcrypt = require("bcryptjs");
 
-user_router.post("/api/createUser", (req, res) => {
-    db.User.create(req.body).then(data => {
-        console.log(`This is from createUser route: ${data}`);
-        res.json(data);
-    })
-    .catch(err => console.log(err));
+user_router.post("/signup", async(req, res) => {
+
+    try{
+        const user = new User(req.body);
+        const result = await user.save();
+        res.send(result);
+
+    }catch(error){
+        res.status(500).send(error);
+    }
 });
 
-user_router.get("/api/Users", (req, res) => {
-    db.User.find({}).then(data => {
-        console.log(`This is from Users route: ${data}`);
-        res.json(data);
-    })
-    .catch(err => console.log(err));
-});
+user_router.post("/signin", async(req, res) => {
+    try{
+        let user = await User.findOne({username: req.body.username});
+        
+        if(!user){
+            return res.status(400).send({message: "The username does not exist in our system."})
+        }
+        user.comparePassword(req.body.password, (error, match) => {
+            if(!match) {
+                return res.status(400).send({message: "The password is incorrect"});
+            }
+        });
+
+        res.send({message: "Login credentials are correct."});
+
+    }catch(error){
+        res.status(500).send(error);
+        console.log(error);
+    }
+})
 
 module.exports = user_router;
