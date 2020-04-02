@@ -17,7 +17,7 @@ function NavBar() {
           </linearGradient>
         </defs>
         <path
-          fill="#121212"
+          fill="#212121"
           d="M-1.41 132.72c112.3-242.75 359.48 193.42 501.68-70.06L500 0H0z"
           stroke="url(#gradient)"
           strokeWidth="4"
