@@ -1,11 +1,33 @@
-.playLogo {
+.animations {
   animation: flubber 1s ease-in-out alternate;
-  width: 30vh;
+
+
 }
 
-.listContainer {
-  animation: flubber 1s ease-in-out alternate;
-  margin-bottom: 50px;
+.col-md {
+  width: 200px;
+  height: 200px;
+  margin: 5px;
+  background-color: pink;
+}
+
+
+@keyframes zoomOut {
+  from {
+    opacity: 0;
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(0);
+    opacity: 1;
+  }
+}
+
+.zoomIn {
+  &:hover {
+    animation: zoomIn 2s forwards;
+  }
 }
 
 @keyframes flubber {
