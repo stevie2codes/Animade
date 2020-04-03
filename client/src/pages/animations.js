@@ -8,10 +8,11 @@ class animation extends Component {
     animations: getAnimations()
   };
   render() {
+    const { length: count } = this.state.animations;
     return (
       <React.Fragment>
-        <p>{this.state.animations.length}</p>
         <AnimationContainer />
+        <p>Showing {count} animations</p>
         <div className="container animations">
           <div className="row">
             <div className="col-md fallAway">
