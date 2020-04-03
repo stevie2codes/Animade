@@ -11,6 +11,10 @@ app.use(express.json());
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
+//hopefully makes heroku routing work
+app.get('/*', function(req, res) {
+  res.sendFile(path.join(__dirname, 'build', 'index.html'));
+});
 
 app.use(admin_router);
 app.use(user_router);
