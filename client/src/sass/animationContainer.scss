@@ -1,11 +1,43 @@
-.playLogo {
-  animation: flubber 1s ease-in-out alternate;
-  width: 30vh;
+.animations {
+  // animation: flubber 1s ease-in-out alternate;
+
+
 }
 
-.listContainer {
-  animation: flubber 1s ease-in-out alternate;
-  margin-bottom: 50px;
+.col-md {
+  width: 200px;
+  height: 200px;
+  margin: 5px;
+  background-color: pink;
+  text-align: center;
+  border-radius: 10px;
+}
+
+
+@keyframes fallAway {
+  from {
+    opacity: 0;
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(0);
+    opacity: 1;
+  }
+}
+
+.fallAway {
+  &:hover {
+    animation: fallAway 2s forwards;
+    cursor: pointer;
+
+  }
+}
+
+.flubber {
+  &:hover {
+    animation: flubber 1.5s alternate;
+  }
 }
 
 @keyframes flubber {
@@ -35,5 +67,23 @@
 
   to {
     transform: scale3d(1, 1, 1);
+  }
+}
+
+.dipSet {
+  &:hover {
+    animation: dipSet 2s alternate;
+  }
+}
+
+@keyframes dipSet {
+  from {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+
+  to {
+    transform: translateY(300px);
+    opacity: 0;
   }
 }
