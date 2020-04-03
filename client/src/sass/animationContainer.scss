@@ -1,18 +1,45 @@
+$black: #212121;
+$primary-font: "Poiret One",
+cursive;
+$logo-font: "Coiny",
+cursive;
+$secondary-font: "Montserrat",
+sans-serif;
+
+$Primary-color: #ad54a4;
+$Secondary-color: #db6c6d;
+$black: #212121;
+$white: rgba(242, 242, 242, 1);
+$gradient: linear-gradient(90deg, #ad54a4 0%, #db6c6d 64%);
+
+
 .animations {
-  // animation: flubber 1s ease-in-out alternate;
-
-
+  display: flex;
+  justify-content: center;
+  margin: auto;
 }
 
 .col-md {
-  width: 200px;
-  height: 200px;
-  margin: 5px;
-  background-color: pink;
   text-align: center;
-  border-radius: 10px;
+  width: 150px;
+  height: 200px;
+  margin: 10px;
+  background-color: $black;
+  display: inline-block;
+  opacity: 0.8;
+  border-radius: 30%
 }
 
+p {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: $white;
+  font-size: 1.5rem;
+  font-family: $secondary-font;
+}
 
 @keyframes fallAway {
   from {
@@ -29,8 +56,8 @@
 .fallAway {
   &:hover {
     animation: fallAway 2s forwards;
-    cursor: pointer;
 
+    cursor: pointer;
   }
 }
 
@@ -85,5 +112,26 @@
   to {
     transform: translateY(300px);
     opacity: 0;
+  }
+}
+
+.dipSet {
+  &:hover {
+    animation: dipSet 2s alternate;
+  }
+}
+
+.cartWheel:hover {
+  animation: cartWheel 1s alternate;
+  cursor: pointer;
+}
+
+@keyframes cartWheel {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
   }
 }
