@@ -36,8 +36,14 @@ class animation extends Component {
               <div class="modal-header">
                 <h5 class="modal-title">Modal title</h5>
               </div>
-              <div class="modal-body">
-                <p>{count}</p>
+              <div class="modal-body m-5 p-5">
+                {this.state.animations.map(data => (
+                  <ul>
+                    <li className="text-dark">
+                      {data.name} {data.code}
+                    </li>
+                  </ul>
+                ))}
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-primary">
