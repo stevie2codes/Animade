@@ -9,13 +9,21 @@ const path = require("path");
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+//must check to see what environment we are in, to serve up the correct
+//filepath to the index.html for SPA's
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
+  app.get("/*", function(req, res) {
+    res.sendFile(path.join(__dirname, "./client/build/index.html"));
+  });
+}else {
+  app.use(express.static(path.join(__dirname, '/client/public')));
+  app.get("/*", function(req, res) {
+    res.sendFile(path.join(__dirname, "./client/public/index.html"));
+  });
 }
-//hopefully makes heroku routing work
-app.get('/*', function(req, res) {
-  res.sendFile(path.join(__dirname, 'build', 'index.html'));
-});
+
+
 
 app.use(admin_router);
 app.use(user_router);
