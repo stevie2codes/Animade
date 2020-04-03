@@ -8,7 +8,7 @@ import NavBar from "./components/nav/nav";
 import "./App.scss";
 import "./sass/navbar.scss";
 import logo from "./logo.svg";
-import CreateUser from "./pages/createUser";
+import UserLogin from "./pages/createUser";
 
 // import "./App.css";
 
@@ -43,7 +43,7 @@ function App() {
         <Route exact path="/" component={Home} />
         <Route path="/animations" component={animations} />
         <Route path="/signup" component={SignIn} />
-        <Route path="/signin" component={CreateUser} />
+        <Route path="/signin" component={UserLogin} />
         <Route path="/Contact" component={Contact} />
       </BrowserRouter>
     </div>
