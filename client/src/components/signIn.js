@@ -65,7 +65,7 @@ export default function SignUp() {
           fontWeight="bolder"
           className={classes.paper}
         >
-          Sign up
+          Sign In
         </Typography>
         <form className={classes.form} noValidate>
           <Grid container spacing={2}>
@@ -82,18 +82,7 @@ export default function SignUp() {
               />
             </Grid>
 
-            <Grid item xs={12}>
-              <TextField
-                variant="outlined"
-                color=" primary"
-                required
-                fullWidth
-                id="email"
-                label="Email Address"
-                name="email"
-                autoComplete="email"
-              />
-            </Grid>
+           
             <Grid item xs={12}>
               <TextField
                 variant="outlined"
@@ -114,15 +103,9 @@ export default function SignUp() {
             color="secondary"
             className={classes.submit}
           >
-            Sign Up
+            Sign In
           </Button>
-          <Grid container justify="flex-end">
-            <Grid item>
-              <Link href="signin" variant="body2">
-                Already have an account? Sign in
-              </Link>
-            </Grid>
-          </Grid>
+          
         </form>
       </div>
       <Box mt={5}>
