@@ -17,27 +17,30 @@ $gradient: linear-gradient(90deg, #ad54a4 0%, #db6c6d 64%);
   display: flex;
   justify-content: center;
   margin: auto;
+  flex-wrap: wrap;
 }
 
-.col-md {
+.dipSet,
+.flubber,
+.fallAway,
+.cartWheel {
+  display: flex;
   text-align: center;
+  flex-wrap: wrap;
   width: 150px;
-  height: 200px;
-  margin: 10px;
+  height: 150px;
+  margin: 30px;
   background-color: $black;
   display: inline-block;
   opacity: 0.8;
-  border-radius: 30%
+  border-radius: 50%
 }
 
 p {
-  margin: 0;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  margin: 50px auto;
+  text-align: center;
   color: $white;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   font-family: $secondary-font;
 }
 
@@ -54,14 +57,15 @@ p {
 }
 
 .fallAway {
+
   &:hover {
     animation: fallAway 2s forwards;
-
     cursor: pointer;
   }
 }
 
 .flubber {
+
   &:hover {
     animation: flubber 1.5s alternate;
   }
@@ -98,6 +102,8 @@ p {
 }
 
 .dipSet {
+
+
   &:hover {
     animation: dipSet 2s alternate;
   }
@@ -115,15 +121,15 @@ p {
   }
 }
 
-.dipSet {
-  &:hover {
-    animation: dipSet 2s alternate;
-  }
-}
 
-.cartWheel:hover {
-  animation: cartWheel 1s alternate;
-  cursor: pointer;
+
+.cartWheel {
+
+  &:hover {
+    animation: cartWheel 1s alternate;
+    cursor: pointer;
+  }
+
 }
 
 @keyframes cartWheel {

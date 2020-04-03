@@ -1,7 +1,6 @@
-import { functionTypeAnnotation } from "@babel/types";
-
 const animations = [
   {
+    id: 1,
     name: "fallAway",
     code: `@keyframes fallAway {
     from {
@@ -16,6 +15,7 @@ const animations = [
 }`
   },
   {
+    id: 2,
     name: "flubber",
     code: `@keyframes flubber {
         from {
@@ -48,6 +48,7 @@ const animations = [
     }`
   },
   {
+    id: 3,
     name: "dipSet",
     code: `@keyframes dipSet {
         from {
@@ -62,6 +63,7 @@ const animations = [
     }`
   },
   {
+    id: 4,
     name: "cartWheel",
     code: `@keyframes cartWheel {
         from {
