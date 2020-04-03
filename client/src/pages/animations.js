@@ -1,32 +1,35 @@
-import React from "react";
-// import AnimationContainer from "../components/animationContainer";
-// import Dropdown from "../components/dropdown";
+import React, { Component } from "react";
+import AnimationContainer from "../components/animationContainer";
+import { getAnimations } from "../services/animationService";
 import "../sass/animationContainer.scss";
 
-const animations = props => {
-  return (
-    <React.Fragment>
-      {/* <AnimationContainer /> */}
-      {/* <Dropdown /> */}
-      <div className="container animations">
-        <div className="row">
-          <div className="col-md fallAway">Fall Away</div>
-          <div className="col-md dipSet">dipSet</div>
-          <div className="col-md">One of three columns</div>
+class animation extends Component {
+  state = {
+    animations: getAnimations()
+  };
+  render() {
+    return (
+      <React.Fragment>
+        <p>{this.state.animations.length}</p>
+        <AnimationContainer />
+        <div className="container animations">
+          <div className="row">
+            <div className="col-md fallAway">
+              <p>Fall Away</p>
+            </div>
+            <div className="col-md dipSet">
+              <p>Dip Set</p>
+            </div>
+            <div className="col-md flubber">
+              <p>Flubber</p>
+            </div>
+            <div className="col-md cartWheel">
+              <p>CartWheel</p>
+            </div>
+          </div>
         </div>
-        <div className="row">
-          <div className="col-md flubber">Flubber</div>
-          <div className="col-md">One of three columns</div>
-          <div className="col-md">One of three columns</div>
-        </div>
-        <div className="row">
-          <div className="col-md">One of three columns</div>
-          <div className="col-md">One of three columns</div>
-          <div className="col-md">One of three columns</div>
-        </div>
-      </div>
-    </React.Fragment>
-  );
-};
-
-export default animations;
+      </React.Fragment>
+    );
+  }
+}
+export default animation;
