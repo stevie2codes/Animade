@@ -8,6 +8,7 @@ import NavBar from "./components/nav/nav";
 import "./App.scss";
 import "./sass/navbar.scss";
 import logo from "./logo.svg";
+import CreateUser from "./pages/createUser";
 
 // import "./App.css";
 
@@ -33,7 +34,7 @@ function App() {
               <Link to="/Contact" className="nav-link ">
                 Contact
               </Link>
-              <Link to="/SignIn" className="nav-link ">
+              <Link to="/signup" className="nav-link ">
                 Sign-In
               </Link>
             </div>
@@ -41,7 +42,8 @@ function App() {
         </div>
         <Route exact path="/" component={Home} />
         <Route path="/animations" component={animations} />
-        <Route path="/SignIn" component={SignIn} />
+        <Route path="/signup" component={SignIn} />
+        <Route path="/signin" component={CreateUser} />
         <Route path="/Contact" component={Contact} />
       </BrowserRouter>
     </div>
