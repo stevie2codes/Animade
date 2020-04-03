@@ -1,36 +1,73 @@
-import React from "react";
+import { functionTypeAnnotation } from "@babel/types";
 
-// const animations = [
-//   {
-//     animation_name: "flubber",
+const animations = [
+  {
+    fallAway: `
+   @keyframes fallAway {
+       from {
+           opacity: 0;
+           transform: scale(1);
+       }
+   
+       to {
+           transform: scale(0);
+           opacity: 1;
+       }
+   }`,
 
-//     animation_code: "@keyframes slideUp {
-//         from {
-//           transform: translateY(500px);
-//           opacity: 0;
-//         }
-
-//         to {
-//           transform: translateY(0px);
-//           opacity: 1;
-//         }
-//       }"
-//   }
-// ];
-
-const zoomIn = keyframes`
+    flubber: `@keyframes flubber {
     from {
-        opacity: 0;
-        transform: scale(0);
+        transform: scale3d(1, 1, 1);
+    }
+
+    30% {
+        transform: scale3d(1.25, 0.75, 1);
+    }
+
+    40% {
+        transform: scale3d(0.75, 1.25, 1);
+    }
+
+    50% {
+        transform: scale3d(1.15, 0.85, 1);
+    }
+
+    65% {
+        transform: scale3d(0.95, 1.05, 1);
+    }
+
+    75% {
+        transform: scale3d(1.05, 0.95, 1);
     }
 
     to {
-        transform: scale(1);
-        opacity: 1;
+        transform: scale3d(1, 1, 1);
+    }
+}`,
+
+    dipset: `@keyframes dipSet {
+        from {
+            transform: translateY(0px);
+            opacity: 1;
+        }
     
-}`;
-export default Ball = dropDown.div`
-width: 200px;
-height: 200px;
-border-radius: 50%;
-animation: ${zoomIn} 2s linear infinite`;
+        to {
+            transform: translateY(300px);
+            opacity: 0;
+        }
+    }`,
+    cartWheel: `@keyframes cartWheel {
+        from {
+            transform: rotate(0deg);
+        }
+    
+        to {
+            transform: rotate(360deg);
+        }
+    }`
+  }
+];
+
+export function getAnimations() {
+  return animations;
+}
