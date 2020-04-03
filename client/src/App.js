@@ -41,10 +41,10 @@ function App() {
           </div>
         </div>
         <Route exact path="/" component={Home} />
-        <Route path="/animations" component={animations} />
-        <Route path="/signup" component={SignIn} />
-        <Route path="/signin" component={UserLogin} />
-        <Route path="/Contact" component={Contact} />
+        <Route exact path="/animations" component={animations} />
+        <Route exact path="/signup" component={SignIn} />
+        <Route exact path="/signin" component={UserLogin} />
+        <Route exact path="/Contact" component={Contact} />
       </BrowserRouter>
     </div>
   );
