@@ -1,5 +1,5 @@
 .animations {
-  animation: flubber 1s ease-in-out alternate;
+  // animation: flubber 1s ease-in-out alternate;
 
 
 }
@@ -9,10 +9,12 @@
   height: 200px;
   margin: 5px;
   background-color: pink;
+  text-align: center;
+  border-radius: 10px;
 }
 
 
-@keyframes zoomOut {
+@keyframes fallAway {
   from {
     opacity: 0;
     transform: scale(1);
@@ -24,9 +26,17 @@
   }
 }
 
-.zoomIn {
+.fallAway {
   &:hover {
-    animation: zoomIn 2s forwards;
+    animation: fallAway 2s forwards;
+    cursor: pointer;
+
+  }
+}
+
+.flubber {
+  &:hover {
+    animation: flubber 1.5s alternate;
   }
 }
 
@@ -57,5 +67,23 @@
 
   to {
     transform: scale3d(1, 1, 1);
+  }
+}
+
+.dipSet {
+  &:hover {
+    animation: dipSet 2s alternate;
+  }
+}
+
+@keyframes dipSet {
+  from {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+
+  to {
+    transform: translateY(300px);
+    opacity: 0;
   }
 }
