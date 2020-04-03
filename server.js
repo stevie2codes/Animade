@@ -9,6 +9,8 @@ const path = require("path");
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+//must check to see what environment we are in, to serve up the correct
+//filepath to the index.html for SPA's
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
   app.get("/*", function(req, res) {
