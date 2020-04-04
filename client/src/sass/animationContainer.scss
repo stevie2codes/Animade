@@ -20,10 +20,17 @@ $gradient: linear-gradient(90deg, #ad54a4 0%, #db6c6d 64%);
   flex-wrap: wrap;
 }
 
-.dipSet,
+.rollLeft,
+.rollRight,
+.rise,
+.fall,
+.dipSetUp,
 .flubber,
-.fallAway,
-.cartWheel {
+.fade,
+.cartWheel,
+.flipX,
+.flipY,
+.spinOut {
   display: flex;
   text-align: center;
   flex-wrap: wrap;
@@ -32,8 +39,9 @@ $gradient: linear-gradient(90deg, #ad54a4 0%, #db6c6d 64%);
   margin: 30px;
   background-color: $black;
   display: inline-block;
-  opacity: 0.8;
-  border-radius: 50%
+  opacity: 0.9;
+  border-radius: 20%;
+  box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.735);
 }
 
 p {
@@ -45,22 +53,16 @@ p {
   letter-spacing: 2px;
 }
 
-@keyframes fallAway {
-  from {
-    opacity: 0;
-    transform: scale(1);
-  }
-
+@keyframes fade {
   to {
-    transform: scale(0);
-    opacity: 1;
+    opacity: 0;
   }
 }
 
-.fallAway {
+.fade {
 
   &:hover {
-    animation: fallAway 2s forwards;
+    animation: fade 1s alternate;
     cursor: pointer;
   }
 }
@@ -68,7 +70,8 @@ p {
 .flubber {
 
   &:hover {
-    animation: flubber 1.5s alternate;
+    animation: flubber 1s alternate;
+    cursor: pointer;
   }
 }
 
@@ -102,15 +105,14 @@ p {
   }
 }
 
-.dipSet {
-
-
+.fall {
   &:hover {
-    animation: dipSet 2s alternate;
+    animation: fall 1s alternate;
+    cursor: pointer;
   }
 }
 
-@keyframes dipSet {
+@keyframes fall {
   from {
     transform: translateY(0px);
     opacity: 1;
@@ -121,6 +123,31 @@ p {
     opacity: 0;
   }
 }
+
+.fall {
+  &:hover {
+    animation: fall 1.5s forwards;
+    cursor: pointer;
+  }
+}
+
+.rise:hover {
+  cursor: pointer;
+  animation: rise 1.5s alternate;
+}
+
+@keyframes rise {
+  from {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+
+  to {
+    transform: translateY(-300px);
+    opacity: 0;
+  }
+}
+
 
 
 
@@ -134,11 +161,79 @@ p {
 }
 
 @keyframes cartWheel {
-  from {
-    transform: rotate(0deg);
-  }
 
   to {
     transform: rotate(360deg);
+  }
+}
+
+.flipX:hover {
+  animation: flipX 1s forwards;
+  cursor: pointer;
+}
+
+@keyframes flipX {
+
+  to {
+    transform: rotateX(360deg);
+
+  }
+}
+
+.flipY:hover {
+  animation: flipY 1s forwards;
+  cursor: pointer;
+}
+
+@keyframes flipY {
+
+  to {
+    transform: rotateY(360deg);
+  }
+}
+
+.rollLeft:hover {
+  cursor: pointer;
+  animation: rollLeft 1s alternate;
+}
+
+@keyframes rollLeft {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    transform: translateX(-300px) rotate(-360deg);
+    opacity: 0;
+  }
+}
+
+.rollRight:hover {
+  cursor: pointer;
+  animation: rollRight 1s alternate;
+}
+
+@keyframes rollRight {
+  from {
+    opacity: 1;
+
+  }
+
+  to {
+    transform: translateX(300px) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+.spinOut:hover {
+  animation: spinOut 1s alternate;
+  cursor: pointer;
+}
+
+@keyframes spinOut {
+
+  to {
+    transform: rotate(360deg) scale(0);
+    opacity: 0;
   }
 }

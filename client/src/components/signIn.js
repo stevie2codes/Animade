@@ -82,7 +82,6 @@ export default function SignUp() {
               />
             </Grid>
 
-           
             <Grid item xs={12}>
               <TextField
                 variant="outlined"
@@ -105,7 +104,6 @@ export default function SignUp() {
           >
             Sign In
           </Button>
-          
         </form>
       </div>
       <Box mt={5}>

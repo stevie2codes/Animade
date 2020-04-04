@@ -4,6 +4,9 @@ import { getAnimations } from "../services/animationService";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import "../sass/animationContainer.scss";
 import "../sass/modal.scss";
+import { Button } from "@material-ui/core";
+import Save from "@material-ui/icons/Save";
+import Like from "@material-ui/icons/ThumbUpSharp";
 
 class animation extends Component {
   state = {
@@ -25,8 +28,8 @@ class animation extends Component {
     return (
       <React.Fragment>
         <AnimationContainer />
-        <p className="mt-5">Showing {count} animations</p>
-        <div className="container animations my-5">
+        <p className="mt-1">Showing {count} animations</p>
+        <div className="container animations my-2">
           {this.state.animations.map(animation => (
             <div key={animation.id} className="row">
               <div
@@ -63,12 +66,27 @@ class animation extends Component {
                       onCopy={() => this.setState({ copied: true })}
                     >
                       <div className="modal-footer ">
-                        <button type="button" className="btn btn-primary">
-                          Copy to clipboard
-                        </button>
+                        <Button
+                          type="button"
+                          size="large"
+                          color="secondary"
+                          variant="outlined"
+                          endIcon={<Save />}
+                        >
+                          Copy
+                        </Button>
                       </div>
                     </CopyToClipboard>
                   </li>
+                  <Button
+                    type="button"
+                    size="large"
+                    color="primary"
+                    variant="outlined"
+                    endIcon={<Like />}
+                  >
+                    Like
+                  </Button>
                 </ul>
               </div>
             </div>
