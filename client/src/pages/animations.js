@@ -5,11 +5,13 @@ import "../sass/animationContainer.scss";
 
 class animation extends Component {
   state = {
-    animations: getAnimations()
+    animations: getAnimations(),
+    animation_code: " "
   };
 
-  handleSelection = animation => {
-    console.log(animation);
+  handleSelection = function(animation){
+    this.setState({animation_code: animation})
+    
   };
   render() {
     const { length: count } = this.state.animations;
@@ -39,7 +41,7 @@ class animation extends Component {
               </div>
               <div className="modal-body m-5 p-5">
                 <ul>
-                  <li className="text-dark"></li>
+                  <li className="text-dark">{this.state.animation_code}</li>
                 </ul>
               </div>
               <div className="modal-footer">
