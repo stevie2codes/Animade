@@ -5,7 +5,13 @@ import "../sass/animationContainer.scss";
 
 class animation extends Component {
   state = {
-    animations: getAnimations()
+    animations: getAnimations(),
+    animation_code: " "
+  };
+
+  handleSelection = function(animation){
+    this.setState({animation_code: animation})
+    
   };
   render() {
     const { length: count } = this.state.animations;
@@ -14,40 +20,33 @@ class animation extends Component {
         <AnimationContainer />
         <p className="mt-5">Showing {count} animations</p>
         <div className="container animations my-5">
-          <div className="row">
-            <div className="col-md fallAway">
-              <p>Fall Away</p>
+          {this.state.animations.map(animation => (
+            <div key={animation.id} className="row">
+              <div
+                className={animation.name}
+                id={animation.id}
+                onClick={() => this.handleSelection(animation.code)}
+              >
+                <p>{animation.name}</p>
+              </div>
             </div>
-            <div className="col-md dipSet">
-              <p>Dip Set</p>
-            </div>
-            <div className="col-md flubber">
-              <p>Flubber</p>
-            </div>
-            <div className="col-md cartWheel">
-              <p>CartWheel</p>
-            </div>
-          </div>
+          ))}
         </div>
 
-        <div class="box" tabindex="-1" role="dialog">
-          <div class="modal-dialog" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title">Modal title</h5>
+        <div className="box " role="dialog">
+          <div className="modal-dialog " role="document">
+            <div className="modal-content">
+              <div className="modal-header">
+                <h5 className="modal-title">Animation:</h5>
               </div>
-              <div class="modal-body m-5 p-5">
-                {this.state.animations.map(data => (
-                  <ul>
-                    <li className="text-dark">
-                      {data.name} {data.code}
-                    </li>
-                  </ul>
-                ))}
+              <div className="modal-body m-5 p-5">
+                <ul>
+                  <li className="text-dark">{this.state.animation_code}</li>
+                </ul>
               </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-primary">
-                  Save changes
+              <div className="modal-footer">
+                <button type="button" className="btn btn-primary">
+                  Copy to clipboard
                 </button>
               </div>
             </div>
