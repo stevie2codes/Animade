@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import AnimationContainer from "../components/animationContainer";
 import { getAnimations } from "../services/animationService";
 import "../sass/animationContainer.scss";
+import "../sass/modal.scss";
 
 class animation extends Component {
   state = {
@@ -10,8 +11,11 @@ class animation extends Component {
     animation_name: " "
   };
 
-  handleSelection = function(animation){
-    this.setState({animation_code: animation.code, animation_name: animation.name})
+  handleSelection = function(animation) {
+    this.setState({
+      animation_code: animation.code,
+      animation_name: animation.name
+    });
   };
 
   render() {
@@ -22,7 +26,6 @@ class animation extends Component {
         <p className="mt-5">Showing {count} animations</p>
         <div className="container animations my-5">
           {this.state.animations.map(animation => (
-            
             <div key={animation.id} className="row">
               <div
                 className={animation.name}
@@ -39,11 +42,13 @@ class animation extends Component {
           <div className="modal-dialog " role="document">
             <div className="modal-content">
               <div className="modal-header">
-                <h5 className="modal-title">Animation: {this.state.animation_name}</h5>
+                <h5 className="modal-title">
+                  Animation Name: {this.state.animation_name}
+                </h5>
               </div>
-              <div className="modal-body m-5 p-5">
-                <ul>
-                  <li className="text-dark">{this.state.animation_code}</li>
+              <div className="modal-body m-2 ">
+                <ul className="ul">
+                  <li className="codeOutput">{this.state.animation_code}</li>
                 </ul>
               </div>
               <div className="modal-footer">

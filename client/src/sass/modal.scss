@@ -1,0 +1,33 @@
+// Fonts
+$primary-font: "Poiret One",
+cursive;
+$logo-font: "Coiny",
+cursive;
+$secondary-font: "Montserrat",
+sans-serif;
+
+/* Color Theme Swatches in RGBA */
+$Primary-color: #ad54a4;
+$Secondary-color: #db6c6d;
+$black: #212121;
+$white: rgba(242, 242, 242, 1);
+$gradient: linear-gradient(90deg, #ad54a4 0%, #db6c6d 64%);
+
+.modal-title {
+    font-family: $secondary-font;
+
+}
+
+.ul {
+    list-style-type: none;
+}
+
+.modal-content {
+    background-color: $black;
+    color: $white;
+    font-family: $secondary-font;
+    font-size: 1.5rem;
+    letter-spacing: 3px;
+    opacity: 0.8;
+    border: 4px solid $white;
+}

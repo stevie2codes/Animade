@@ -41,7 +41,8 @@ p {
   text-align: center;
   color: $white;
   font-size: 1.3rem;
-  font-family: $secondary-font;
+  font-family: $logo-font;
+  letter-spacing: 2px;
 }
 
 @keyframes fallAway {
