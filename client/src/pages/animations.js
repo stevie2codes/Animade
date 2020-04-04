@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import AnimationContainer from "../components/animationContainer";
 import { getAnimations } from "../services/animationService";
+import { CopyToClipboard } from "react-copy-to-clipboard";
 import "../sass/animationContainer.scss";
 import "../sass/modal.scss";
 
@@ -8,7 +9,8 @@ class animation extends Component {
   state = {
     animations: getAnimations(),
     animation_code: " ",
-    animation_name: " "
+    animation_name: " ",
+    copied: false
   };
 
   handleSelection = function(animation) {
@@ -48,13 +50,26 @@ class animation extends Component {
               </div>
               <div className="modal-body m-2 ">
                 <ul className="ul">
-                  <li className="codeOutput">{this.state.animation_code}</li>
+                  <li
+                    className="codeOutput"
+                    value={this.state.animation_code}
+                    onChange={({ target: { value } }) =>
+                      this.setState({ value, copied: false })
+                    }
+                  >
+                    {this.state.animation_code}{" "}
+                    <CopyToClipboard
+                      text={this.state.animation_code}
+                      onCopy={() => this.setState({ copied: true })}
+                    >
+                      <div className="modal-footer ">
+                        <button type="button" className="btn btn-primary">
+                          Copy to clipboard
+                        </button>
+                      </div>
+                    </CopyToClipboard>
+                  </li>
                 </ul>
-              </div>
-              <div className="modal-footer">
-                <button type="button" className="btn btn-primary">
-                  Copy to clipboard
-                </button>
               </div>
             </div>
           </div>

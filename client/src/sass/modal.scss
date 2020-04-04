@@ -15,6 +15,8 @@ $gradient: linear-gradient(90deg, #ad54a4 0%, #db6c6d 64%);
 
 .modal-title {
     font-family: $secondary-font;
+    margin: 0 auto;
+    text-align: center;
 
 }
 
@@ -30,4 +32,13 @@ $gradient: linear-gradient(90deg, #ad54a4 0%, #db6c6d 64%);
     letter-spacing: 3px;
     opacity: 0.8;
     border: 4px solid $white;
+}
+
+.modal-footer {
+    border: none;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    border-top: 2px solid white;
+
 }
