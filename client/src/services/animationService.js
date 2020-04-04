@@ -1,18 +1,12 @@
 const animations = [
   {
     id: 1,
-    name: "fallAway",
-    code: `@keyframes fallAway {
-    from {
-        opacity: 0;
-        transform: scale(1);
-    }
-
-    to {
-        transform: scale(0);
-        opacity: 1;
-    }
-}`
+    name: "fade",
+    code: `@keyframes fade {
+        to {
+          opacity: 0;
+        }
+      }`
   },
   {
     id: 2,
@@ -49,8 +43,8 @@ const animations = [
   },
   {
     id: 3,
-    name: "dipSet",
-    code: `@keyframes dipSet {
+    name: "fall",
+    code: `@keyframes fall {
         from {
             transform: translateY(0px);
             opacity: 1;
@@ -66,14 +60,88 @@ const animations = [
     id: 4,
     name: "cartWheel",
     code: `@keyframes cartWheel {
-        from {
-            transform: rotate(0deg);
-        }
     
         to {
             transform: rotate(360deg);
         }
     }`
+  },
+  {
+    id: 5,
+    name: "flipX",
+    code: `@keyframes flipX { 
+        to {
+          transform: rotateX(360deg);
+      
+        }
+      }`
+  },
+  {
+    id: 6,
+    name: "flipY",
+    code: `@keyframes flipY {
+        to {
+          transform: rotateY(360deg);
+      
+        }
+      }`
+  },
+  {
+    id: 7,
+    name: "rise",
+    code: `@keyframes rise {
+        from {
+          transform: translateY(0px);
+          opacity: 1;
+        }
+      
+        to {
+          transform: translateY(-300px);
+          opacity: 0;
+        }
+      }`
+  },
+  {
+    id: 8,
+    name: "rollLeft",
+    code: `
+    @keyframes rollLeft {
+      from {
+        opacity: 1;
+      }
+    
+      to {
+        transform: translateX(-300px) rotate(-360deg);
+        opacity: 0;
+      }
+    }`
+  },
+  {
+    id: 9,
+    name: "rollRight",
+    code: `
+    @keyframes rollRight {
+      from {
+        opacity: 1;
+      }
+    
+      to {
+        transform: translateX(300px) rotate(360deg);
+        opacity: 0;
+      }
+    }`
+  },
+  {
+    id: 10,
+    name: "spinOut",
+    code: `
+    @keyframes spinOut {
+
+        to {
+          transform: rotate(360deg) scale(0);
+          opacity: 0;
+        }
+      }`
   }
 ];
 

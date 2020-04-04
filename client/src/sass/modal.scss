@@ -17,28 +17,23 @@ $gradient: linear-gradient(90deg, #ad54a4 0%, #db6c6d 64%);
     font-family: $secondary-font;
     margin: 0 auto;
     text-align: center;
-
 }
 
 .ul {
     list-style-type: none;
+
 }
 
 .modal-content {
     background-color: $black;
     color: $white;
     font-family: $secondary-font;
-    font-size: 1.5rem;
+    font-size: 2.5vh;
     letter-spacing: 3px;
-    opacity: 0.8;
-    border: 4px solid $white;
+    border: 2px solid $white;
 }
 
 .modal-footer {
+    margin-bottom: -60px;
     border: none;
-    display: flex;
-    justify-content: center;
-    margin: 0 auto;
-    border-top: 2px solid white;
-
 }

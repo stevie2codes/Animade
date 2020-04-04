@@ -85,7 +85,7 @@ export default function SignUp() {
             <Grid item xs={12}>
               <TextField
                 variant="outlined"
-                color=" primary"
+                color="primary"
                 required
                 fullWidth
                 id="email"
