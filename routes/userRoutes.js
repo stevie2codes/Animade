@@ -9,7 +9,7 @@ user_router.post("/signup", async(req, res) => {
         const newUser = new User(req.body);
         const sessionUser = sessionizeUser(newUser)
         await newUser.save();
-        console.log(`session: ${req.session}`);
+        console.log(req.session);
         req.session.user = sessionUser;
         res.send(sessionUser);
 
