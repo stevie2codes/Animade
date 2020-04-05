@@ -5,6 +5,7 @@ import SignIn from "./pages/signIn";
 import animations from "./pages/animations";
 import Contact from "./pages/contact";
 import NavBar from "./components/nav/nav";
+import Playground from "./pages/playground";
 import "./App.scss";
 import "./sass/navbar.scss";
 import logo from "./logo.svg";
@@ -31,6 +32,9 @@ function App() {
               <Link to="/animations" className="nav-link ">
                 Animations
               </Link>
+              <Link to="/playground" className="nav-link ">
+                Playground
+              </Link>
               <Link to="/Contact" className="nav-link ">
                 Contact
               </Link>
@@ -42,6 +46,7 @@ function App() {
         </div>
         <Route exact path="/" component={Home} />
         <Route exact path="/animations" component={animations} />
+        <Route exact path="/playground" component={Playground} />
         <Route exact path="/signup" component={SignIn} />
         <Route exact path="/signin" component={UserLogin} />
         <Route exact path="/Contact" component={Contact} />
