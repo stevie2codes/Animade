@@ -17,11 +17,12 @@ $gradient: linear-gradient(90deg, #ad54a4 0%, #db6c6d 64%);
   display: flex;
   width: 50vh;
   margin: -0vh auto;
-  animation: zoomIn 1s ease-in-out alternate;
+  animation: zoomIn 1s ease-in-out forwards;
   box-shadow: -4px -4px 14px rgba(13, 13, 13, 0.474),
     4px 4px 14px rgba(13, 13, 13, 0.687);
   border-radius: 50%;
   border: 2px solid #ad54a425;
+
 
   &:hover {
     cursor: auto !important;
@@ -55,7 +56,7 @@ $gradient: linear-gradient(90deg, #ad54a4 0%, #db6c6d 64%);
   }
 
   to {
-    transform: scale(1);
+    transform: scale(1) rotate(360deg);
     opacity: 1;
   }
 }
