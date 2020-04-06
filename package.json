@@ -24,13 +24,10 @@
     "@material-ui/icons": "^4.9.1",
     "axios": "^0.18.1",
     "bcryptjs": "^2.4.3",
-<<<<<<< HEAD
     "body-parser": "^1.19.0",
     "connect-mongo": "^3.2.0",
     "cookie-parser": "^1.4.5",
-=======
     "codemirror": "^5.52.2",
->>>>>>> master
     "express": "^4.16.3",
     "express-session": "^1.17.0",
     "if-env": "^1.0.4",
