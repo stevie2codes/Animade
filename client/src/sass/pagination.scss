@@ -1,0 +1,43 @@
+$primary-font: "Poiret One",
+cursive;
+$logo-font: "Coiny",
+cursive;
+$secondary-font: "Montserrat",
+sans-serif;
+
+$Primary-color: #ad54a4;
+$Secondary-color: #db6c6d;
+$black: #212121;
+$white: rgba(242, 242, 242, 1);
+$gradient: linear-gradient(90deg, #ad54a4 0%, #db6c6d 90%);
+
+.pagination {
+    display: flex;
+    width: 200px;
+    margin: 30px auto;
+
+}
+
+.page-item {
+    color: $black;
+    box-shadow: -4px -4px 14px #b66c6c, 4px 4px 14px #000000bb;
+    text-align: center;
+    font-family: $logo-font;
+    border: 1px solid black;
+
+}
+
+.active .page-link {
+    background-image: $gradient !important;
+    color: $white !important;
+    border-color: $black !important;
+    transform: scale(1.1);
+
+}
+
+.page-item :hover {
+    background-image: $gradient !important;
+    transform: scale(1.11);
+    border-color: $black !important;
+
+}
