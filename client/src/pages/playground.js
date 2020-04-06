@@ -4,6 +4,7 @@ import "../sass/playground.scss";
 
 import "codemirror/lib/codemirror.css";
 import "codemirror/theme/material.css";
+import "codemirror/theme/yonce.css";
 
 import "codemirror/mode/htmlmixed/htmlmixed";
 import "codemirror/mode/css/css";
@@ -63,7 +64,9 @@ class Playground extends Component {
             <CodeMirror
               value={this.state.html}
               options={{
-                mode: "htmlmixed"
+                mode: "htmlmixed",
+                theme: "yonce",
+                lineNumbers: true
               }}
               onBeforeChange={(editor, data, html) => {
                 this.setState({ html });
@@ -75,8 +78,11 @@ class Playground extends Component {
             <CodeMirror
               value={this.state.css}
               options={{
-                mode: "css"
+                mode: "css",
                 // ...codeMirrorOptions
+                theme: "yonce",
+                lineNumbers: true,
+                autoCloseBrackets: true
               }}
               onBeforeChange={(editor, data, css) => {
                 this.setState({ css });
@@ -88,8 +94,10 @@ class Playground extends Component {
             <CodeMirror
               value={this.state.js}
               options={{
-                mode: "javascript"
+                mode: "javascript",
                 // ...codeMirrorOptions
+                theme: "yonce",
+                lineNumbers: true
               }}
               onBeforeChange={(editor, data, js) => {
                 this.setState({ js });
