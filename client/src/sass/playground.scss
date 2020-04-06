@@ -1,14 +1,85 @@
-.ideContainer {
-    text-align: center;
-    display: block;
-    width: 80vw;
+$Primary-color: #ad54a4;
+$Secondary-color: #db6c6d;
+$black: #212121;
+$white: rgba(242, 242, 242, 1);
+$gradient: linear-gradient(90deg, #ad54a4 0%, #db6c6d 90%);
+
+$primary-font: "Poiret One",
+cursive;
+$logo-font: "Coiny",
+cursive;
+$secondary-font: "Montserrat",
+sans-serif;
+
+.App {
+    margin-top: 30px;
+}
+
+.playground {
+    display: flex;
+    background-color: #1e1e2c;
+    width: 95vw;
+    margin: 0 auto;
+    margin-left: 20px;
+    background: transparent;
+}
+
+.css-code {
+    padding-left: 40px;
+}
+
+.CodeMirror-scroll {
+    background-color: $black;
+    opacity: 0.9;
+    color: $white;
+    font-family: $secondary-font;
+    height: auto;
+    overflow-y: hidden;
+    overflow-x: auto;
+}
+
+.code-editor {
+    margin-top: 50px;
+    width: 95%;
+    display: flex;
+    justify-content: center;
+    background-color: transparent;
 
 }
 
-iframe {
-
-    bottom: 0;
+.editor-header {
+    content: attr(title);
     position: relative;
-    width: 80%;
-    height: 60vh;
+    top: -30px;
+    left: 100px;
+    align-items: center;
+    font-size: 18px;
+    font-weight: bolder;
+    color: $white;
+}
+
+.react-codemirror2 {
+    max-height: calc(100% - 30px);
+    width: 100%;
+    overflow: auto;
+    box-shadow: 3px 3px 10px $black;
+    border-radius: 6px;
+
+
+}
+
+.result {
+    display: flex;
+    justify-content: center;
+    height: 30vh;
+    margin-bottom: 40px;
+
+}
+
+.iframe {
+    width: 95%;
+    height: 100%;
+    background-color: $white;
+    box-shadow: 3px 3px 10px $black;
+    border-radius: 6px;
 }
