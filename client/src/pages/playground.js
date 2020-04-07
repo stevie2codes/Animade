@@ -3,9 +3,16 @@ import { Controlled as CodeMirror } from "react-codemirror2";
 import "../sass/playground.scss";
 
 import "codemirror/lib/codemirror.css";
-import "codemirror/theme/material.css";
 import "codemirror/theme/yonce.css";
+import "codemirror/addon/hint/html-hint";
+import "codemirror/addon/hint/anyword-hint";
+import "codemirror/addon/hint/css-hint";
+import "codemirror/addon/hint/show-hint";
+import "codemirror/addon/display/fullscreen";
 
+import "codemirror/addon/edit/matchbrackets";
+import "codemirror/addon/edit/closebrackets";
+import "codemirror/addon/edit/closetag";
 import "codemirror/mode/htmlmixed/htmlmixed";
 import "codemirror/mode/css/css";
 import "codemirror/mode/javascript/javascript";
@@ -66,7 +73,12 @@ class Playground extends Component {
               options={{
                 mode: "htmlmixed",
                 theme: "yonce",
-                lineNumbers: true
+                lineNumbers: true,
+                lineWrapping: true,
+                autoCloseBrackets: true,
+                smartIndent: true,
+                autoCloseTags: true,
+                showHint: true
               }}
               onBeforeChange={(editor, data, html) => {
                 this.setState({ html });
@@ -79,10 +91,14 @@ class Playground extends Component {
               value={this.state.css}
               options={{
                 mode: "css",
-                // ...codeMirrorOptions
                 theme: "yonce",
                 lineNumbers: true,
-                autoCloseBrackets: true
+                lineWrapping: true,
+                autoCloseBrackets: true,
+                smartIndent: true,
+                matchBrackets: true,
+                showHint: true,
+                spellcheck: true
               }}
               onBeforeChange={(editor, data, css) => {
                 this.setState({ css });
@@ -95,9 +111,14 @@ class Playground extends Component {
               value={this.state.js}
               options={{
                 mode: "javascript",
-                // ...codeMirrorOptions
+                autoCloseBrackets: true,
                 theme: "yonce",
-                lineNumbers: true
+                lineWrapping: true,
+                lineNumbers: true,
+                smartIndent: true,
+                autoCloseTags: true,
+                matchBrackets: true,
+                spellcheck: true
               }}
               onBeforeChange={(editor, data, js) => {
                 this.setState({ js });
