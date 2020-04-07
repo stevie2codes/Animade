@@ -65,6 +65,7 @@ class Playground extends Component {
   render() {
     return (
       <div className="App">
+        <button className="saveCode">Save</button>
         <section className="playground">
           <div className="code-editor html-code">
             <div className="editor-header">HTML</div>
