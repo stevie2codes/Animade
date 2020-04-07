@@ -8,7 +8,6 @@ import NavBar from "./components/nav/nav";
 import Playground from "./pages/playground";
 import "./App.scss";
 import "./sass/navbar.scss";
-import logo from "./logo.svg";
 import newLogo from "./mono-logo.svg";
 import UserLogin from "./pages/createUser";
 
