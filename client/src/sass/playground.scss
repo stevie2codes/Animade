@@ -34,6 +34,26 @@ html {
 
 
 
+.saveCode {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 10px;
+    width: 100px;
+    border-radius: 10px;
+    background-image: $gradient;
+    font-weight: bolder;
+    border: none;
+
+    &:hover {
+        transform: scale(1.1);
+        transition-duration: 500ms;
+        box-shadow: 3px 3px 8px $black;
+        opacity: 0.8;
+
+    }
+
+}
 
 .App {
     margin-top: 30px;
