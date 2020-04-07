@@ -1,11 +1,21 @@
 $white: rgb(232, 232, 232);
 $primary-font:'Poiret One',
 cursive;
+$nice-blue: #0e72cf;
 
 
+
+
+html,
 body {
   margin: 0;
-  background: linear-gradient(90deg, #ad54a4 0%, #db6c6d 64%);
+  padding: 0;
+  box-sizing: border-box;
+  background: radial-gradient(circle at 50%, rgb(155, 84, 173) 0%, #212121);
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  contain: content;
   font-family: $primary-font;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

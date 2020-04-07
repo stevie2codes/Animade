@@ -9,6 +9,7 @@ import Playground from "./pages/playground";
 import "./App.scss";
 import "./sass/navbar.scss";
 import logo from "./logo.svg";
+import newLogo from "./mono-logo.svg";
 import UserLogin from "./pages/createUser";
 
 // import "./App.css";
@@ -21,7 +22,7 @@ function App() {
 
         <div className="nav nav-pills d-flex justify-content-end">
           <Link to="/">
-            <img src={logo} className="iconAbove" id="logoSvg" alt="logo" />
+            <img src={newLogo} className="iconAbove" id="logoSvg" alt="logo" />
           </Link>
 
           <div className="navigation">

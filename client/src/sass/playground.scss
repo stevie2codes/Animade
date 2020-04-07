@@ -10,38 +10,65 @@ $logo-font: "Coiny",
 cursive;
 $secondary-font: "Montserrat",
 sans-serif;
+$code-font1: 'Roboto Mono',
+monospace;
+$code-font2: 'Fira Sans',
+sans-serif;
+
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+
+
 
 .App {
     margin-top: 30px;
 }
 
+
+
 .playground {
     display: flex;
+    align-content: center;
+    justify-content: center;
+    flex-wrap: wrap;
     background-color: #1e1e2c;
-    width: 95vw;
-    margin: 0 auto;
-    margin-left: 20px;
+    width: 100%;
+    margin: 60px auto;
     background: transparent;
 }
 
-.css-code {
-    padding-left: 40px;
-}
+
 
 .CodeMirror-scroll {
     background-color: $black;
-    opacity: 0.9;
     color: $white;
-    // font-family: $secondary-font;
+    font-family: $code-font2;
     height: auto;
     overflow-y: hidden;
     overflow-x: auto;
+
 }
 
-.code-editor {
-    margin-top: 50px;
+.code-editor .js-code {
+    margin: 0px auto;
     width: 95%;
     display: flex;
+    font-family: $code-font2;
     justify-content: center;
     background-color: transparent;
 
@@ -50,8 +77,7 @@ sans-serif;
 .editor-header {
     content: attr(title);
     position: relative;
-    top: -30px;
-    left: 100px;
+    left: 10px;
     align-items: center;
     font-size: 18px;
     font-weight: bolder;
@@ -59,27 +85,28 @@ sans-serif;
 }
 
 .react-codemirror2 {
-    max-height: calc(100% - 30px);
-    width: 100%;
+    max-height: calc(100% - 10px);
+    width: 32vmax;
     overflow: auto;
     box-shadow: 3px 3px 10px $black;
     border-radius: 6px;
-
-
+    margin: 5px;
+    font-family: $code-font2;
 }
 
 .result {
     display: flex;
     justify-content: center;
-    height: 30vh;
+    height: 30vmax;
     margin-bottom: 40px;
-
 }
 
 .iframe {
-    width: 95%;
+    width: 97%;
     height: 100%;
-    background-color: $white;
+    background-image: radial-gradient(circle at 50%, #2e2d2d, #212121);
+
     box-shadow: 3px 3px 10px $black;
     border-radius: 6px;
+    border: 3px solid $black;
 }
