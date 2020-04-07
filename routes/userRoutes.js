@@ -14,6 +14,7 @@ user_router.post("/signup", async(req, res) => {
         res.send(sessionUser);
 
     }catch(error){
+        console.log(error);
         res.status(500).send(error);
     }
 
