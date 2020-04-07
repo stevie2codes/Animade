@@ -16,8 +16,8 @@ $gradient: linear-gradient(90deg, #ad54a4 0%, #db6c6d 64%);
 #logoSvg {
   position: absolute;
   left: 20px;
-  width: 12vmin;
-  border-radius: 50%;
+  width: 10vmin;
+  top: 20px;
 
   &:hover {
     cursor: pointer !important;

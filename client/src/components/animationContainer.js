@@ -1,6 +1,6 @@
 import React from "react";
 import "../sass/animationContainer.scss";
-import logo from "../logo.svg";
+import logo from "../mono-logo.svg";
 
 //this component only displays the logo
 const AnimationContainer = () => {
@@ -11,7 +11,7 @@ const AnimationContainer = () => {
         src={logo}
         alt="logo"
         style={{
-          borderRadius: "50%"
+          borderRadius: "0%"
         }}
       />
     </div>

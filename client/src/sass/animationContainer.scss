@@ -39,9 +39,8 @@ $gradient: linear-gradient(90deg, #ad54a4 0%, #db6c6d 64%);
   margin: 30px;
   background-color: $black;
   display: inline-block;
-  opacity: 0.9;
   border-radius: 20%;
-  box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.735);
+  box-shadow: 3px 3px 8px rgba(3, 3, 3, 0.735);
 }
 
 p {
@@ -49,17 +48,23 @@ p {
   text-align: center;
   color: $white;
   font-size: 1.3rem;
-  font-family: $logo-font;
-  letter-spacing: 2px;
+  font-family: $primary-font;
+  font-weight: bolder;
+  letter-spacing: 3px;
 }
 
 @keyframes fade {
+  from {
+    opacity: 1;
+  }
+
   to {
     opacity: 0;
   }
 }
 
 .fade {
+  opacity: 1;
 
   &:hover {
     animation: fade 1s alternate;
