@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import newLogo from "../../mono-logo.svg";
 
 function NavBar(props) {
-  console.log(props.name);
+  
   return (
     <div style={{ height: "30vmin" }} overflow="hidden">
       <svg
