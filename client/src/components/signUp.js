@@ -88,8 +88,7 @@ export default function SignUp() {
         password: formUserObject.password
       })
         .then(data => {
-          console.log(data);
-          console.log(formUserObject);
+          
           setRedirect({ toProfile: true });
         })
         .catch(err => console.log(err));

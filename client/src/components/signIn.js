@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import { Redirect } from "react-router-dom";
 import Avatar from "@material-ui/core/Avatar";
 import Button from "@material-ui/core/Button";
 import CssBaseline from "@material-ui/core/CssBaseline";
@@ -10,6 +11,7 @@ import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
+import API from "../utils/API";
 import NavBar from "./nav/nav";
 import Cookies from "js-cookie";
 
@@ -56,6 +58,34 @@ export default function SignUp() {
    Cookies.get("name")
   );
   const classes = useStyles();
+    //constucting an object to send to the DB to store the user
+    const [formUserObject, setFormUserObject] = useState({});
+    const [redirect, setRedirect] = useState({ toProfile: false });
+  
+    //setting the object up to be sent to the axios call, to be placed in DB
+    function handleInputChange(event) {
+      const { name, value } = event.target;
+      setFormUserObject({ ...formUserObject, [name]: value });
+    }
+  
+    function handleFormSubmit(event) {
+      event.preventDefault();
+      if (formUserObject.username && formUserObject.password) {
+        API.logInUser({
+          username: formUserObject.username,
+          password: formUserObject.password
+        })
+          .then(data => {
+            
+            setRedirect({ toProfile: true });
+          })
+          .catch(err => console.log(err));
+      }
+    }
+    
+  if (redirect.toProfile) {
+    return <Redirect to="/Profile" />;
+  }
 
   return (
     <div>
@@ -80,8 +110,9 @@ export default function SignUp() {
           <Grid container spacing={2}>
             <Grid item xs={12} sm={12}>
               <TextField
+                onChange={handleInputChange}
                 autoComplete="fname"
-                name="userName"
+                name="username"
                 variant="outlined"
                 required
                 fullWidth
@@ -93,6 +124,7 @@ export default function SignUp() {
 
             <Grid item xs={12}>
               <TextField
+                onChange={handleInputChange}
                 variant="outlined"
                 required
                 fullWidth
@@ -110,6 +142,8 @@ export default function SignUp() {
             variant="contained"
             color="secondary"
             className={classes.submit}
+            disabled={!(formUserObject.username && formUserObject.password)}
+            onClick={handleFormSubmit}
           >
             Sign In
           </Button>
