@@ -1,7 +1,10 @@
 import React from "react";
 import "../../sass/navbar.scss";
+import { Link } from "react-router-dom";
+import newLogo from "../../mono-logo.svg";
 
-function NavBar() {
+function NavBar(props) {
+  console.log(props.name);
   return (
     <div style={{ height: "30vmin" }} overflow="hidden">
       <svg
@@ -30,6 +33,34 @@ function NavBar() {
           fillRule="nonzero"
         ></path>
       </svg>
+      
+      <div className="nav nav-pills d-flex justify-content-end">
+          <Link to="/">
+            <img src={newLogo} className="iconAbove" id="logoSvg" alt="logo" />
+          </Link>
+
+          <div className="navigation">
+            <div className="nav-items d-flex">
+              <Link to="/" className="nav-link ">
+                Home
+              </Link>
+              <Link to="/animations" className="nav-link ">
+                Animations
+              </Link>
+              <Link to="/playground" className="nav-link ">
+                Playground
+              </Link>
+              <Link to="/Contact" className="nav-link ">
+                Contact
+              </Link>
+              {props.name !== undefined ?  <Link to="/Profile" className="nav-link ">
+                Profile
+              </Link> :  <Link to="/signup" className="nav-link ">
+                Sign Up
+              </Link>}
+            </div>
+          </div>
+        </div>
     </div>
   );
 }

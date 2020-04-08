@@ -9,6 +9,8 @@ import Save from "@material-ui/icons/Save";
 import Like from "@material-ui/icons/ThumbUpSharp";
 import Pagination from "../components/pagination";
 import { paginate } from "../services/paginate";
+import NavBar from "../components/nav/nav";
+import Cookies from "js-cookie";
 
 class animation extends Component {
   state = {
@@ -17,9 +19,10 @@ class animation extends Component {
     animation_name: " ",
     copied: false,
     pageSize: 4,
-    currentPage: 1
+    currentPage: 1,
+    activeUser: Cookies.get("name")
   };
-
+  
   handleSelection = function(animation) {
     this.setState({
       animation_code: animation.code,
@@ -43,6 +46,8 @@ class animation extends Component {
     const { length: count } = this.state.animations;
 
     return (
+      <div>
+        <div><NavBar name={this.state.activeUser}/></div>
       <React.Fragment>
         <AnimationContainer />
         <p className="mt-1">
@@ -119,6 +124,7 @@ class animation extends Component {
           </div>
         </div>
       </React.Fragment>
+      </div>
     );
   }
 }

@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import Avatar from "@material-ui/core/Avatar";
 import Button from "@material-ui/core/Button";
 import CssBaseline from "@material-ui/core/CssBaseline";
@@ -10,6 +10,8 @@ import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
+import NavBar from "./nav/nav";
+import Cookies from "js-cookie";
 
 function Copyright() {
   return (
@@ -50,10 +52,17 @@ const useStyles = makeStyles(theme => ({
 }));
 
 export default function SignUp() {
+  const [activeUser] = useState(
+   Cookies.get("name")
+  );
   const classes = useStyles();
 
   return (
+    <div>
+    <div><NavBar name={activeUser}/></div>
+
     <Container component="main" maxWidth="xs">
+          
       <CssBaseline />
       <div className={classes.paper}>
         <Avatar className={classes.avatar}>
@@ -110,5 +119,6 @@ export default function SignUp() {
         <Copyright />
       </Box>
     </Container>
+    </div>
   );
 }

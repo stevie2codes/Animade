@@ -12,6 +12,9 @@ import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import API from "../utils/API";
 import { Redirect } from "react-router-dom";
+import NavBar from "./nav/nav";
+import Cookies from "js-cookie";
+
 
 function Copyright() {
   return (
@@ -61,11 +64,14 @@ const buttonStyle = {
 };
 
 export default function SignUp() {
+  const [activeUser] = useState(
+      Cookies.get("name")
+  );
   const classes = useStyles();
-
+ 
   //keeping for now, unsure if I may need this to keep track of user being
   //logged in
-  const [newUser, setNewUser] = useState([]);
+
 
   //constucting an object to send to the DB to store the user
   const [formUserObject, setFormUserObject] = useState({});
@@ -89,17 +95,34 @@ export default function SignUp() {
           console.log(data);
           console.log(formUserObject);
           setRedirect({ toProfile: true });
+<<<<<<< HEAD
+
+        }
+        )
+        .catch(err => console.log(err));
+    }
+  };
+
+  if (redirect.toProfile) {
+
+=======
         })
         .catch(err => console.log(err));
     }
   }
 
   if (redirect.toProfile) {
+>>>>>>> master
     return <Redirect to="/Profile" />;
   }
+  
 
   return (
-    <Container component="main" maxWidth="xs">
+    <div>
+      <div><NavBar name={activeUser}/></div>
+
+      
+      <Container component="main" maxWidth="xs">
       <CssBaseline />
       <div className={classes.paper}>
         <Avatar className={classes.avatar}>
@@ -181,5 +204,7 @@ export default function SignUp() {
         <Copyright />
       </Box>
     </Container>
+      </div>
+    
   );
 }

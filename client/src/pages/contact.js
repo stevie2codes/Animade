@@ -1,7 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
+import NavBar from "../components/nav/nav";
+import Cookies from "js-cookie";
 
 const Contact = () => {
-  return <h1>Contact</h1>;
+  const [activeUser] = useState(
+     Cookies.get("name")
+  );
+
+  return (
+    <div>
+    <NavBar name={activeUser}/>
+    <h1>Contact</h1>
+    </div>
+  )
+  
 };
 
 export default Contact;
