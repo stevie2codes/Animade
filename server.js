@@ -2,6 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const admin_router = require("./routes/api/adminAPIRoute");
 const user_router = require("./routes/userRoutes");
+const profile_router = require("./routes/profileRoute");
 const path = require("path");
 const body_parser = require("body-parser");
 const cookie_parser = require("cookie-parser");
@@ -31,7 +32,8 @@ app.use(session({
   cookie :{
     sameSite: true, 
     secure: process.env.NODE_ENV === "production",
-    expires: 600000
+    expires: 600000,
+    
   }
 }));
 
@@ -47,14 +49,17 @@ app.use((req, res, next) => {
 
 //must check to see what environment we are in, to serve up the correct
 //filepath to the index.html for SPA's
+app.use(profile_router);
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
   app.get("/*", function(req, res) {
+   
     res.sendFile(path.join(__dirname, "./client/build/index.html"));
   });
 }else {
   app.use(express.static(path.join(__dirname, '/client/public')));
   app.get("/*", function(req, res) {
+    
     res.sendFile(path.join(__dirname, "./client/public/index.html"));
   });
 }
@@ -64,6 +69,7 @@ if (process.env.NODE_ENV === "production") {
 
 app.use(admin_router);
 app.use(user_router);
+
 
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/animade_db");
 

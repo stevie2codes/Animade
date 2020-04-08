@@ -1,10 +1,23 @@
-import React, { Component } from "react";
+import React, {useState} from "react";
+import NavBar from "../components/nav/nav";
 
-class Profile extends Component {
-  state = {};
-  render() {
-    return <h1>Profile</h1>;
+import Cookies from "js-cookie";
+function Profile() {
+  const [activeUser] = useState({
+    activeUser: Cookies.get("name")
+  });
+  
+  
+    return (
+   <div>
+        <NavBar name={activeUser}/>
+        <h1>Profile</h1>
+    </div>
+        
+       
+      
+    );
   }
-}
+
 
 export default Profile;

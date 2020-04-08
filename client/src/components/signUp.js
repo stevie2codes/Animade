@@ -12,6 +12,9 @@ import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import API from "../utils/API";
 import { Redirect } from "react-router-dom";
+import NavBar from "./nav/nav";
+import Cookies from "js-cookie";
+
 
 function Copyright() {
   return (
@@ -52,15 +55,18 @@ const useStyles = makeStyles(theme => ({
 }));
 
 export default function SignUp() {
+  const [activeUser, setActiveUser] = useState({
+    activeUser: Cookies.get("name")
+  });
   const classes = useStyles();
 
   //keeping for now, unsure if I may need this to keep track of user being
   //logged in
-  const [newUser, setNewUser] = useState([]);
+
 
   //constucting an object to send to the DB to store the user
   const [formUserObject, setFormUserObject] = useState({});
-  const [redirect, setRedirect] = useState({toProfile: false});
+  const [redirect, setRedirect] = useState({ toProfile: false });
 
   //setting the object up to be sent to the axios call, to be placed in DB
   function handleInputChange(event) {
@@ -79,99 +85,110 @@ export default function SignUp() {
         .then(data => {
           console.log(data);
           console.log(formUserObject);
-          setRedirect({toProfile: true});
-          
+          setRedirect({ toProfile: true });
+
         }
-          )
+        )
         .catch(err => console.log(err));
     }
   };
-  
-  if(redirect.toProfile){
+
+  if (redirect.toProfile) {
+
     return <Redirect to="/Profile" />;
   }
+  
 
   return (
-    <Container component="main" maxWidth="xs">
-      <CssBaseline />
-      <div className={classes.paper}>
-        <Avatar className={classes.avatar}>
-          <LockOutlinedIcon />
-        </Avatar>
-        <Typography
-          component="h1"
-          variant="h5"
-          fontWeight="bolder"
-          className={classes.paper}
-        >
-          Sign up
-        </Typography>
-        <form className={classes.form} noValidate>
-          <Grid container spacing={2}>
-            <Grid item xs={12} sm={12}>
-              <TextField
-                onChange={handleInputChange}
-                autoComplete="fname"
-                name="username"
-                variant="outlined"
-                required
-                fullWidth
-                id="userName"
-                label="Username"
-                autoFocus
-              />
-            </Grid>
+    <div>
+      <div><NavBar name={activeUser}/></div>
 
-            <Grid item xs={12}>
-              <TextField
-                onChange={handleInputChange}
-                variant="outlined"
-                color="primary"
-                required
+      
+        <Container component="main" maxWidth="xs">
+
+          <CssBaseline />
+
+          <div className={classes.paper}>
+
+            <Avatar className={classes.avatar}>
+              <LockOutlinedIcon />
+            </Avatar>
+            <Typography
+              component="h1"
+              variant="h5"
+              fontWeight="bolder"
+              className={classes.paper}
+            >
+              Sign up
+        </Typography>
+            <form className={classes.form} noValidate>
+              <Grid container spacing={2}>
+                <Grid item xs={12} sm={12}>
+                  <TextField
+                    onChange={handleInputChange}
+                    autoComplete="fname"
+                    name="username"
+                    variant="outlined"
+                    required
+                    fullWidth
+                    id="userName"
+                    label="Username"
+                    autoFocus
+                  />
+                </Grid>
+
+                <Grid item xs={12}>
+                  <TextField
+                    onChange={handleInputChange}
+                    variant="outlined"
+                    color="primary"
+                    required
+                    fullWidth
+                    id="email"
+                    label="Email Address"
+                    name="email"
+                    autoComplete="email"
+                  />
+                </Grid>
+                <Grid item xs={12}>
+                  <TextField
+                    onChange={handleInputChange}
+                    variant="outlined"
+                    required
+                    fullWidth
+                    name="password"
+                    label="Password"
+                    type="password"
+                    id="password"
+                    autoComplete="current-password"
+                  />
+                </Grid>
+              </Grid>
+              <Button
+                type="submit"
                 fullWidth
-                id="email"
-                label="Email Address"
-                name="email"
-                autoComplete="email"
-              />
-            </Grid>
-            <Grid item xs={12}>
-              <TextField
-                onChange={handleInputChange}
-                variant="outlined"
-                required
-                fullWidth
-                name="password"
-                label="Password"
-                type="password"
-                id="password"
-                autoComplete="current-password"
-              />
-            </Grid>
-          </Grid>
-          <Button
-            type="submit"
-            fullWidth
-            variant="contained"
-            color="secondary"
-            className={classes.submit}
-            disabled={!(formUserObject.username && formUserObject.password)}
-            onClick={handleFormSubmit}
-          >
-            <Link href="Profile">Sign Up</Link>
-          </Button>
-          <Grid container justify="flex-end">
-            <Grid item>
-              <Link href="signin" variant="body2">
-                Already have an account? Sign in
+                variant="contained"
+                color="secondary"
+                className={classes.submit}
+                disabled={!(formUserObject.username && formUserObject.password)}
+                onClick={handleFormSubmit}
+              >
+                <Link href="Profile">Sign Up</Link>
+              </Button>
+              <Grid container justify="flex-end">
+                <Grid item>
+                  <Link href="signin" variant="body2">
+                    Already have an account? Sign in
               </Link>
-            </Grid>
-          </Grid>
-        </form>
+                </Grid>
+              </Grid>
+            </form>
+          </div>
+          <Box mt={5}>
+            <Copyright />
+          </Box>
+        </Container>
       </div>
-      <Box mt={5}>
-        <Copyright />
-      </Box>
-    </Container>
+    
   );
 }
