@@ -27,26 +27,32 @@ user_router.post("/signup", async(req, res) => {
 
 user_router.post("/signin", async(req, res) => {
     try{
+        console.log(req.body);
+        console.log(req.session);
+        console.log(`header: ${req.header}`);
         let user = await User.findOne({username: req.body.username});
+        console.log(`this is the user await: ${user}`);
         
         if(!user){
-            return res.status(400).send({message: "The username does not exist in our system."}).redirect("/signup");
+           return res.status(400).send({message: "The username does not exist in our system."}).redirect("/signup");
         }
         user.comparePassword(req.body.password, (error, match) => {
             if(!match) {
-                return res.status(400).send({message: "The password is incorrect"});
+                return  res.status(400).send({message: "The password is incorrect"});
             }
-            console.log(user);
+            
             const sessionUser = sessionizeUser(user);
             req.session.user = sessionUser;
             console.log(`Session user: ${req.session.user}`);
+            res.cookie("name", sessionUser.username, {maxAge: 600000, secure: process.env.NODE_ENV === true}); 
             res.send(sessionUser);
         });
 
 
     }catch(error){
-        res.status(500).send(error);
         console.log(error);
+        res.status(500).send(error);
+       
     }
 });
 
