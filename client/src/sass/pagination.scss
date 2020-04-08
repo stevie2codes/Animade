@@ -22,7 +22,8 @@ $gradient: linear-gradient(90deg, #ad54a4 0%, #db6c6d 90%);
     color: $black;
     box-shadow: -4px -4px 14px $Primary-color, 4px 4px 14px #00000091;
     text-align: center;
-    font-family: $logo-font;
+    font-family: $primary-font;
+    font-weight: bolder;
     border: 1px solid black;
 
 }

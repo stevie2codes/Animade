@@ -7,6 +7,7 @@ const Home = () => {
     <div>
       <div className="homeContent">
         <img className="homeLogo" src={logo} alt="animade" />
+
         <h4 className="readyText">
           Ready-Made
           <span id="animations"> Animations</span>
