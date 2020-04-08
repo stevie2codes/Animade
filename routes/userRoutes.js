@@ -45,4 +45,8 @@ user_router.post("/signin", async(req, res) => {
     }
 });
 
+user_router.get("", ({session: { user }}, res) => {
+    res.send({ user });
+})
+
 module.exports = user_router;
