@@ -14,6 +14,7 @@ const Home = () => {
       <div><NavBar name={activeUser}/></div>
       <div className="homeContent">
         <img className="homeLogo" src={logo} alt="animade" />
+
         <h4 className="readyText">
           Ready-Made
           <span id="animations"> Animations</span>
