@@ -21,8 +21,8 @@ function NavBar(props) {
         </defs>
         <defs>
           <linearGradient id="gradient2" x1="20%" y1="50%" x2="70%" y2="40%">
-            <stop offset="0%" stopColor="#ad54a4" />
-            <stop offset="100%" stopColor="#db6c6d" />
+            <stop offset="0%" stopColor="#FE6B8B" />
+            <stop offset="100%" stopColor="#FF8E53" />
           </linearGradient>
         </defs>
         <path
@@ -33,34 +33,38 @@ function NavBar(props) {
           fillRule="nonzero"
         ></path>
       </svg>
-      
-      <div className="nav nav-pills d-flex justify-content-end">
-          <Link to="/">
-            <img src={newLogo} className="iconAbove" id="logoSvg" alt="logo" />
-          </Link>
 
-          <div className="navigation">
-            <div className="nav-items d-flex">
-              <Link to="/" className="nav-link ">
-                Home
-              </Link>
-              <Link to="/animations" className="nav-link ">
-                Animations
-              </Link>
-              <Link to="/playground" className="nav-link ">
-                Playground
-              </Link>
-              <Link to="/Contact" className="nav-link ">
-                Contact
-              </Link>
-              {props.name !== undefined ?  <Link to="/Profile" className="nav-link ">
+      <div className="nav nav-pills d-flex justify-content-end">
+        <Link to="/">
+          <img src={newLogo} className="iconAbove" id="logoSvg" alt="logo" />
+        </Link>
+
+        <div className="navigation">
+          <div className="nav-items d-flex">
+            <Link to="/" className="nav-link ">
+              Home
+            </Link>
+            <Link to="/animations" className="nav-link ">
+              Animations
+            </Link>
+            <Link to="/playground" className="nav-link ">
+              Playground
+            </Link>
+            <Link to="/Contact" className="nav-link ">
+              Contact
+            </Link>
+            {props.name !== undefined ? (
+              <Link to="/Profile" className="nav-link ">
                 Profile
-              </Link> :  <Link to="/signup" className="nav-link ">
+              </Link>
+            ) : (
+              <Link to="/signup" className="nav-link ">
                 Sign Up
-              </Link>}
-            </div>
+              </Link>
+            )}
           </div>
         </div>
+      </div>
     </div>
   );
 }
