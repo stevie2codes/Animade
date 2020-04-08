@@ -22,7 +22,7 @@ class animation extends Component {
     currentPage: 1,
     activeUser: Cookies.get("name")
   };
-
+  
   handleSelection = function(animation) {
     this.setState({
       animation_code: animation.code,

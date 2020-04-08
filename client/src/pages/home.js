@@ -5,9 +5,10 @@ import NavBar from "../components/nav/nav";
 import Cookies from "js-cookie";
 
 const Home = () => {
-  const [activeUser] = useState({
-    activeUser: Cookies.get("name")
-  });
+  const [activeUser] = useState(
+     Cookies.get("name")
+  );
+  
   return (
     <div>
       <div><NavBar name={activeUser}/></div>

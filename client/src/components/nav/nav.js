@@ -53,7 +53,7 @@ function NavBar(props) {
               <Link to="/Contact" className="nav-link ">
                 Contact
               </Link>
-              {(props.name !== undefined || props.name.activeUser !== undefined) ?  <Link to="/Profile" className="nav-link ">
+              {props.name !== undefined ?  <Link to="/Profile" className="nav-link ">
                 Profile
               </Link> :  <Link to="/signup" className="nav-link ">
                 Sign Up

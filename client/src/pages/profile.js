@@ -3,9 +3,9 @@ import NavBar from "../components/nav/nav";
 
 import Cookies from "js-cookie";
 function Profile() {
-  const [activeUser] = useState({
-    activeUser: Cookies.get("name")
-  });
+  const [activeUser] = useState(
+    Cookies.get("name")
+  );
   
   
     return (

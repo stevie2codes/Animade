@@ -16,7 +16,8 @@ import "codemirror/addon/edit/closetag";
 import "codemirror/mode/htmlmixed/htmlmixed";
 import "codemirror/mode/css/css";
 import "codemirror/mode/javascript/javascript";
-
+import NavBar from "../components/nav/nav";
+import Cookies from "js-cookie";
 class Playground extends Component {
   constructor() {
     super();
@@ -24,13 +25,14 @@ class Playground extends Component {
       id: "",
       html: "",
       css: "",
-      js: ""
+      js: "", 
+      activeUser: Cookies.get("name")
     };
   }
   componentDidUpdate() {
     this.runCode();
   }
-
+  
   runCode = () => {
     const { html, css, js } = this.state;
 
@@ -64,6 +66,8 @@ class Playground extends Component {
   };
   render() {
     return (
+      <div>
+        <div><NavBar name={this.state.activeUser}/></div>
       <div className="App">
         <button className="saveCode">Save</button>
         <section className="playground">
@@ -130,6 +134,7 @@ class Playground extends Component {
         <section className="result">
           <iframe title="result" className="iframe" ref="iframe" />
         </section>
+      </div>
       </div>
     );
   }

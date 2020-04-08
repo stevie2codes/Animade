@@ -1,17 +1,17 @@
 import React from "react";
-import { BrowserRouter, Route, Link } from "react-router-dom";
+import { BrowserRouter, Route} from "react-router-dom";
 import Home from "./pages/home";
 import SignIn from "./pages/signIn";
 import animations from "./pages/animations";
 import Contact from "./pages/contact";
-import NavBar from "./components/nav/nav";
+
 import Playground from "./pages/playground";
 import "./App.scss";
 import "./sass/navbar.scss";
-import newLogo from "./mono-logo.svg";
+
 import UserLogin from "./pages/createUser";
 import Profile from "./pages/profile";
-import Cookies from "js-cookie";
+
 
 // import "./App.css";
 

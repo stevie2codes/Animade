@@ -55,11 +55,11 @@ const useStyles = makeStyles(theme => ({
 }));
 
 export default function SignUp() {
-  const [activeUser, setActiveUser] = useState({
-    activeUser: Cookies.get("name")
-  });
+  const [activeUser] = useState(
+      Cookies.get("name")
+  );
   const classes = useStyles();
-
+ 
   //keeping for now, unsure if I may need this to keep track of user being
   //logged in
 
