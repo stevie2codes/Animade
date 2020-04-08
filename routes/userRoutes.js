@@ -45,7 +45,8 @@ user_router.post("/signin", async(req, res) => {
     }
 });
 
-user_router.get("", ({session: { user }}, res) => {
+//checks to see if user is logged in
+user_router.get("/*", ({session: { user }}, res) => {
     res.send({ user });
 })
 

@@ -11,6 +11,7 @@ import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import API from "../utils/API";
+import { Redirect } from "react-router-dom";
 
 function Copyright() {
   return (
@@ -59,6 +60,7 @@ export default function SignUp() {
 
   //constucting an object to send to the DB to store the user
   const [formUserObject, setFormUserObject] = useState({});
+  const [redirect, setRedirect] = useState({toProfile: false});
 
   //setting the object up to be sent to the axios call, to be placed in DB
   function handleInputChange(event) {
@@ -77,13 +79,17 @@ export default function SignUp() {
         .then(data => {
           console.log(data);
           console.log(formUserObject);
+          setRedirect({toProfile: true});
           
         }
           )
         .catch(err => console.log(err));
     }
   };
-
+  
+  if(redirect.toProfile){
+    return <Redirect to="/Profile" />;
+  }
 
   return (
     <Container component="main" maxWidth="xs">
