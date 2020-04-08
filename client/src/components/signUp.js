@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import Avatar from "@material-ui/core/Avatar";
 import Button from "@material-ui/core/Button";
 import CssBaseline from "@material-ui/core/CssBaseline";
@@ -52,7 +52,7 @@ const useStyles = makeStyles(theme => ({
 
 export default function SignUp() {
   const classes = useStyles();
-  
+
   //keeping for now, unsure if I may need this to keep track of user being
   //logged in
   const [newUser, setNewUser] = useState([]);
@@ -63,8 +63,8 @@ export default function SignUp() {
   //setting the object up to be sent to the axios call, to be placed in DB
   function handleInputChange(event) {
     const { name, value } = event.target;
-    setFormUserObject({...formUserObject, [name]: value})
-  };
+    setFormUserObject({ ...formUserObject, [name]: value });
+  }
 
   function handleFormSubmit(event) {
     event.preventDefault();
@@ -77,13 +77,10 @@ export default function SignUp() {
         .then(data => {
           console.log(data);
           console.log(formUserObject);
-          
-        }
-          )
+        })
         .catch(err => console.log(err));
     }
-  };
-
+  }
 
   return (
     <Container component="main" maxWidth="xs">
@@ -152,7 +149,7 @@ export default function SignUp() {
             disabled={!(formUserObject.username && formUserObject.password)}
             onClick={handleFormSubmit}
           >
-            Sign Up
+            <Link href="Profile">Sign Up</Link>
           </Button>
           <Grid container justify="flex-end">
             <Grid item>
