@@ -15,7 +15,6 @@ import { Redirect } from "react-router-dom";
 import NavBar from "./nav/nav";
 import Cookies from "js-cookie";
 
-
 function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
@@ -64,14 +63,11 @@ const buttonStyle = {
 };
 
 export default function SignUp() {
-  const [activeUser] = useState(
-      Cookies.get("name")
-  );
+  const [activeUser] = useState(Cookies.get("name"));
   const classes = useStyles();
- 
+
   //keeping for now, unsure if I may need this to keep track of user being
   //logged in
-
 
   //constucting an object to send to the DB to store the user
   const [formUserObject, setFormUserObject] = useState({});
@@ -95,116 +91,103 @@ export default function SignUp() {
           console.log(data);
           console.log(formUserObject);
           setRedirect({ toProfile: true });
-<<<<<<< HEAD
-
-        }
-        )
-        .catch(err => console.log(err));
-    }
-  };
-
-  if (redirect.toProfile) {
-
-=======
         })
         .catch(err => console.log(err));
     }
   }
 
   if (redirect.toProfile) {
->>>>>>> master
     return <Redirect to="/Profile" />;
   }
-  
 
   return (
     <div>
-      <div><NavBar name={activeUser}/></div>
+      <div>
+        <NavBar name={activeUser} />
+      </div>
 
-      
       <Container component="main" maxWidth="xs">
-      <CssBaseline />
-      <div className={classes.paper}>
-        <Avatar className={classes.avatar}>
-          <LockOutlinedIcon />
-        </Avatar>
-        <Typography
-          component="h1"
-          variant="h5"
-          fontWeight="bolder"
-          className={classes.paper}
-        >
-          Sign up
-        </Typography>
-        <form className={classes.form} noValidate>
-          <Grid container spacing={2}>
-            <Grid item xs={12} sm={12}>
-              <TextField
-                onChange={handleInputChange}
-                autoComplete="fname"
-                name="username"
-                variant="outlined"
-                required
-                fullWidth
-                id="userName"
-                label="Username"
-                autoFocus
-              />
-            </Grid>
-
-            <Grid item xs={12}>
-              <TextField
-                onChange={handleInputChange}
-                variant="outlined"
-                color="primary"
-                required
-                fullWidth
-                id="email"
-                label="Email Address"
-                name="email"
-                autoComplete="email"
-              />
-            </Grid>
-            <Grid item xs={12}>
-              <TextField
-                onChange={handleInputChange}
-                variant="outlined"
-                required
-                fullWidth
-                name="password"
-                label="Password"
-                type="password"
-                id="password"
-                autoComplete="current-password"
-              />
-            </Grid>
-          </Grid>
-          <Button
-            type="submit"
-            fullWidth
-            variant="contained"
-            color="secondary"
-            className={classes.submit}
-            disabled={!(formUserObject.username && formUserObject.password)}
-            onClick={handleFormSubmit}
-            style={buttonStyle}
+        <CssBaseline />
+        <div className={classes.paper}>
+          <Avatar className={classes.avatar}>
+            <LockOutlinedIcon />
+          </Avatar>
+          <Typography
+            component="h1"
+            variant="h5"
+            fontWeight="bolder"
+            className={classes.paper}
           >
-            <Link href="Profile">Sign Up</Link>
-          </Button>
-          <Grid container justify="flex-end">
-            <Grid item>
-              <Link href="signin" variant="body2">
-                Already have an account? Sign in
-              </Link>
+            Sign up
+          </Typography>
+          <form className={classes.form} noValidate>
+            <Grid container spacing={2}>
+              <Grid item xs={12} sm={12}>
+                <TextField
+                  onChange={handleInputChange}
+                  autoComplete="fname"
+                  name="username"
+                  variant="outlined"
+                  required
+                  fullWidth
+                  id="userName"
+                  label="Username"
+                  autoFocus
+                />
+              </Grid>
+
+              <Grid item xs={12}>
+                <TextField
+                  onChange={handleInputChange}
+                  variant="outlined"
+                  color="primary"
+                  required
+                  fullWidth
+                  id="email"
+                  label="Email Address"
+                  name="email"
+                  autoComplete="email"
+                />
+              </Grid>
+              <Grid item xs={12}>
+                <TextField
+                  onChange={handleInputChange}
+                  variant="outlined"
+                  required
+                  fullWidth
+                  name="password"
+                  label="Password"
+                  type="password"
+                  id="password"
+                  autoComplete="current-password"
+                />
+              </Grid>
             </Grid>
-          </Grid>
-        </form>
-      </div>
-      <Box mt={5}>
-        <Copyright />
-      </Box>
-    </Container>
-      </div>
-    
+            <Button
+              type="submit"
+              fullWidth
+              variant="contained"
+              color="secondary"
+              className={classes.submit}
+              disabled={!(formUserObject.username && formUserObject.password)}
+              onClick={handleFormSubmit}
+              style={buttonStyle}
+            >
+              <Link href="Profile">Sign Up</Link>
+            </Button>
+            <Grid container justify="flex-end">
+              <Grid item>
+                <Link href="signin" variant="body2">
+                  Already have an account? Sign in
+                </Link>
+              </Grid>
+            </Grid>
+          </form>
+        </div>
+        <Box mt={5}>
+          <Copyright />
+        </Box>
+      </Container>
+    </div>
   );
 }
