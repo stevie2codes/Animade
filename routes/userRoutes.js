@@ -15,7 +15,7 @@ user_router.post("/signup", async(req, res) => {
             //just trying to see if it works
         
         
-        res.cookie("name", sessionUser.username, {maxAge: 600000, secure: process.env.NODE_ENV === true});   
+        res.cookie("name", sessionUser.username, {secure: process.env.NODE_ENV === true});   
         res.send(sessionUser);
 
     }catch(error){
@@ -44,7 +44,7 @@ user_router.post("/signin", async(req, res) => {
             const sessionUser = sessionizeUser(user);
             req.session.user = sessionUser;
             console.log(`Session user: ${req.session.user}`);
-            res.cookie("name", sessionUser.username, {maxAge: 600000, secure: process.env.NODE_ENV === true}); 
+            res.cookie("name", sessionUser.username, { secure: process.env.NODE_ENV === true}); 
             res.send(sessionUser);
         });
 
