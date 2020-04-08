@@ -79,7 +79,6 @@ export default function SignUp() {
         .then(data => {
           console.log(data);
           console.log(formUserObject);
-<<<<<<< HEAD
           setRedirect({toProfile: true});
           
         }
@@ -90,11 +89,6 @@ export default function SignUp() {
   
   if(redirect.toProfile){
     return <Redirect to="/Profile" />;
-=======
-        })
-        .catch(err => console.log(err));
-    }
->>>>>>> master
   }
 
   return (
