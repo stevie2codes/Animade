@@ -10,6 +10,7 @@ import "./App.scss";
 import "./sass/navbar.scss";
 import newLogo from "./mono-logo.svg";
 import UserLogin from "./pages/createUser";
+import Profile from "./pages/profile";
 
 // import "./App.css";
 
@@ -50,6 +51,7 @@ function App() {
         <Route exact path="/signup" component={SignIn} />
         <Route exact path="/signin" component={UserLogin} />
         <Route exact path="/Contact" component={Contact} />
+        <Route exact path="/Profile" component={Profile} />
       </BrowserRouter>
     </div>
   );
