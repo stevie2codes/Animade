@@ -45,4 +45,9 @@ user_router.post("/signin", async(req, res) => {
     }
 });
 
+//checks to see if user is logged in
+user_router.get("/*", ({session: { user }}, res) => {
+    res.send({ user });
+})
+
 module.exports = user_router;
