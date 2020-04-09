@@ -8,9 +8,9 @@ function Profile() {
   return (
     <div>
       <NavBar name={activeUser} />
+
       <div className="profileContainer">
-        <h1 className="userName">{activeUser}</h1>
-        <button className="signOut">Sign Out</button>
+        <h1 className="userName">Welcome to your Dashboard: {activeUser}</h1>
       </div>
     </div>
   );

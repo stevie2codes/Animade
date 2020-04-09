@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import newLogo from "../../mono-logo.svg";
 
 function NavBar(props) {
-  
   return (
     <div style={{ height: "30vmin" }} overflow="hidden">
       <svg
@@ -55,13 +54,15 @@ function NavBar(props) {
             </Link>
             {props.name !== undefined ? (
               <Link to="/Profile" className="nav-link ">
-                Profile
+                {props.name}
               </Link>
             ) : (
               <Link to="/signup" className="nav-link ">
                 Sign Up
               </Link>
             )}
+
+            {props.name ? <button className="signOut">Logout</button> : "null"}
           </div>
         </div>
       </div>
