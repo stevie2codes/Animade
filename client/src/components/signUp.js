@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "../sass/signUp.scss";
 import Avatar from "@material-ui/core/Avatar";
 import Button from "@material-ui/core/Button";
 import CssBaseline from "@material-ui/core/CssBaseline";
@@ -42,7 +43,7 @@ const useStyles = makeStyles(theme => ({
     backgroundColor: theme.palette.secondary.main
   },
   form: {
-    width: "100%", // Fix IE 11 issue.
+    width: "100%",
     marginTop: theme.spacing(3),
     fontFamily: "Poiret One"
   },
@@ -59,6 +60,7 @@ const buttonStyle = {
   color: "white",
   height: 48,
   padding: "0 30px",
+  letterSpacing: "3px",
   boxShadow: "0 3px 5px 2px rgba(255, 105, 135, .3)"
 };
 
@@ -88,7 +90,6 @@ export default function SignUp() {
         password: formUserObject.password
       })
         .then(data => {
-          
           setRedirect({ toProfile: true });
         })
         .catch(err => console.log(err));
@@ -113,7 +114,7 @@ export default function SignUp() {
           </Avatar>
           <Typography
             component="h1"
-            variant="h5"
+            variant="h4"
             fontWeight="bolder"
             className={classes.paper}
           >
@@ -126,11 +127,12 @@ export default function SignUp() {
                   onChange={handleInputChange}
                   autoComplete="fname"
                   name="username"
-                  variant="outlined"
+                  variant="standard"
                   required
                   fullWidth
                   id="userName"
                   label="Username"
+                  color="secondary"
                   autoFocus
                 />
               </Grid>
@@ -138,8 +140,8 @@ export default function SignUp() {
               <Grid item xs={12}>
                 <TextField
                   onChange={handleInputChange}
-                  variant="outlined"
-                  color="primary"
+                  variant="standard"
+                  color="secondary"
                   required
                   fullWidth
                   id="email"
@@ -151,7 +153,8 @@ export default function SignUp() {
               <Grid item xs={12}>
                 <TextField
                   onChange={handleInputChange}
-                  variant="outlined"
+                  color="secondary"
+                  variant="standard"
                   required
                   fullWidth
                   name="password"
@@ -176,7 +179,16 @@ export default function SignUp() {
             </Button>
             <Grid container justify="flex-end">
               <Grid item>
-                <Link href="signin" variant="body2">
+                <Link
+                  href="signin"
+                  variant="body2"
+                  style={{
+                    color: "white",
+                    fontWeight: "bolder",
+                    marginRight: "90px",
+                    fontSize: "1.1rem"
+                  }}
+                >
                   Already have an account? Sign in
                 </Link>
               </Grid>

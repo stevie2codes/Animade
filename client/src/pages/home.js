@@ -5,13 +5,13 @@ import NavBar from "../components/nav/nav";
 import Cookies from "js-cookie";
 
 const Home = () => {
-  const [activeUser] = useState(
-     Cookies.get("name")
-  );
-  
+  const [activeUser] = useState(Cookies.get("name"));
+
   return (
     <div>
-      <div><NavBar name={activeUser}/></div>
+      <div>
+        <NavBar name={activeUser} />
+      </div>
       <div className="homeContent">
         <img className="homeLogo" src={logo} alt="animade" />
 
