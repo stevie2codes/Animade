@@ -62,7 +62,7 @@ function NavBar(props) {
               </Link>
             )}
 
-            {props.name ? <button className="signOut">Logout</button> : "null"}
+            {props.name ? <button className="signOut">Logout</button> : null}
           </div>
         </div>
       </div>
