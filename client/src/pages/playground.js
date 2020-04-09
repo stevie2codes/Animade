@@ -25,14 +25,14 @@ class Playground extends Component {
       id: "",
       html: "",
       css: "",
-      js: "", 
+      js: "",
       activeUser: Cookies.get("name")
     };
   }
   componentDidUpdate() {
     this.runCode();
   }
-  
+
   runCode = () => {
     const { html, css, js } = this.state;
 
@@ -67,74 +67,76 @@ class Playground extends Component {
   render() {
     return (
       <div>
-        <div><NavBar name={this.state.activeUser}/></div>
-      <div className="App">
-        <button className="saveCode">Save</button>
-        <section className="playground">
-          <div className="code-editor html-code">
-            <div className="editor-header">HTML</div>
-            <CodeMirror
-              value={this.state.html}
-              options={{
-                mode: "htmlmixed",
-                theme: "yonce",
-                lineNumbers: true,
-                lineWrapping: true,
-                autoCloseBrackets: true,
-                smartIndent: true,
-                autoCloseTags: true,
-                showHint: true
-              }}
-              onBeforeChange={(editor, data, html) => {
-                this.setState({ html });
-              }}
-            />
-          </div>
-          <div className="code-editor css-code">
-            <div className="editor-header">CSS</div>
-            <CodeMirror
-              value={this.state.css}
-              options={{
-                mode: "css",
-                theme: "yonce",
-                lineNumbers: true,
-                lineWrapping: true,
-                autoCloseBrackets: true,
-                smartIndent: true,
-                matchBrackets: true,
-                showHint: true,
-                spellcheck: true
-              }}
-              onBeforeChange={(editor, data, css) => {
-                this.setState({ css });
-              }}
-            />
-          </div>
-          <div className="code-editor js-code">
-            <div className="editor-header">JavaScript</div>
-            <CodeMirror
-              value={this.state.js}
-              options={{
-                mode: "javascript",
-                autoCloseBrackets: true,
-                theme: "yonce",
-                lineWrapping: true,
-                lineNumbers: true,
-                smartIndent: true,
-                autoCloseTags: true,
-                matchBrackets: true,
-                spellcheck: true
-              }}
-              onBeforeChange={(editor, data, js) => {
-                this.setState({ js });
-              }}
-            />
-          </div>
-        </section>
-        <section className="result">
-          <iframe title="result" className="iframe" ref="iframe" />
-        </section>
-      </div>
+        <div>
+          <NavBar name={this.state.activeUser} />
+        </div>
+        <div className="App">
+          <button className="saveCode">Save</button>
+          <section className="playground">
+            <div className="code-editor html-code">
+              <div className="editor-header">HTML</div>
+              <CodeMirror
+                value={this.state.html}
+                options={{
+                  mode: "htmlmixed",
+                  theme: "yonce",
+                  lineNumbers: true,
+                  lineWrapping: true,
+                  autoCloseBrackets: true,
+                  smartIndent: true,
+                  autoCloseTags: true,
+                  showHint: true
+                }}
+                onBeforeChange={(editor, data, html) => {
+                  this.setState({ html });
+                }}
+              />
+            </div>
+            <div className="code-editor css-code">
+              <div className="editor-header">CSS</div>
+              <CodeMirror
+                value={this.state.css}
+                options={{
+                  mode: "css",
+                  theme: "yonce",
+                  lineNumbers: true,
+                  lineWrapping: true,
+                  autoCloseBrackets: true,
+                  smartIndent: true,
+                  matchBrackets: true,
+                  showHint: true,
+                  spellcheck: true
+                }}
+                onBeforeChange={(editor, data, css) => {
+                  this.setState({ css });
+                }}
+              />
+            </div>
+            <div className="code-editor js-code">
+              <div className="editor-header">JavaScript</div>
+              <CodeMirror
+                value={this.state.js}
+                options={{
+                  mode: "javascript",
+                  autoCloseBrackets: true,
+                  theme: "yonce",
+                  lineWrapping: true,
+                  lineNumbers: true,
+                  smartIndent: true,
+                  autoCloseTags: true,
+                  matchBrackets: true,
+                  spellcheck: true
+                }}
+                onBeforeChange={(editor, data, js) => {
+                  this.setState({ js });
+                }}
+              />
+            </div>
+          </section>
+          <section className="result">
+            <iframe title="result" className="iframe" ref="iframe" />
+          </section>
+        </div>
       </div>
     );
   }
