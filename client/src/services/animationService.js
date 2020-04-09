@@ -2,6 +2,7 @@ const animations = [
   {
     id: 1,
     name: "fade",
+    type: { _id: "1b", type: "Exit" },
     code: `@keyframes fade {
         to {
           opacity: 0;
@@ -11,6 +12,7 @@ const animations = [
   {
     id: 2,
     name: "flubber",
+    type: { _id: "1c", type: "Static" },
     code: `@keyframes flubber {
         from {
             transform: scale3d(1, 1, 1);
@@ -44,6 +46,7 @@ const animations = [
   {
     id: 3,
     name: "fall",
+    type: { _id: "1b", type: "Exit" },
     code: `@keyframes fall {
         from {
             transform: translateY(0px);
@@ -59,6 +62,7 @@ const animations = [
   {
     id: 4,
     name: "cartWheel",
+    type: { _id: "1c", type: "Static" },
     code: `@keyframes cartWheel {
     
         to {
@@ -69,6 +73,7 @@ const animations = [
   {
     id: 5,
     name: "flipX",
+    type: { _id: "1c", type: "Static" },
     code: `@keyframes flipX { 
         to {
           transform: rotateX(360deg);
@@ -79,6 +84,7 @@ const animations = [
   {
     id: 6,
     name: "flipY",
+    type: { _id: "1c", type: "Static" },
     code: `@keyframes flipY {
         to {
           transform: rotateY(360deg);
@@ -89,6 +95,7 @@ const animations = [
   {
     id: 7,
     name: "rise",
+    type: { _id: "1b", type: "Exit" },
     code: `@keyframes rise {
         from {
           transform: translateY(0px);
@@ -104,6 +111,7 @@ const animations = [
   {
     id: 8,
     name: "rollLeft",
+    type: { _id: "1b", type: "Exit" },
     code: `
     @keyframes rollLeft {
       from {
@@ -119,6 +127,7 @@ const animations = [
   {
     id: 9,
     name: "rollRight",
+    type: { _id: "1b", type: "Exit" },
     code: `
     @keyframes rollRight {
       from {
@@ -134,6 +143,7 @@ const animations = [
   {
     id: 10,
     name: "spinOut",
+    type: { _id: "1b", type: "Exit" },
     code: `
     @keyframes spinOut {
 
