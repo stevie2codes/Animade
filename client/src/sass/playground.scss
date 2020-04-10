@@ -35,30 +35,34 @@ html {
 
 
 
-.saveCode {
-    display: flex;
-    justify-content: center;
+.saveCodeBtn {
+    position: sticky;
+    font-family: $primary-font;
+    letter-spacing: 2px;
+    text-decoration: none;
     font-weight: 900;
+    font-size: 1.2rem;
     margin: 0 auto;
-    padding: 10px;
+    margin-left: 5px;
     width: 100px;
-    background: linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%);
+    background: $new-gradient;
     border-radius: 3px;
     border: none;
     color: white;
-    height: 48px;
-    padding: 0 30px;
+    height: 49px;
+
     box-shadow: 0 3px 5px 2px rgba(255, 105, 135, .3);
 
     &:hover {
-        transform: scale(1.1);
+        transform: scale(1.05);
         transition-duration: 300ms;
         box-shadow: 0 3px 9px 2px rgba(255, 105, 135, 0.418);
         opacity: 0.9;
-
+        text-decoration: none;
     }
-
 }
+
+
 
 .App {
     margin-top: 30px;
@@ -77,6 +81,29 @@ html {
     background: transparent;
 }
 
+.userCodeInput {
+    margin-left: 40px;
+    color: black;
+    background-color: transparent;
+    border-radius: 3px;
+    padding: 10px;
+    color: $white;
+    font-weight: bolder;
+    border: 2px solid $Primary-color;
+
+    box-shadow: 2px 2px 8px 2px rgb(48, 7, 48);
+
+    &::placeholder {
+        color: $white;
+        font-weight: bolder;
+        letter-spacing: 1px;
+    }
+
+    &:focus {
+        outline-color: #FE6B8B;
+        border: none;
+    }
+}
 
 
 .CodeMirror-scroll {
@@ -130,7 +157,6 @@ html {
     width: 97%;
     height: 100%;
     background-image: radial-gradient(circle at 50%, #2e2d2d, #212121);
-
     box-shadow: 3px 3px 10px $black;
     border-radius: 6px;
     border: 3px solid $black;
