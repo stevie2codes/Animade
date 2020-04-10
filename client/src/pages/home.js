@@ -5,6 +5,7 @@ import NavBar from "../components/nav/nav";
 import Cookies from "js-cookie";
 import { Link } from "@material-ui/core";
 import Repo from "../components/repo";
+import HomeCube from "../components/homeCube";
 
 const Home = () => {
   const [activeUser] = useState(Cookies.get("name"));
@@ -16,8 +17,8 @@ const Home = () => {
       </div>
 
       <div className="homeContent">
-        <img className="homeLogo" src={logo} alt="animade" />
-
+        {/* <img className="homeLogo" src={logo} alt="animade" /> */}
+        <HomeCube />
         <h4 className="readyText">
           Ready-Made
           <span id="animations">Animations</span>

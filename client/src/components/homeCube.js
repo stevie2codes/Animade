@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import * as THREE from "three";
 
-class ThreeScene2 extends Component {
+class HomeCube extends Component {
   componentDidMount() {
     const width = this.mount.clientWidth;
     const height = this.mount.clientHeight;
@@ -9,23 +9,25 @@ class ThreeScene2 extends Component {
     this.scene = new THREE.Scene();
     //ADD CAMERA
     this.camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000);
-    this.camera.position.z = 5;
+    this.camera.position.z = 170;
     //ADD RENDERER
-
     this.renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+    this.renderer.setPixelRatio(window.devicePixelRatio);
     // this.renderer.setClearColor("0x000000, 0");
     this.renderer.setSize(width, height);
     this.mount.appendChild(this.renderer.domElement);
-    this.renderer.setPixelRatio(window.devicePixelRatio);
 
     //ADD CUBE
 
-    const geometry = new THREE.BoxGeometry(2.5, 2.5, 2.5);
+    const geometry = new THREE.BoxGeometry(120, 120, 120, 120, 120, 120);
 
     const texture = new THREE.TextureLoader().load(
-      "https://media-exp1.licdn.com/dms/image/C4D03AQEHj4ZQuCMxSw/profile-displayphoto-shrink_200_200/0?e=1591833600&v=beta&t=FQEJs2tFv77fi9cuR3OvBJlM5PvF4PBOWpUtKuuCAQg"
+      "https://res.cloudinary.com/df9q0hnuw/image/upload/v1586534332/default_tq2jz7.png"
     );
-    const material = new THREE.MeshBasicMaterial({ map: texture });
+    const material = new THREE.MeshBasicMaterial({
+      map: texture,
+      wireframe: true
+    });
 
     this.cube = new THREE.Mesh(geometry, material);
     this.scene.add(this.cube);
@@ -45,8 +47,8 @@ class ThreeScene2 extends Component {
     cancelAnimationFrame(this.frameId);
   };
   animate = () => {
-    this.cube.rotation.x += 0.01;
-    this.cube.rotation.y += 0.01;
+    this.cube.rotation.x += 0.0;
+    this.cube.rotation.y += 0.005;
     this.renderScene();
     this.frameId = window.requestAnimationFrame(this.animate);
   };
@@ -59,8 +61,9 @@ class ThreeScene2 extends Component {
       <React.Fragment>
         <div
           style={{
-            width: "300px",
-            height: "300px"
+            width: "250px",
+            height: "250px",
+            margin: "auto"
           }}
           ref={mount => {
             this.mount = mount;
@@ -71,4 +74,4 @@ class ThreeScene2 extends Component {
   }
 }
 
-export default ThreeScene2;
+export default HomeCube;
