@@ -1,7 +1,10 @@
 // Fonts
-$primary-font: "Poiret One", cursive;
-$logo-font: "Coiny", cursive;
-$secondary-font: "Montserrat", sans-serif;
+$primary-font: "Poiret One",
+cursive;
+$logo-font: "Coiny",
+cursive;
+$secondary-font: "Montserrat",
+sans-serif;
 
 /* Color Theme Swatches in RGBA */
 $Primary-color: #ad54a4;
@@ -10,6 +13,7 @@ $black: #212121;
 $white: rgba(242, 242, 242, 1);
 $gradient: linear-gradient(90deg, #ad54a4 0%, #db6c6d 64%);
 $new-gradient: linear-gradient(45deg, #fe6b8b 30%, #ff8e53 90%);
+
 .homeLogo {
   display: flex;
   width: 50vh;
@@ -47,17 +51,65 @@ $new-gradient: linear-gradient(45deg, #fe6b8b 30%, #ff8e53 90%);
   -webkit-text-fill-color: transparent;
   font-size: 6vmin;
   letter-spacing: 5px;
-  animation: slideUp 1.5s ease-in-out alternate;
+  animation: flubber 1s ease-in-out alternate;
 }
 
-@keyframes slideUp {
+@keyframes flubber {
   from {
-    transform: translateY(500px);
-    opacity: 0;
+    transform: scale3d(1, 1, 1);
+  }
+
+  30% {
+    transform: scale3d(1.25, 0.75, 1);
+  }
+
+  40% {
+    transform: scale3d(0.75, 1.25, 1);
+  }
+
+  50% {
+    transform: scale3d(1.15, 0.85, 1);
+  }
+
+  65% {
+    transform: scale3d(0.95, 1.05, 1);
+  }
+
+  75% {
+    transform: scale3d(1.05, 0.95, 1);
   }
 
   to {
-    transform: translateY(0px);
-    opacity: 1;
+    transform: scale3d(1, 1, 1);
   }
+}
+
+.signInHome {
+  display: block;
+  justify-content: center;
+  font-family: $primary-font;
+  letter-spacing: 2px;
+  text-decoration: none;
+  font-weight: 900;
+  margin: 0 auto;
+  width: 100px;
+  background: $new-gradient;
+  border-radius: 3px;
+  border: none;
+  color: white;
+  height: 44px;
+  padding: 5px;
+  box-shadow: 0 3px 5px 2px rgba(255, 105, 135, .3);
+
+  &:hover {
+    transform: scale(1.1);
+    transition-duration: 300ms;
+    box-shadow: 0 3px 9px 2px rgba(255, 105, 135, 0.418);
+    opacity: 0.9;
+    text-decoration: none;
+  }
+}
+
+a:hover {
+  text-decoration-color: transparent !important;
 }

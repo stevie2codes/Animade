@@ -4,6 +4,7 @@ import logo from "../mono-logo.svg";
 import NavBar from "../components/nav/nav";
 import Cookies from "js-cookie";
 import ThreeScene from "../components/three";
+import { Link } from "@material-ui/core";
 
 const Home = () => {
   const [activeUser] = useState(Cookies.get("name"));
@@ -22,6 +23,9 @@ const Home = () => {
           <span id="animations">Animations</span>
         </h4>
       </div>
+      <Link href="signin">
+        <button className="signInHome">Sign-In</button>
+      </Link>
     </div>
   );
 };
