@@ -3,8 +3,8 @@ import "../sass/home.scss";
 import logo from "../mono-logo.svg";
 import NavBar from "../components/nav/nav";
 import Cookies from "js-cookie";
-import ThreeScene from "../components/three";
 import { Link } from "@material-ui/core";
+import Repo from "../components/repo";
 
 const Home = () => {
   const [activeUser] = useState(Cookies.get("name"));
@@ -24,8 +24,9 @@ const Home = () => {
         </h4>
       </div>
       <Link href="signin">
-        <button className="signInHome">Sign-In</button>
+        <button className="signInHome mb4">Sign-In</button>
       </Link>
+      <Repo />
     </div>
   );
 };
