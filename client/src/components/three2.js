@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import * as THREE from "three";
 
-class ThreeScene extends Component {
+class ThreeScene2 extends Component {
   componentDidMount() {
     const width = this.mount.clientWidth;
     const height = this.mount.clientHeight;
@@ -21,7 +21,7 @@ class ThreeScene extends Component {
     const geometry = new THREE.BoxGeometry(2.5, 2.5, 2.5);
 
     const texture = new THREE.TextureLoader().load(
-      "https://media-exp1.licdn.com/dms/image/C4E03AQHDHYjuPEmQQQ/profile-displayphoto-shrink_800_800/0?e=1591833600&v=beta&t=NioMBOL-W2RvJHZrU7HW3zAlApS57tO79UF2qNWZqe8"
+      "https://media-exp1.licdn.com/dms/image/C4D03AQEHj4ZQuCMxSw/profile-displayphoto-shrink_200_200/0?e=1591833600&v=beta&t=FQEJs2tFv77fi9cuR3OvBJlM5PvF4PBOWpUtKuuCAQg"
     );
     const material = new THREE.MeshBasicMaterial({ map: texture });
 
@@ -43,8 +43,8 @@ class ThreeScene extends Component {
     cancelAnimationFrame(this.frameId);
   };
   animate = () => {
-    this.cube.rotation.x += 0.0113;
-    this.cube.rotation.y += 0.0103;
+    this.cube.rotation.x += 0.01;
+    this.cube.rotation.y += 0.01;
     this.renderScene();
     this.frameId = window.requestAnimationFrame(this.animate);
   };
@@ -69,4 +69,4 @@ class ThreeScene extends Component {
   }
 }
 
-export default ThreeScene;
+export default ThreeScene2;
