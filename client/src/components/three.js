@@ -12,6 +12,7 @@ class ThreeScene extends Component {
     this.camera.position.z = 5;
     //ADD RENDERER
     this.renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+    this.renderer.setPixelRatio(window.devicePixelRatio);
     // this.renderer.setClearColor("0x000000, 0");
     this.renderer.setSize(width, height);
     this.mount.appendChild(this.renderer.domElement);
