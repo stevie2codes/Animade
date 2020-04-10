@@ -27,11 +27,8 @@ user_router.post("/signup", async(req, res) => {
 
 user_router.post("/signin", async(req, res) => {
     try{
-        console.log(req.body);
-        console.log(req.session);
-        console.log(`header: ${req.header}`);
         let user = await User.findOne({username: req.body.username});
-        console.log(`this is the user await: ${user}`);
+       
         
         if(!user){
            return res.status(400).send({message: "The username does not exist in our system."}).redirect("/signup");
