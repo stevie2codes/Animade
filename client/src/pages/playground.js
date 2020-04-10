@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Controlled as CodeMirror } from "react-codemirror2";
 import "../sass/playground.scss";
+import InputLabel from "@material-ui/core/InputLabel";
 
 import "codemirror/lib/codemirror.css";
 import "codemirror/theme/yonce.css";
@@ -71,7 +72,13 @@ class Playground extends Component {
           <NavBar name={this.state.activeUser} />
         </div>
         <div className="App">
-          <button className="saveCode">Save</button>
+          <input
+            type="text"
+            className="userCodeInput"
+            placeholder="Name Playmation"
+          />
+          <button className="saveCodeBtn">Save</button>
+
           <section className="playground">
             <div className="code-editor html-code">
               <div className="editor-header">HTML</div>
