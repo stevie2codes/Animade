@@ -1,10 +1,7 @@
 // Fonts
-$primary-font: "Poiret One",
-cursive;
-$logo-font: "Coiny",
-cursive;
-$secondary-font: "Montserrat",
-sans-serif;
+$primary-font: "Poiret One", cursive;
+$logo-font: "Coiny", cursive;
+$secondary-font: "Montserrat", sans-serif;
 
 /* Color Theme Swatches in RGBA */
 $Primary-color: #ad54a4;
@@ -12,11 +9,11 @@ $Secondary-color: #db6c6d;
 $black: #212121;
 $white: rgba(242, 242, 242, 1);
 $gradient: linear-gradient(90deg, #ad54a4 0%, #db6c6d 64%);
-
+$new-gradient: linear-gradient(45deg, #fe6b8b 30%, #ff8e53 90%);
 .homeLogo {
   display: flex;
   width: 50vh;
-  margin: -0vh auto;
+  margin: auto;
 
   &:hover {
     cursor: auto !important;
@@ -52,8 +49,6 @@ $gradient: linear-gradient(90deg, #ad54a4 0%, #db6c6d 64%);
   letter-spacing: 5px;
   animation: slideUp 1.5s ease-in-out alternate;
 }
-
-
 
 @keyframes slideUp {
   from {
