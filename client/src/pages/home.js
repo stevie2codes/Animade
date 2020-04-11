@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "../sass/home.scss";
 import logo from "../mono-logo.svg";
+import defaultLogo from "../default.svg";
 import NavBar from "../components/nav/nav";
 import Cookies from "js-cookie";
 import { Link } from "@material-ui/core";
@@ -17,8 +18,8 @@ const Home = () => {
       </div>
 
       <div className="homeContent">
-        {/* <img className="homeLogo" src={logo} alt="animade" /> */}
-        <HomeCube />
+        <img className="homeLogo" src={logo} alt="animade" />
+        {/* <HomeCube /> */}
         <h4 className="readyText">
           Ready-Made
           <span id="animations">Animations</span>
