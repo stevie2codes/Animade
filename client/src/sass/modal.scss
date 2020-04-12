@@ -13,11 +13,14 @@ $Secondary-color: #db6c6d;
 $black: #212121;
 $white: rgba(242, 242, 242, 1);
 $gradient: linear-gradient(90deg, #ad54a4 0%, #db6c6d 64%);
+$main-background-gradient:radial-gradient(circle at 50%, rgb(155, 84, 173) 0%, #212121);
+$complementary-color: #66ad54;
 
 .modal-title {
     font-family: $secondary-font;
     margin: 0 auto;
     text-align: center;
+    color: $white;
 }
 
 .ul {
@@ -29,9 +32,11 @@ $gradient: linear-gradient(90deg, #ad54a4 0%, #db6c6d 64%);
     background-color: $black;
     color: $white;
     font-family: $secondary-font;
+    font-weight: bolder;
     letter-spacing: 3px;
     border: 2px solid $black;
     box-shadow: 3px 3px 8px rgba(3, 3, 3, 0.735);
+
 }
 
 .modal-footer {
