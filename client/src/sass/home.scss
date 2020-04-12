@@ -16,7 +16,7 @@ $new-gradient: linear-gradient(45deg, #fe6b8b 30%, #ff8e53 90%);
 
 .homeLogo {
   display: flex;
-  width: 10vh;
+  width: 40vh;
   margin: auto;
 
   &:hover {
@@ -88,17 +88,17 @@ $new-gradient: linear-gradient(45deg, #fe6b8b 30%, #ff8e53 90%);
   display: block;
   justify-content: center;
   font-family: $primary-font;
-  letter-spacing: 2px;
+  letter-spacing: 3px;
   text-decoration: none;
-  font-weight: 900;
+  font-weight: bolder;
   margin: 0 auto;
-  width: 100px;
+  margin-bottom: 80px;
+  width: 30vw;
   background: $new-gradient;
   border-radius: 3px;
   border: none;
   color: white;
-  height: 44px;
-  padding: 5px;
+  padding: 15px;
   box-shadow: 0 3px 5px 2px rgba(255, 105, 135, .3);
 
   &:hover {
