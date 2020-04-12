@@ -1,4 +1,3 @@
-// Fonts
 $primary-font: "Poiret One",
 cursive;
 $logo-font: "Coiny",
@@ -6,7 +5,9 @@ cursive;
 $secondary-font: "Montserrat",
 sans-serif;
 
-/* Color Theme Swatches in RGBA */
+/* Color Theme  */
+
+
 $Primary-color: #ad54a4;
 $Secondary-color: #db6c6d;
 $black: #212121;
@@ -14,13 +15,18 @@ $white: rgba(242, 242, 242, 1);
 $gradient: linear-gradient(90deg, #ad54a4 0%, #db6c6d 64%);
 $new-gradient: linear-gradient(45deg, #fe6b8b 30%, #ff8e53 90%);
 
+.homeContent {
+  animation: bounceInUp 1s;
+}
+
 .homeLogo {
   display: flex;
-  width: 40vh;
+  width: 50vh;
   margin: auto;
 
   &:hover {
     cursor: auto !important;
+
   }
 }
 
@@ -35,7 +41,8 @@ $new-gradient: linear-gradient(45deg, #fe6b8b 30%, #ff8e53 90%);
   font-size: 6vmin;
   margin-left: 30px;
   letter-spacing: 5px;
-  animation: slideUp 1.7s ease-in-out alternate;
+  animation-name: bounceIn;
+
 }
 
 .readyText {
@@ -51,38 +58,9 @@ $new-gradient: linear-gradient(45deg, #fe6b8b 30%, #ff8e53 90%);
   -webkit-text-fill-color: transparent;
   font-size: 6vmin;
   letter-spacing: 5px;
-  animation: flubber 1s ease-in-out alternate;
+
 }
 
-@keyframes flubber {
-  from {
-    transform: scale3d(1, 1, 1);
-  }
-
-  30% {
-    transform: scale3d(1.25, 0.75, 1);
-  }
-
-  40% {
-    transform: scale3d(0.75, 1.25, 1);
-  }
-
-  50% {
-    transform: scale3d(1.15, 0.85, 1);
-  }
-
-  65% {
-    transform: scale3d(0.95, 1.05, 1);
-  }
-
-  75% {
-    transform: scale3d(1.05, 0.95, 1);
-  }
-
-  to {
-    transform: scale3d(1, 1, 1);
-  }
-}
 
 .signInHome {
   display: block;
@@ -102,14 +80,46 @@ $new-gradient: linear-gradient(45deg, #fe6b8b 30%, #ff8e53 90%);
   box-shadow: 0 3px 5px 2px rgba(255, 105, 135, .3);
 
   &:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
     transition-duration: 300ms;
     box-shadow: 0 3px 9px 2px rgba(255, 105, 135, 0.418);
     opacity: 0.9;
     text-decoration: none;
+
   }
 }
 
 a:hover {
   text-decoration-color: transparent !important;
+}
+
+
+
+.homeContent {
+  animation: fallIn 1s;
+}
+
+@keyframes fallIn {
+
+  from {
+    opacity: 0;
+    transform: translate3d(0, -3000px, 0);
+  }
+
+  60% {
+    opacity: 1;
+    transform: translate3d(0, 20px, 0);
+  }
+
+  75% {
+    transform: translate3d(0, -10px, 0);
+  }
+
+  90% {
+    transform: translate3d(0, 5px, 0);
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+  }
 }

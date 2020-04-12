@@ -24,10 +24,11 @@ const Home = () => {
           Ready-Made
           <span id="animations">Animations</span>
         </h4>
+
+        <Link href="signin">
+          <button className="signInHome mb4">Sign-In</button>
+        </Link>
       </div>
-      <Link href="signin">
-        <button className="signInHome mb4">Sign-In</button>
-      </Link>
       <Repo />
     </div>
   );

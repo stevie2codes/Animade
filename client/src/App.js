@@ -1,26 +1,20 @@
 import React from "react";
-import { BrowserRouter, Route} from "react-router-dom";
+import { BrowserRouter, Route } from "react-router-dom";
 import Home from "./pages/home";
 import SignIn from "./pages/signIn";
 import animations from "./pages/animations";
 import Contact from "./pages/contact";
-
 import Playground from "./pages/playground";
 import "./App.scss";
+import "./index.scss";
 import "./sass/navbar.scss";
-
 import UserLogin from "./pages/createUser";
 import Profile from "./pages/profile";
 
-
-// import "./App.css";
-
 function App() {
- 
   return (
     <div>
       <BrowserRouter>
-  
         <Route exact path="/" component={Home} />
         <Route exact path="/animations" component={animations} />
         <Route exact path="/playground" component={Playground} />

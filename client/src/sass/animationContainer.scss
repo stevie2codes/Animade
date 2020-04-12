@@ -1,4 +1,10 @@
 $black: #212121;
+$Primary-color: #ad54a4;
+$Secondary-color: #db6c6d;
+$white: rgba(242, 242, 242, 1);
+$gradient: linear-gradient(90deg, #ad54a4 0%, #db6c6d 64%);
+$main-background-gradient:radial-gradient(circle at 50%, rgb(155, 84, 173) 0%, #212121);
+
 $primary-font: "Poiret One",
 cursive;
 $logo-font: "Coiny",
@@ -6,11 +12,6 @@ cursive;
 $secondary-font: "Montserrat",
 sans-serif;
 
-$Primary-color: #ad54a4;
-$Secondary-color: #db6c6d;
-$black: #212121;
-$white: rgba(242, 242, 242, 1);
-$gradient: linear-gradient(90deg, #ad54a4 0%, #db6c6d 64%);
 
 
 .animations {
@@ -18,6 +19,8 @@ $gradient: linear-gradient(90deg, #ad54a4 0%, #db6c6d 64%);
   justify-content: center;
   margin: auto;
   flex-wrap: wrap;
+
+
 }
 
 .rollLeft,
@@ -30,17 +33,24 @@ $gradient: linear-gradient(90deg, #ad54a4 0%, #db6c6d 64%);
 .cartWheel,
 .flipX,
 .flipY,
-.spinOut {
+.spinOut,
+.flubUp,
+.bigIn,
+.spinIn,
+.flipIn,
+.fallIn,
+.arriveLeft,
+.arriveRight {
   display: flex;
   text-align: center;
   flex-wrap: wrap;
   width: 150px;
   height: 150px;
   margin: 30px;
-  background-color: $black;
+  background-image: $main-background-gradient;
   display: inline-block;
   border-radius: 20%;
-  box-shadow: 3px 3px 8px rgba(3, 3, 3, 0.735);
+  box-shadow: 3px 5px 20px rgba(3, 3, 3, 0.611);
 }
 
 p {
@@ -48,7 +58,7 @@ p {
   text-align: center;
   color: $white;
   font-size: 1.3rem;
-  font-family: $primary-font;
+  font-family: $secondary-font;
   font-weight: bolder;
   letter-spacing: 3px;
 }
@@ -131,14 +141,14 @@ p {
 
 .fall {
   &:hover {
-    animation: fall 1.5s forwards;
+    animation: fall 1s forwards;
     cursor: pointer;
   }
 }
 
 .rise:hover {
   cursor: pointer;
-  animation: rise 1.5s alternate;
+  animation: rise 1s alternate;
 }
 
 @keyframes rise {
@@ -161,6 +171,7 @@ p {
   &:hover {
     animation: cartWheel 1s alternate;
     cursor: pointer;
+
   }
 
 }
@@ -240,5 +251,184 @@ p {
   to {
     transform: rotate(360deg) scale(0);
     opacity: 0;
+  }
+}
+
+.flubUp {
+  &:hover {
+    cursor: pointer;
+    animation: flubUp 1s 100ms;
+  }
+}
+
+@keyframes flubUp {
+
+  from {
+    opacity: 0;
+    transform: translate3d(0, 3000px, 0);
+  }
+
+  60% {
+    opacity: 1;
+    transform: translate3d(0, -20px, 0);
+  }
+
+  75% {
+    transform: translate3d(0, 10px, 0);
+  }
+
+  90% {
+    transform: translate3d(0, -5px, 0);
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.bigIn:hover {
+  animation: bigIn 1s;
+  cursor: pointer;
+}
+
+@keyframes bigIn {
+  from {
+    opacity: 0;
+    transform: scale3d(2, 2, 2)
+  }
+
+  to {
+    opacity: 1;
+    transform: scale3d(1, 1, 1)
+  }
+}
+
+.spinIn:hover {
+  animation: spinIn 1s;
+  cursor: pointer;
+}
+
+@keyframes spinIn {
+  from {
+    opacity: 0;
+    transform: scale3d(2, 2, 2) rotate(360deg);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale3d(1, 1, 1) rotate(0deg);
+  }
+}
+
+.flipIn:hover {
+  animation: flipIn 1s;
+  cursor: pointer;
+}
+
+@keyframes flipIn {
+  from {
+    opacity: 0;
+    transform: scale3d(2, 2, 2) rotateY(360deg);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale3d(1, 1, 1) rotateY(0deg);
+  }
+}
+
+.fallIn {
+  &:hover {
+    cursor: pointer;
+    animation: fallIn 1s 100ms;
+  }
+}
+
+@keyframes fallIn {
+
+  from {
+    opacity: 0;
+    transform: translate3d(0, -3000px, 0);
+  }
+
+  60% {
+    opacity: 1;
+    transform: translate3d(0, 20px, 0);
+  }
+
+  75% {
+    transform: translate3d(0, -10px, 0);
+  }
+
+  90% {
+    transform: translate3d(0, 5px, 0);
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.arriveLeft {
+  &:hover {
+    cursor: pointer;
+    animation: arriveLeft 1s 100ms;
+  }
+}
+
+@keyframes arriveLeft {
+
+  from {
+    opacity: 0;
+    transform: translate3d(-300px, 0, 0);
+  }
+
+  60% {
+    opacity: 1;
+    transform: translate3d(20px, 0, 0);
+  }
+
+  75% {
+    transform: translate3d(0, 0, -3px);
+  }
+
+  90% {
+    transform: translate3d(5px, 0, 0);
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.arriveRight {
+  &:hover {
+    cursor: pointer;
+    animation: arriveRight 1s 100ms;
+  }
+}
+
+@keyframes arriveRight {
+
+  from {
+    opacity: 0;
+    transform: translate3d(300px, 0, 0);
+  }
+
+  60% {
+    opacity: 1;
+    transform: translate3d(-20px, 0, 0);
+  }
+
+  75% {
+    transform: translate3d(0, 0, 3px);
+  }
+
+  90% {
+    transform: translate3d(-5px, 0, 0);
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
   }
 }
