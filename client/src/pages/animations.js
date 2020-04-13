@@ -27,7 +27,7 @@ class animation extends Component {
   };
 
   componentDidMount() {
-    const types = [{ type: "All" }, ...getTypes()];
+    const types = [{ _id: "", type: "All" }, ...getTypes()];
     this.setState({ animations: getAnimations(), types });
   }
   handleSelection = function(animation) {
@@ -78,7 +78,7 @@ class animation extends Component {
             selectedType={this.state.selectedType}
           />
 
-          <div className="container animations my-2">
+          <div className="container animations pt-5">
             {myAnimations.map(animation => (
               <div key={animation.id} className="row">
                 <div

@@ -38,6 +38,7 @@ $main-background-gradient:radial-gradient(circle at 50%, rgb(155, 84, 173) 0%, #
     color: $white !important;
     border-color: $black !important;
     transform: scale(1.1);
+    box-shadow: none;
 
 }
 
@@ -45,5 +46,4 @@ $main-background-gradient:radial-gradient(circle at 50%, rgb(155, 84, 173) 0%, #
     background-image: $main-background-gradient !important;
     transform: scale(1.11);
     border-color: $black !important;
-
 }
