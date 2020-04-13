@@ -2,7 +2,7 @@ const express = require("express");
 const user_router = express.Router();
 const { User } = require("../models");
 const {sessionizeUser} = require("../utils/helpers");
-const axios = require("axios");
+
 
 user_router.post("/signup", async(req, res) => {
 
@@ -10,11 +10,9 @@ user_router.post("/signup", async(req, res) => {
         const newUser = new User(req.body);
         const sessionUser = sessionizeUser(newUser)
         await newUser.save();
-        console.log(req.session);
+
         req.session.user = sessionUser;
-            //just trying to see if it works
-        
-        
+
         res.cookie("name", sessionUser.username, {secure: process.env.NODE_ENV === true});   
         res.send(sessionUser);
 
@@ -27,11 +25,8 @@ user_router.post("/signup", async(req, res) => {
 
 user_router.post("/signin", async(req, res) => {
     try{
-        console.log(req.body);
-        console.log(req.session);
-        console.log(`header: ${req.header}`);
         let user = await User.findOne({username: req.body.username});
-        console.log(`this is the user await: ${user}`);
+       
         
         if(!user){
            return res.status(400).send({message: "The username does not exist in our system."}).redirect("/signup");

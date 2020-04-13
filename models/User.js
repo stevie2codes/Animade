@@ -29,11 +29,7 @@ const UserSchema = new Schema({
     user_created: {
         type: Date,
         default: Date.now
-    }
-
-    //maybe add a saved animations property to this model here
-
-    
+    },
 });
 
 //hashes password everytime the save function is called, before user data is stored

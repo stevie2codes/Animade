@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const adminAnimation = new Schema({
+const adminAnimationSchema = new Schema({
     user: {
         type: String,
         trim: true, 
@@ -27,6 +27,6 @@ const adminAnimation = new Schema({
 
 });
 
-const admin_Animation = mongoose.model("admin_Animation", adminAnimation);
+const adminAnimation = mongoose.model("admin_Animation", adminAnimationSchema);
 
-module.exports = admin_Animation;
+module.exports = adminAnimation;
