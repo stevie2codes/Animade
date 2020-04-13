@@ -27,7 +27,7 @@ class animation extends Component {
   };
 
   componentDidMount() {
-    const types = [{ type: "All" }, ...getTypes()];
+    const types = [{ _id: "", type: "All" }, ...getTypes()];
     this.setState({ animations: getAnimations(), types });
   }
   handleSelection = function(animation) {
