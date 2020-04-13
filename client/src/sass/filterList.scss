@@ -15,15 +15,16 @@ $main-background-gradient:radial-gradient(circle at 50%, rgb(155, 84, 173) 0%, #
 
 .filter {
     display: inline;
-    margin: 0 auto;
-    position: relative;
-    left: 35%;
+
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
     box-shadow: -4px -4px 14px $Primary-color, 4px 20px 14px #00000091;
 
 }
 
 .list-group-item {
-    display: inline-flex;
+    display: inline;
     color: $black;
     background-image: $new-gradient;
     font-family: $primary-font;

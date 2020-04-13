@@ -5,18 +5,17 @@ $nice-blue: #0e72cf;
 $main-background-gradient:radial-gradient(circle at 50%, rgb(155, 84, 173) 0%, #212121);
 
 .authorContainer {
-
     margin-bottom: 120px;
     flex-wrap: wrap;
-
 }
 
 
 .authorText {
-    color: #212121;
+    color: $white;
     font-family: $primary-font;
     font-weight: bolder;
     font-size: 3rem;
+    letter-spacing: 5px;
 }
 
 .col- {
@@ -36,5 +35,4 @@ $main-background-gradient:radial-gradient(circle at 50%, rgb(155, 84, 173) 0%, #
     font-size: 2rem;
     position: absolute;
     bottom: 0;
-
 }

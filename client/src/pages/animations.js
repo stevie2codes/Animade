@@ -78,7 +78,7 @@ class animation extends Component {
             selectedType={this.state.selectedType}
           />
 
-          <div className="container animations my-2">
+          <div className="container animations pt-5">
             {myAnimations.map(animation => (
               <div key={animation.id} className="row">
                 <div

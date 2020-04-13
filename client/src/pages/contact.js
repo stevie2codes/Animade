@@ -39,7 +39,7 @@ const Contact = () => {
                   className="card-link"
                   style={linkStyles}
                 >
-                  <GitHubIcon /> GitHub
+                  <GitHubIcon fontSize="large" /> GitHub
                 </a>
 
                 <a
@@ -47,7 +47,7 @@ const Contact = () => {
                   className="card-link"
                   style={linkStyles}
                 >
-                  <LinkedInIcon /> LinkedIn
+                  <LinkedInIcon fontSize="large" /> LinkedIn
                 </a>
               </div>
             </div>
@@ -55,7 +55,9 @@ const Contact = () => {
         </div>
         <div className="row">
           <div className="twoToesId col-">
-            <ThreeScene2 />
+            <div className="sceneDiv">
+              <ThreeScene2 />
+            </div>
             <div className="card" style={{ width: "20rem" }}>
               <div className="card-body">
                 <h5 className="card-title">Stephen Webb</h5>
@@ -68,14 +70,14 @@ const Contact = () => {
                   className="card-link"
                   style={linkStyles}
                 >
-                  <GitHubIcon /> GitHub
+                  <GitHubIcon fontSize="large" /> GitHub
                 </a>
                 <a
                   href="https://www.linkedin.com/in/js-webb/"
                   className="card-link"
                   style={linkStyles}
                 >
-                  <LinkedInIcon /> LinkedIn
+                  <LinkedInIcon fontSize="large" /> LinkedIn
                 </a>
               </div>
             </div>
