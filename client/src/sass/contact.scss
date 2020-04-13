@@ -4,6 +4,13 @@ cursive;
 $nice-blue: #0e72cf;
 $main-background-gradient:radial-gradient(circle at 50%, rgb(155, 84, 173) 0%, #212121);
 
+.authorContainer {
+
+    margin-bottom: 120px;
+    flex-wrap: wrap;
+
+}
+
 
 .authorText {
     color: #212121;

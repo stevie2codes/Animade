@@ -19,11 +19,11 @@ const Contact = () => {
       <NavBar name={activeUser} />
 
       <h1 className="d-flex justify-content-center authorText">Authors</h1>
-      <div className="container-fluid d-flex justify-content-center">
+      <div className="container d-flex justify-content-center authorContainer">
         <div className="row">
           <div className="squatchId col-">
             <ThreeScene />
-            <div className="card" style={{ width: "18rem" }}>
+            <div className="card" style={{ width: "20rem" }}>
               <div className="card-body">
                 <h5 className="card-title">Cassidy Fortner</h5>
                 <h6 className="card-subtitle mb-2 text-muted">
@@ -56,7 +56,7 @@ const Contact = () => {
         <div className="row">
           <div className="twoToesId col-">
             <ThreeScene2 />
-            <div className="card" style={{ width: "18rem" }}>
+            <div className="card" style={{ width: "20rem" }}>
               <div className="card-body">
                 <h5 className="card-title">Stephen Webb</h5>
                 <h6 className="card-subtitle mb-2 text-muted">
