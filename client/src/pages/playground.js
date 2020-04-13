@@ -19,22 +19,46 @@ import "codemirror/mode/css/css";
 import "codemirror/mode/javascript/javascript";
 import NavBar from "../components/nav/nav";
 import Cookies from "js-cookie";
+import API from "../utils/API";
+
 class Playground extends Component {
   constructor() {
     super();
     this.state = {
-      id: "",
       html: "",
       css: "",
       js: "",
-      activeUser: Cookies.get("name")
+      activeUser: Cookies.get("name"),
+      playmation_name: ""
     };
+
+    
   }
+  //saving the code to the playground_code database
+  saveCode = () => {
+    console.log(this);
+    API.savePlaygroundCode({
+      username: this.state.activeUser,
+      playmation_name: this.state.playmation_name,
+      html: this.state.html,
+      css: this.state.css, 
+      js: this.state.js
+    })
+    .then(data => {
+      
+    })
+    .catch(error => {
+      console.log(error);
+    })   
+  }
+
   componentDidUpdate() {
+    
     this.runCode();
   }
 
   runCode = () => {
+    
     const { html, css, js } = this.state;
 
     const iframe = this.refs.iframe;
@@ -73,11 +97,13 @@ class Playground extends Component {
         </div>
         <div className="App">
           <input
+            
             type="text"
             className="userCodeInput"
             placeholder="Name Playmation"
+            onChange={(event) => this.setState({playmation_name: event.target.value})}
           />
-          <button className="saveCodeBtn">Save</button>
+          <button className="saveCodeBtn" onClick={this.saveCode}>Save</button>
 
           <section className="playground">
             <div className="code-editor html-code">

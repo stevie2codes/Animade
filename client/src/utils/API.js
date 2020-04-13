@@ -6,5 +6,11 @@ export default {
     },
     logInUser: function(userData){
         return axios.post("/signin", userData);
+    },
+    savePlaygroundCode: function(userData){
+        return axios.post("/api/playground_code", userData);
+    },
+    getPlaygroundCode: function(username){
+        return axios.get("/api/playground_code", username);
     }
 }
