@@ -24,6 +24,7 @@ class ThreeScene extends Component {
     const texture = new THREE.TextureLoader().load(
       "https://media-exp1.licdn.com/dms/image/C4E03AQHDHYjuPEmQQQ/profile-displayphoto-shrink_800_800/0?e=1591833600&v=beta&t=NioMBOL-W2RvJHZrU7HW3zAlApS57tO79UF2qNWZqe8"
     );
+    texture.minFilter = THREE.LinearFilter;
     const material = new THREE.MeshBasicMaterial({ map: texture });
 
     this.cube = new THREE.Mesh(geometry, material);

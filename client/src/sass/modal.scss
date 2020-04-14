@@ -1,20 +1,4 @@
-// Fonts
-$primary-font: "Poiret One",
-cursive;
-$logo-font: "Coiny",
-cursive;
-$secondary-font: "Montserrat",
-sans-serif;
-
-/* Color Theme Swatches in RGBA */
-$Primary-color: #ad54a4;
-$Darker-purple:#9B54AD;
-$Secondary-color: #db6c6d;
-$black: #212121;
-$white: rgba(242, 242, 242, 1);
-$gradient: linear-gradient(90deg, #ad54a4 0%, #db6c6d 64%);
-$main-background-gradient:radial-gradient(circle at 50%, rgb(155, 84, 173) 0%, #212121);
-$complementary-color: #66ad54;
+@import "./variables";
 
 .modal-title {
     font-family: $secondary-font;
