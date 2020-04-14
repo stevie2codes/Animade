@@ -3,15 +3,12 @@ import { Controlled as CodeMirror } from "react-codemirror2";
 import "../sass/playground.scss";
 
 import "codemirror/lib/codemirror.css";
-import "codemirror/mode/javascript/javascript";
+import "codemirror/mode/xml/xml";
 import "codemirror/mode/htmlmixed/htmlmixed";
 import "codemirror/mode/css/css";
-
+import "codemirror/lib/codemirror.js";
+import "codemirror/mode/javascript/javascript.js";
 import "codemirror/theme/yonce.css";
-import "codemirror/addon/hint/html-hint";
-import "codemirror/addon/hint/anyword-hint";
-import "codemirror/addon/hint/css-hint";
-import "codemirror/addon/hint/show-hint";
 import "codemirror/addon/display/fullscreen";
 
 import "codemirror/addon/edit/matchbrackets";
@@ -85,6 +82,7 @@ class Playground extends Component {
     document.close();
   };
   render() {
+    const { html, css, js } = this.state;
     return (
       <div>
         <div>
@@ -107,10 +105,9 @@ class Playground extends Component {
             <div className="code-editor html-code">
               <div className="editor-header">HTML</div>
               <CodeMirror
-                value={this.state.html}
+                value={html}
                 options={{
                   mode: "htmlmixed",
-
                   theme: "yonce",
                   lineNumbers: true,
                   lineWrapping: true,
@@ -127,7 +124,7 @@ class Playground extends Component {
             <div className="code-editor css-code">
               <div className="editor-header">CSS</div>
               <CodeMirror
-                value={this.state.css}
+                value={css}
                 options={{
                   mode: "css",
                   theme: "yonce",
@@ -147,9 +144,9 @@ class Playground extends Component {
             <div className="code-editor js-code">
               <div className="editor-header">JavaScript</div>
               <CodeMirror
-                value={this.state.js}
+                value={js}
                 options={{
-                  mode: { name: "javascript", json: true },
+                  mode: "javascript",
                   autoCloseBrackets: true,
                   theme: "yonce",
                   lineWrapping: true,
