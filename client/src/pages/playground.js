@@ -1,9 +1,12 @@
 import React, { Component } from "react";
 import { Controlled as CodeMirror } from "react-codemirror2";
 import "../sass/playground.scss";
-import InputLabel from "@material-ui/core/InputLabel";
 
 import "codemirror/lib/codemirror.css";
+import "codemirror/mode/javascript/javascript";
+import "codemirror/mode/htmlmixed/htmlmixed";
+import "codemirror/mode/css/css";
+
 import "codemirror/theme/yonce.css";
 import "codemirror/addon/hint/html-hint";
 import "codemirror/addon/hint/anyword-hint";
@@ -14,9 +17,7 @@ import "codemirror/addon/display/fullscreen";
 import "codemirror/addon/edit/matchbrackets";
 import "codemirror/addon/edit/closebrackets";
 import "codemirror/addon/edit/closetag";
-import "codemirror/mode/htmlmixed/htmlmixed";
-import "codemirror/mode/css/css";
-import "codemirror/mode/javascript/javascript";
+
 import NavBar from "../components/nav/nav";
 import Cookies from "js-cookie";
 import API from "../utils/API";
@@ -109,6 +110,7 @@ class Playground extends Component {
                 value={this.state.html}
                 options={{
                   mode: "htmlmixed",
+
                   theme: "yonce",
                   lineNumbers: true,
                   lineWrapping: true,
@@ -147,7 +149,7 @@ class Playground extends Component {
               <CodeMirror
                 value={this.state.js}
                 options={{
-                  mode: "javascript",
+                  mode: { name: "javascript", json: true },
                   autoCloseBrackets: true,
                   theme: "yonce",
                   lineWrapping: true,

@@ -1,17 +1,4 @@
-$primary-font: "Poiret One",
-cursive;
-$logo-font: "Coiny",
-cursive;
-$secondary-font: "Montserrat",
-sans-serif;
-
-$Primary-color: #ad54a4;
-$Secondary-color: #db6c6d;
-$black: #212121;
-$white: rgba(242, 242, 242, 1);
-$gradient: linear-gradient(90deg, #ad54a4 0%, #db6c6d 90%);
-$new-gradient: linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%);
-$main-background-gradient:radial-gradient(circle at 50%, rgb(155, 84, 173) 0%, #212121);
+@import "./variables";
 
 .filter {
     display: inline;
