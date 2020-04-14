@@ -26,14 +26,15 @@ html {
     text-decoration: none;
     font-weight: 900;
     font-size: 1.2rem;
-    margin: 0 auto;
+    margin: auto;
     margin-left: 5px;
     width: 100px;
     background: $new-gradient;
     border-radius: 3px;
     border: none;
     color: white;
-    height: 49px;
+    padding-top: 9px;
+    padding-bottom: 11px;
 
     box-shadow: 0 3px 5px 2px rgba(255, 105, 135, .3);
 
@@ -89,6 +90,20 @@ html {
     }
 }
 
+.playUserName {
+    font-family: $primary-font;
+    margin-left: 45px;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    font-weight: bolder;
+    background: $new-gradient;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    justify-content: center;
+    letter-spacing: 2px;
+
+}
 
 .CodeMirror-scroll {
     background-color: $black;
