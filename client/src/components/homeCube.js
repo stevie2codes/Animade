@@ -9,7 +9,7 @@ class HomeCube extends Component {
     this.scene = new THREE.Scene();
     //ADD CAMERA
     this.camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000);
-    this.camera.position.z = 50;
+    this.camera.position.z = 3;
     //ADD RENDERER
     this.renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
     this.renderer.setPixelRatio(window.devicePixelRatio);
@@ -19,15 +19,15 @@ class HomeCube extends Component {
 
     //ADD CUBE
 
-    const geometry = new THREE.BoxGeometry(35, 35, 35, 155, 155, 155);
+    const geometry = new THREE.BoxGeometry(2, 2, 2, 2, 2, 2);
 
     const texture = new THREE.TextureLoader().load(
       "https://res.cloudinary.com/df9q0hnuw/image/upload/v1586534332/default_tq2jz7.png"
     );
     const material = new THREE.MeshBasicMaterial({
-      map: texture,
+      map: texture
       //   color: 0xffffff,
-      wireframe: true
+      // wireframe: true
     });
 
     this.cube = new THREE.Mesh(geometry, material);
@@ -62,9 +62,11 @@ class HomeCube extends Component {
       <React.Fragment>
         <div
           style={{
-            width: "500px",
-            height: "500px",
-            margin: "auto"
+            width: "8vw",
+            height: "8vmax",
+            position: "absolute",
+            left: "15px"
+            // maxWidth: "10vw"
           }}
           ref={mount => {
             this.mount = mount;

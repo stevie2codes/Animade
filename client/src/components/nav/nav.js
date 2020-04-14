@@ -36,6 +36,7 @@ function NavBar(props) {
       <div className="nav nav-pills d-flex justify-content-end">
         <Link to="/">
           <img src={newLogo} className="iconAbove" id="logoSvg" alt="logo" />
+          {/* <HomeCube /> */}
         </Link>
 
         <div className="navigation">
@@ -46,7 +47,7 @@ function NavBar(props) {
             <Link to="/animations" className="nav-link ">
               Animations
             </Link>
-            <Link to="/playground" className="nav-link ">
+            <Link className="nav-link" to={{ pathname: "/playground" }}>
               Playground
             </Link>
             <Link to="/Contact" className="nav-link ">

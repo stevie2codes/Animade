@@ -89,6 +89,9 @@ class Playground extends Component {
           <NavBar name={this.state.activeUser} />
         </div>
         <div className="App">
+          {this.state.activeUser ? (
+            <h5 className="playUserName">Username: {this.state.activeUser}</h5>
+          ) : null}
           <input
             type="text"
             className="userCodeInput"
@@ -97,6 +100,7 @@ class Playground extends Component {
               this.setState({ playmation_name: event.target.value })
             }
           />
+
           <button className="saveCodeBtn" onClick={this.saveCode}>
             Save
           </button>
