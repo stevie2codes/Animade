@@ -1,16 +1,27 @@
 @import "./_variables";
 
 .profileContainer {
-    display: flex;
-    justify-content: center;
-    text-align: center;
-
+  display: flex;
+  justify-content: center;
+  text-align: center;
 }
 
 .userName {
-    display: flex;
-    margin: 30px auto;
-    font-family: $primary-font;
-    font-size: 3rem;
-    text-align: center;
+  display: flex;
+  margin: 10px auto;
+  font-family: $primary-font;
+  font-size: 3rem;
+  text-align: center;
+}
+
+.profilePlaymations {
+  margin: auto;
+  width: 250px;
+  height: 250px;
+  background-color: $black;
+  color: $white;
+  border-radius: 30%;
+  text-align: center;
+  font-size: 2.5rem;
+  font-family: $secondary-font;
 }
