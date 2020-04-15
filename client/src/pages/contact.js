@@ -36,6 +36,7 @@ const Contact = () => {
                   <li>Mongoose</li>
                   <li>JS-Cookie</li>
                   <li>Axios</li>
+                  <li>bcryptjs</li>
                   <li className="lastLi">Heroku</li>
                 </ul>
 
@@ -76,6 +77,7 @@ const Contact = () => {
                   <li>Bootstrap</li>
                   <li>Material-UI</li>
                   <li>CodeMirror</li>
+                  <li>lodash</li>
                   <li className="lastLi">Three.JS</li>
                 </ul>
 
