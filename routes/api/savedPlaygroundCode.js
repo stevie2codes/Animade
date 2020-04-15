@@ -4,7 +4,8 @@ const { savedPlaygroundCode } = require("../../models");
 
 playgroundApiRouter.get("/api/playground_code", async(req, res) => {
     try{
-        const username = req.session.user.username;
+        
+        const username = req.cookies.name;
         let savedUserCode = await savedPlaygroundCode.find({username: username});
         
 
