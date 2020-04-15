@@ -2,8 +2,16 @@ import React from "react";
 import "../../sass/navbar.scss";
 import { Link } from "react-router-dom";
 import newLogo from "../../mono-logo.svg";
+import Cookies from "js-cookie";
 
 function NavBar(props) {
+  
+
+  const logout = () => {
+    Cookies.remove("name");
+    window.location.href = "/";
+  }
+  
   return (
     <div style={{ height: "30vmin" }} overflow="hidden">
       <svg
@@ -62,8 +70,8 @@ function NavBar(props) {
                 Sign Up
               </Link>
             )}
-
-            {props.name ? <button className="signOut">Logout</button> : null}
+            
+            {props.name ? <button className="signOut" onClick={logout}>Logout</button> : null}
           </div>
         </div>
       </div>
