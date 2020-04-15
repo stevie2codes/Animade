@@ -18,6 +18,8 @@ import "codemirror/addon/edit/closetag";
 import NavBar from "../components/nav/nav";
 import Cookies from "js-cookie";
 import API from "../utils/API";
+import { useParams } from "react-router-dom";
+import Axios from "axios";
 
 class Playground extends Component {
   constructor() {
@@ -27,7 +29,8 @@ class Playground extends Component {
       css: "",
       js: "",
       activeUser: Cookies.get("name"),
-      playmation_name: ""
+      playmation_name: "",
+      code_id:  ""
     };
   }
   //saving the code to the playground_code database
@@ -46,13 +49,34 @@ class Playground extends Component {
       });
   };
 
+  componentDidMount(){
+    console.log(this.props.match.params.id);
+    if(this.props.match.params.id){
+      API.getPlaygroundCode(this.state.activeUser).then(data => {
+        console.log(data.data);
+        let playgroundCode = data.data;
+        playgroundCode.map(code => {
+          console.log(code);
+          if(code._id === this.props.match.params.id){
+            this.setState({
+              html: code.html,
+              css: code.css, 
+              js: code.js
+            })
+          }
+        })
+        
+      })
+    }
+  }
   componentDidUpdate() {
+    
     this.runCode();
   }
 
   runCode = () => {
     const { html, css, js } = this.state;
-
+    
     const iframe = this.iframe;
     const document = iframe.contentDocument;
     const documentContents = `

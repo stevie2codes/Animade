@@ -17,7 +17,7 @@ function App() {
       <BrowserRouter>
         <Route exact path="/" component={Home} />
         <Route exact path="/animations" component={animations} />
-        <Route exact path="/playground" component={Playground} />
+        <Route  path="/playground/:id?" component={Playground} />
         <Route exact path="/signup" component={SignIn} />
         <Route exact path="/signin" component={UserLogin} />
         <Route exact path="/Contact" component={Contact} />
