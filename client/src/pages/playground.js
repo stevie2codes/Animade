@@ -129,7 +129,6 @@ class Playground extends Component {
             <h5 className="playUserName">Sign up to Save your code!</h5>
           )}
           <input
-            value={this.props.match.params.id ? this.state.playmation_name :  null}
             type="text"
             className="userCodeInput"
             placeholder={this.props.match.params.id ? this.state.playmation_name :  "Name Playmation"}
