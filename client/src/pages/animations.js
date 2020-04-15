@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import AnimationContainer from "../components/animationContainer";
 import ListGroup from "../components/listGroup";
 import { getTypes } from "../services/typeList";
 import { getAnimations } from "../services/animationService";
@@ -8,7 +7,6 @@ import "../sass/animationContainer.scss";
 import "../sass/modal.scss";
 import { Button } from "@material-ui/core";
 import Save from "@material-ui/icons/Save";
-import Like from "@material-ui/icons/ThumbUpSharp";
 import Pagination from "../components/pagination";
 import { paginate } from "../services/paginate";
 import NavBar from "../components/nav/nav";
