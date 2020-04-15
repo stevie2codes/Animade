@@ -31,10 +31,11 @@ function Profile() {
             <div key={code._id}>
               <Link
                 to={{
-                  pathname: "/playground",
+                  pathname: "/playground/" + code._id,
                   state: {
                     fromProfile: true,
-                    id: code._id
+                    id: code._id,
+                    html: code.html
                   }
                 }}
               >
