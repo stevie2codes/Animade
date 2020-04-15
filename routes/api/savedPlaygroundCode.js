@@ -6,7 +6,7 @@ playgroundApiRouter.get("/api/playground_code", async(req, res) => {
     try{
         const username = req.session.user.username;
         let savedUserCode = await savedPlaygroundCode.find({username: username});
-        console.log(savedUserCode);
+        
 
         res.send(savedUserCode);
     }catch(error){
