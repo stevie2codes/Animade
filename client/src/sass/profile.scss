@@ -6,22 +6,26 @@
   text-align: center;
 }
 
-.userName {
+.profilePlaymations {
   display: flex;
-  margin: 10px auto;
-  font-family: $primary-font;
-  font-size: 3rem;
+  justify-content: center;
+  flex-wrap: wrap;
   text-align: center;
+  font-family: $primary-font;
+  letter-spacing: 4px;
+  font-size: 4vmin;
 }
 
-.profilePlaymations {
-  margin: auto;
-  width: 250px;
-  height: 250px;
-  background-color: $black;
-  color: $white;
-  border-radius: 30%;
-  text-align: center;
-  font-size: 2.5rem;
-  font-family: $secondary-font;
+.iconIsolated {
+  width: 20vw;
+  animation: pulse 2s alternate infinite;
+  flex-wrap: wrap;
+}
+@keyframes pulse {
+  from {
+    transform: scale(0.9);
+  }
+  to {
+    transform: scale(1);
+  }
 }

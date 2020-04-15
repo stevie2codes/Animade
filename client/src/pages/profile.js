@@ -3,8 +3,9 @@ import NavBar from "../components/nav/nav";
 import "../sass/profile.scss";
 import Cookies from "js-cookie";
 import API from "../utils/API";
-// import { Link } from "@material-ui/core";
+
 import { Link } from "react-router-dom";
+import Isolated from "../components/isolatedSvg";
 function Profile() {
   const [activeUser] = useState(Cookies.get("name"));
   const [userPlaygroundCode, setUserPlaygroundCode] = useState([]);
@@ -24,9 +25,11 @@ function Profile() {
       <div>
         <NavBar name={activeUser} />
       </div>
+      {/* <h2 className="playUserName">Welcome to your Dashboard: {activeUser}</h2> */}
+      <h1 className="d-flex justify-content-center authorText">
+        {activeUser}'s Playmations
+      </h1>
       <div className="profileContainer">
-        <h2 className="userName">Welcome to your Dashboard: {activeUser}</h2>
-
         {userPlaygroundCode.map(code => {
           return (
             <div key={code._id}>
@@ -40,7 +43,8 @@ function Profile() {
                   }
                 }}
               >
-                <div className="profilePlaymations">{code.playmation_name}</div>
+                <Isolated />
+                <h3 className="profilePlaymations">{code.playmation_name}</h3>
               </Link>
             </div>
           );
