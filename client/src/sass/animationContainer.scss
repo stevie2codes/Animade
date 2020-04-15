@@ -67,7 +67,6 @@ p {
 }
 
 .flubber {
-
   &:hover {
     animation: flubber 1s alternate;
     cursor: pointer;
@@ -106,7 +105,7 @@ p {
 
 .fall {
   &:hover {
-    animation: fall 1s alternate;
+    animation: fall 1s 100ms linear;
     cursor: pointer;
   }
 }
@@ -147,21 +146,14 @@ p {
   }
 }
 
-
-
-
 .cartWheel {
-
   &:hover {
     animation: cartWheel 1s alternate;
     cursor: pointer;
-
   }
-
 }
 
 @keyframes cartWheel {
-
   to {
     transform: rotate(360deg);
   }
@@ -173,10 +165,8 @@ p {
 }
 
 @keyframes flipX {
-
   to {
     transform: rotateX(360deg);
-
   }
 }
 
@@ -186,7 +176,6 @@ p {
 }
 
 @keyframes flipY {
-
   to {
     transform: rotateY(360deg);
   }
@@ -216,7 +205,6 @@ p {
 @keyframes rollRight {
   from {
     opacity: 1;
-
   }
 
   to {
@@ -231,7 +219,6 @@ p {
 }
 
 @keyframes spinOut {
-
   to {
     transform: rotate(360deg) scale(0);
     opacity: 0;
@@ -246,7 +233,6 @@ p {
 }
 
 @keyframes flubUp {
-
   from {
     opacity: 0;
     transform: translate3d(0, 3000px, 0);
@@ -278,12 +264,12 @@ p {
 @keyframes bigIn {
   from {
     opacity: 0;
-    transform: scale3d(2, 2, 2)
+    transform: scale3d(2, 2, 2);
   }
 
   to {
     opacity: 1;
-    transform: scale3d(1, 1, 1)
+    transform: scale3d(1, 1, 1);
   }
 }
 
@@ -329,7 +315,6 @@ p {
 }
 
 @keyframes fallIn {
-
   from {
     opacity: 0;
     transform: translate3d(0, -3000px, 0);
@@ -361,7 +346,6 @@ p {
 }
 
 @keyframes arriveLeft {
-
   from {
     opacity: 0;
     transform: translate3d(-300px, 0, 0);
@@ -393,7 +377,6 @@ p {
 }
 
 @keyframes arriveRight {
-
   from {
     opacity: 0;
     transform: translate3d(300px, 0, 0);

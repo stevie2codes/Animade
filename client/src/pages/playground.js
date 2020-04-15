@@ -91,7 +91,9 @@ class Playground extends Component {
         <div className="App">
           {this.state.activeUser ? (
             <h5 className="playUserName">Username: {this.state.activeUser}</h5>
-          ) : null}
+          ) : (
+            <h5 className="playUserName">Sign up to Save your code!</h5>
+          )}
           <input
             type="text"
             className="userCodeInput"
