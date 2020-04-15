@@ -23,9 +23,8 @@ function Profile() {
       <div>
         <NavBar name={activeUser} />
       </div>
+      <h2 className="playUserName">Welcome to your Dashboard: {activeUser}</h2>
       <div className="profileContainer">
-        <h2 className="userName">Welcome to your Dashboard: {activeUser}</h2>
-
         {userPlaygroundCode.map(code => {
           return (
             <div key={code._id}>
