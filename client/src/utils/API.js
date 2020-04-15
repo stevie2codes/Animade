@@ -12,5 +12,8 @@ export default {
     },
     getPlaygroundCode: function(username){
         return axios.get("/api/playground_code", username);
+    },
+    updatePlaygroundCode: function(userData){
+        return axios.put("/api/playground_code", userData);
     }
 }

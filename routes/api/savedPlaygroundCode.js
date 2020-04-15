@@ -28,4 +28,16 @@ playgroundApiRouter.post("/api/playground_code", async(req, res) => {
     
 });
 
+playgroundApiRouter.put("/api/playground_code", async(req, res) => {
+    try{
+        savedPlaygroundCode.findOneAndUpdate({_id: req.body.id}, {$set:{html: req.body.html, css: req.body.css, js: req.body.js}}, (err, doc) => {
+            if(err) console.log(err);
+
+            res.send(doc);
+        })
+    }catch(error){
+        console.log(error);
+    }
+})
+
 module.exports = playgroundApiRouter;

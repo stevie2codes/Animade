@@ -18,8 +18,7 @@ import "codemirror/addon/edit/closetag";
 import NavBar from "../components/nav/nav";
 import Cookies from "js-cookie";
 import API from "../utils/API";
-import { useParams } from "react-router-dom";
-import Axios from "axios";
+
 
 class Playground extends Component {
   constructor() {
@@ -36,17 +35,27 @@ class Playground extends Component {
   //saving the code to the playground_code database
   saveCode = () => {
     console.log(this);
-    API.savePlaygroundCode({
-      username: this.state.activeUser,
-      playmation_name: this.state.playmation_name,
-      html: this.state.html,
-      css: this.state.css,
-      js: this.state.js
-    })
-      .then(data => {})
-      .catch(error => {
-        console.log(error);
-      });
+    if(this.props.match.params.id){
+      API.updatePlaygroundCode({
+        id: this.props.match.params.id,
+        html: this.state.html,
+        css: this.state.css,
+        js: this.state.js
+      })
+      .then(data=>{})
+      .catch(error => console.log(error));
+    }else {
+      API.savePlaygroundCode({
+        username: this.state.activeUser,
+        playmation_name: this.state.playmation_name,
+        html: this.state.html,
+        css: this.state.css,
+        js: this.state.js
+      })
+        .then(data => {})
+        .catch(error => console.log(error));
+    }
+ 
   };
 
   componentDidMount(){
@@ -59,6 +68,7 @@ class Playground extends Component {
           console.log(code);
           if(code._id === this.props.match.params.id){
             this.setState({
+              playmation_name: code.playmation_name,
               html: code.html,
               css: code.css, 
               js: code.js
@@ -119,9 +129,10 @@ class Playground extends Component {
             <h5 className="playUserName">Sign up to Save your code!</h5>
           )}
           <input
+            value={this.props.match.params.id ? this.state.playmation_name :  ""}
             type="text"
             className="userCodeInput"
-            placeholder="Name Playmation"
+            placeholder={this.props.match.params.id ? this.state.playmation_name :  "Name Playmation"}
             onChange={event =>
               this.setState({ playmation_name: event.target.value })
             }
