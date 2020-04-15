@@ -6,24 +6,26 @@
   text-align: center;
 }
 
-// .userName {
-//   display: flex;
-//   margin: 10px auto;
-//   font-family: $primary-font;
-//   font-size: 3rem;
-//   text-align: center;
-// }
-
 .profilePlaymations {
   display: flex;
-  text-align: center;
+  justify-content: center;
   flex-wrap: wrap;
-  //   width: 150px;
-  //   height: 150px;
-  //   margin: 30px;
-  //   background-image: $main-background-gradient;
-  display: inline-block;
-  //   padding: 50px;
-  //   border-radius: 20%;
-  //   box-shadow: 3px 5px 20px rgba(3, 3, 3, 0.611);
+  text-align: center;
+  font-family: $primary-font;
+  letter-spacing: 4px;
+  font-size: 4vmin;
+}
+
+.iconIsolated {
+  width: 20vw;
+  animation: pulse 2s alternate infinite;
+  flex-wrap: wrap;
+}
+@keyframes pulse {
+  from {
+    transform: scale(0.9);
+  }
+  to {
+    transform: scale(1);
+  }
 }

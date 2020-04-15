@@ -24,7 +24,10 @@ function Profile() {
       <div>
         <NavBar name={activeUser} />
       </div>
-      <h2 className="playUserName">Welcome to your Dashboard: {activeUser}</h2>
+      {/* <h2 className="playUserName">Welcome to your Dashboard: {activeUser}</h2> */}
+      <h1 className="d-flex justify-content-center authorText">
+        {activeUser}'s Playmations
+      </h1>
       <div className="profileContainer">
         {userPlaygroundCode.map(code => {
           return (
@@ -40,7 +43,7 @@ function Profile() {
                 }}
               >
                 <Isolated />
-                <div className="profilePlaymations">{code.playmation_name}</div>
+                <h3 className="profilePlaymations">{code.playmation_name}</h3>
               </Link>
             </div>
           );
