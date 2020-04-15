@@ -47,14 +47,14 @@ function NavBar(props) {
             <Link to="/animations" className="nav-link ">
               Animations
             </Link>
-            <Link className="nav-link" to={{ pathname: "/playground" }}>
+            <Link className="nav-link" to="/playground">
               Playground
             </Link>
             <Link to="/Contact" className="nav-link ">
               Contact
             </Link>
             {props.name !== undefined ? (
-              <Link to="/Profile" className="nav-link ">
+              <Link className="nav-link" to="/Profile">
                 {props.name}
               </Link>
             ) : (

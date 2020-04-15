@@ -1,34 +1,49 @@
 @import "./variables";
 
 .authorContainer {
-    margin-bottom: 120px;
-    flex-wrap: wrap;
+  margin-bottom: 120px;
+  flex-wrap: wrap;
 }
 
-
 .authorText {
-    color: $white;
-    font-family: $primary-font;
-    font-weight: bolder;
-    font-size: 3rem;
-    letter-spacing: 5px;
+  color: $white;
+  font-family: $primary-font;
+  font-weight: bolder;
+  font-size: 3rem;
+  letter-spacing: 5px;
 }
 
 .col- {
-    margin: 0px 50px 50px 50px;
+  margin: 0px 50px 50px 50px;
 }
 
 .card {
-    background-image: $main-background-gradient;
-    box-shadow: 2px 2px 8px 2px rgb(28, 4, 28);
+  background-image: $main-background-gradient;
+  box-shadow: 2px 2px 8px 2px rgb(28, 4, 28);
 }
 
 .card-title {
-    color: $white;
+  color: $white;
 }
 
 .repoIcon {
-    font-size: 2rem;
-    position: absolute;
-    bottom: 0;
+  font-size: 2rem;
+  position: absolute;
+  bottom: 0;
+}
+.card-text h6 {
+  font-size: 1.2rem;
+  border-bottom: 1px solid $Secondary-color;
+  padding: 10px;
+}
+.card-text {
+  list-style-type: none;
+  color: $white;
+  font-size: 1.2rem;
+  font-family: $secondary-font;
+  text-align: center;
+}
+.lastLi {
+  border-bottom: 1px solid $Secondary-color;
+  padding: 10px;
 }

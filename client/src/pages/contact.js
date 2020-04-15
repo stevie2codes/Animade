@@ -26,13 +26,18 @@ const Contact = () => {
             <div className="card" style={{ width: "20rem" }}>
               <div className="card-body">
                 <h5 className="card-title">Cassidy Fortner</h5>
-                <h6 className="card-subtitle mb-2 text-muted">
-                  Full-Stack Wizard
-                </h6>
-                <p className="card-text">
-                  "Im here for it"
-                  <br /> -squatch 2020
-                </p>
+                <h6 className="card-subtitle mb-2 text-muted">Back-end</h6>
+
+                <ul className="card-text">
+                  {" "}
+                  <h6>Tech Used</h6>
+                  <li>React</li>
+                  <li>Express</li>
+                  <li>Mongoose</li>
+                  <li>JS-Cookie</li>
+                  <li>Axios</li>
+                  <li className="lastLi">Heroku</li>
+                </ul>
 
                 <a
                   href="https://github.com/Cassquatch"
@@ -61,10 +66,19 @@ const Contact = () => {
             <div className="card" style={{ width: "20rem" }}>
               <div className="card-body">
                 <h5 className="card-title">Stephen Webb</h5>
-                <h6 className="card-subtitle mb-2 text-muted">
-                  Full-Stack Wizard
-                </h6>
-                <p className="card-text">"Wheres the box shadow go?" -2toes</p>
+                <h6 className="card-subtitle mb-2 text-muted">Front-end</h6>
+
+                <ul className="card-text">
+                  {" "}
+                  <h6>Tech Used</h6>
+                  <li>React</li>
+                  <li>SASS</li>
+                  <li>Bootstrap</li>
+                  <li>Material-UI</li>
+                  <li>CodeMirror</li>
+                  <li className="lastLi">Three.JS</li>
+                </ul>
+
                 <a
                   href="https://github.com/stevie2codes"
                   className="card-link"
