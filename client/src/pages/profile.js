@@ -18,7 +18,8 @@ function Profile() {
       })
       .catch(error => console.log(error));
   }, [activeUser]);
-
+  
+  
   return (
     <div>
       <div>
