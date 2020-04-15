@@ -34,7 +34,7 @@ class Playground extends Component {
   }
   //saving the code to the playground_code database
   saveCode = () => {
-    console.log(this);
+    
     if(this.props.match.params.id){
       API.updatePlaygroundCode({
         id: this.props.match.params.id,
