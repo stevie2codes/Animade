@@ -18,16 +18,15 @@ function Profile() {
       })
       .catch(error => console.log(error));
   }, [activeUser]);
-  
-  
+
   return (
     <div>
       <div>
         <NavBar name={activeUser} />
       </div>
-      {/* <h2 className="playUserName">Welcome to your Dashboard: {activeUser}</h2> */}
+
       <h1 className="d-flex justify-content-center authorText">
-        {activeUser}'s Playmations
+        {activeUser} Playmations
       </h1>
       <div className="profileContainer">
         {userPlaygroundCode.map(code => {

@@ -21,8 +21,8 @@ function Isolated() {
           y2="0%"
           gradientTransform="rotate(25)"
         >
-          <stop offset="0%" stopColor="#8E42D3"></stop>
-          <stop offset="100%" stopColor="#D46975"></stop>
+          <stop offset="0%" stopColor="#FF8E53"></stop>
+          <stop offset="100%" stopColor="#fe6b8b"></stop>
         </linearGradient>
       </defs>
       <g

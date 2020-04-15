@@ -3,7 +3,7 @@
 .animations {
   display: flex;
   justify-content: center;
-  margin: 20px auto;
+  margin: auto;
   flex-wrap: wrap;
 }
 
@@ -25,25 +25,27 @@
 .fallIn,
 .arriveLeft,
 .arriveRight {
-  display: flex;
   text-align: center;
   flex-wrap: wrap;
-  width: 150px;
-  height: 150px;
-  margin: 30px;
-  background-image: $main-background-gradient;
   display: inline-block;
-  border-radius: 20%;
-  box-shadow: 3px 5px 20px rgba(3, 3, 3, 0.611);
 }
 
 p {
+  position: relative;
   margin: 50px auto;
   text-align: center;
   color: $white;
   font-size: 1.3rem;
   font-family: $secondary-font;
   font-weight: bolder;
+  letter-spacing: 3px;
+}
+
+.previewName {
+  color: $white;
+  font-family: $primary-font;
+  margin-top: -25px;
+  font-size: 4vmin;
   letter-spacing: 3px;
 }
 

@@ -1,43 +1,38 @@
 @import "./variables";
 
 .filter {
-    display: inline;
-
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    box-shadow: -4px -4px 14px $Primary-color, 4px 20px 14px #00000091;
-
+  display: inline;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: -4px -4px 14px $Primary-color, 4px 20px 14px #00000091;
 }
 
 .list-group-item {
-    display: inline;
-    color: $black;
-    background-image: $new-gradient;
-    font-family: $primary-font;
-    letter-spacing: 2px;
-    margin: 1px;
-    font-weight: bolder;
-    text-align: center;
+  display: inline;
+  color: $white;
+  background-image: $main-background-gradient;
+  font-family: $primary-font;
+  letter-spacing: 2px;
+  margin: 1px;
+  font-weight: bolder;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 5px;
+
+  &:hover {
+    background-image: $new-gradient !important;
+    transform: scale(1.11);
+    color: $white;
+    border-color: $black !important;
     cursor: pointer;
-    border-radius: 5px;
+  }
 
-    &:hover {
-
-        background-image: $main-background-gradient !important;
-        transform: scale(1.11);
-        color: $white;
-        border-color: $black !important;
-        cursor: pointer;
-
-
-    }
-
-    &.active {
-        background-image: $main-background-gradient !important;
-        color: $white;
-        border-color: $black !important;
-        transform: scale(1.1);
-        margin: 3px;
-    }
+  &.active {
+    background-image: $new-gradient !important;
+    color: $black;
+    border-color: $black !important;
+    transform: scale(1.1);
+    margin: 3px;
+  }
 }
