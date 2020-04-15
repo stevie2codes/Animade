@@ -3,8 +3,9 @@ import NavBar from "../components/nav/nav";
 import "../sass/profile.scss";
 import Cookies from "js-cookie";
 import API from "../utils/API";
-// import { Link } from "@material-ui/core";
+
 import { Link } from "react-router-dom";
+import Isolated from "../components/isolatedSvg";
 function Profile() {
   const [activeUser] = useState(Cookies.get("name"));
   const [userPlaygroundCode, setUserPlaygroundCode] = useState([]);
@@ -38,6 +39,7 @@ function Profile() {
                   }
                 }}
               >
+                <Isolated />
                 <div className="profilePlaymations">{code.playmation_name}</div>
               </Link>
             </div>
