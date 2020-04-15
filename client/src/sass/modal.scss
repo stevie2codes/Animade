@@ -17,18 +17,11 @@
   font-family: $secondary-font;
   font-weight: bolder;
   letter-spacing: 3px;
-  border: 2px solid $black;
+  //   border: 2px solid #fe6b8b;
   box-shadow: 3px 3px 8px rgba(3, 3, 3, 0.735);
 }
 
 .modal-footer {
   margin-bottom: -50px;
   border: none;
-}
-
-.MuiButton-label {
-  display: flex;
-  justify-content: center;
-  align-content: center;
-  align-items: center;
 }

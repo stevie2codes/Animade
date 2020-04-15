@@ -68,7 +68,6 @@ class animation extends Component {
           <NavBar name={this.state.activeUser} />
         </div>
         <div className="container">
-          {/* <AnimationContainer /> */}
           <p className="mt-1">
             Viewing {filtered.length}/{count} animations
           </p>
