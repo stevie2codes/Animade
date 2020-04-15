@@ -3,6 +3,8 @@ import NavBar from "../components/nav/nav";
 import "../sass/profile.scss";
 import Cookies from "js-cookie";
 import API from "../utils/API";
+// import { Link } from "@material-ui/core";
+import { Link } from "react-router-dom";
 function Profile() {
   const [activeUser] = useState(Cookies.get("name"));
   const [userPlaygroundCode, setUserPlaygroundCode] = useState([]);
@@ -25,10 +27,23 @@ function Profile() {
         <h2 className="userName">Welcome to your Dashboard: {activeUser}</h2>
 
         {userPlaygroundCode.map(code => {
-          return <li key={code._id}>{code._id}</li>;
+          return (
+            <div key={code._id}>
+              <Link
+                to={{
+                  pathname: "/playground",
+                  state: {
+                    fromProfile: true,
+                    id: code._id
+                  }
+                }}
+              >
+                <div className="profilePlaymations">{code.playmation_name}</div>
+              </Link>
+            </div>
+          );
         })}
       </div>
-      <div>{}</div>
     </div>
   );
 }
