@@ -1,29 +1,27 @@
 @import "./variables";
 
 .modal-title {
-    font-family: $secondary-font;
-    margin: 0 auto;
-    text-align: center;
-    color: $white;
+  font-family: $secondary-font;
+  margin: 0 auto;
+  text-align: center;
+  color: $white;
 }
 
 .ul {
-    list-style-type: none;
-
+  list-style-type: none;
 }
 
 .modal-content {
-    background-color: $black;
-    color: $white;
-    font-family: $secondary-font;
-    font-weight: bolder;
-    letter-spacing: 3px;
-    border: 2px solid $black;
-    box-shadow: 3px 3px 8px rgba(3, 3, 3, 0.735);
-
+  background-color: $black;
+  color: $white;
+  font-family: $secondary-font;
+  font-weight: bolder;
+  letter-spacing: 3px;
+  //   border: 2px solid #fe6b8b;
+  box-shadow: 3px 3px 8px rgba(3, 3, 3, 0.735);
 }
 
 .modal-footer {
-    margin-bottom: -60px;
-    border: none;
+  margin-bottom: -50px;
+  border: none;
 }

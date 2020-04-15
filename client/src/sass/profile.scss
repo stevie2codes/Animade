@@ -6,26 +6,39 @@
   text-align: center;
 }
 
+.profileName {
+  font-family: $primary-font;
+  margin-left: 45px;
+  margin-bottom: 20px;
+  font-size: 5vmin;
+  font-weight: bolder;
+  color: $white;
+  justify-content: center;
+  letter-spacing: 2px;
+}
+
 .profilePlaymations {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   text-align: center;
+  font-weight: bolder;
   font-family: $primary-font;
-  letter-spacing: 4px;
-  font-size: 4vmin;
+  letter-spacing: 3px;
+  font-size: 3vmin;
+  color: $white;
+  &:hover {
+    transform: scale(1.05);
+    color: $Secondary-color;
+  }
 }
 
+//this width of the icon is being shared with the amimations page
 .iconIsolated {
-  width: 20vw;
-  animation: pulse 2s alternate infinite;
+  width: 25vmin;
   flex-wrap: wrap;
-}
-@keyframes pulse {
-  from {
-    transform: scale(0.9);
-  }
-  to {
-    transform: scale(1);
+  &:hover {
+    transform: scale(1.1);
+    transition: 500ms;
   }
 }

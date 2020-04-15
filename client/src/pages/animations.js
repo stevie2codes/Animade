@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import AnimationContainer from "../components/animationContainer";
 import ListGroup from "../components/listGroup";
 import { getTypes } from "../services/typeList";
 import { getAnimations } from "../services/animationService";
@@ -8,11 +7,11 @@ import "../sass/animationContainer.scss";
 import "../sass/modal.scss";
 import { Button } from "@material-ui/core";
 import Save from "@material-ui/icons/Save";
-import Like from "@material-ui/icons/ThumbUpSharp";
 import Pagination from "../components/pagination";
 import { paginate } from "../services/paginate";
 import NavBar from "../components/nav/nav";
 import Cookies from "js-cookie";
+import Isolated from "../components/isolatedSvg";
 
 class animation extends Component {
   state = {
@@ -67,7 +66,6 @@ class animation extends Component {
           <NavBar name={this.state.activeUser} />
         </div>
         <div className="container">
-          <AnimationContainer />
           <p className="mt-1">
             Viewing {filtered.length}/{count} animations
           </p>
@@ -78,15 +76,16 @@ class animation extends Component {
             selectedType={this.state.selectedType}
           />
 
-          <div className="container animations pt-5">
+          <div className=" animations pt-5">
             {myAnimations.map(animation => (
-              <div key={animation.id} className="row">
+              <div key={animation.id}>
                 <div
                   className={animation.name}
                   id={animation.id}
                   onClick={() => this.handleSelection(animation)}
                 >
-                  <p>{animation.name}</p>
+                  <Isolated />
+                  <h3 className="previewName">{animation.name}</h3>
                 </div>
               </div>
             ))}
@@ -120,12 +119,14 @@ class animation extends Component {
                         text={animation_code}
                         onCopy={() => this.setState({ copied: true })}
                       >
-                        <div className="modal-footer ">
+                        <div className="modal-footer d-flex">
                           <Button
+                            fullWidth
+                            variant="contained"
                             type="button"
                             size="large"
                             color="secondary"
-                            variant="outlined"
+                            // variant="outlined"
                             endIcon={<Save />}
                           >
                             Copy
@@ -133,15 +134,6 @@ class animation extends Component {
                         </div>
                       </CopyToClipboard>
                     </li>
-                    <Button
-                      type="button"
-                      size="large"
-                      color="primary"
-                      variant="outlined"
-                      endIcon={<Like />}
-                    >
-                      Like
-                    </Button>
                   </ul>
                 </div>
               </div>

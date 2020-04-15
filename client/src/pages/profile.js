@@ -6,6 +6,7 @@ import API from "../utils/API";
 
 import { Link } from "react-router-dom";
 import Isolated from "../components/isolatedSvg";
+// import { link } from "fs";
 function Profile() {
   const [activeUser] = useState(Cookies.get("name"));
   const [userPlaygroundCode, setUserPlaygroundCode] = useState([]);
@@ -18,17 +19,16 @@ function Profile() {
       })
       .catch(error => console.log(error));
   }, [activeUser]);
-  
-  
+
   return (
     <div>
       <div>
         <NavBar name={activeUser} />
       </div>
-      {/* <h2 className="playUserName">Welcome to your Dashboard: {activeUser}</h2> */}
-      <h1 className="d-flex justify-content-center authorText">
-        {activeUser}'s Playmations
+      <h1 className="d-flex justify-content-center profileName">
+        {userPlaygroundCode.length} Playmations by {activeUser}
       </h1>
+      ;
       <div className="profileContainer">
         {userPlaygroundCode.map(code => {
           return (
@@ -43,8 +43,10 @@ function Profile() {
                   }
                 }}
               >
-                <Isolated />
-                <h3 className="profilePlaymations">{code.playmation_name}</h3>
+                <div className="iconDisplay">
+                  <Isolated />
+                  <h3 className="profilePlaymations">{code.playmation_name}</h3>
+                </div>
               </Link>
             </div>
           );
