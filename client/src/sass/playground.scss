@@ -138,11 +138,14 @@ html {
 .react-codemirror2 {
   max-height: calc(100% - 10px);
   width: 32vmax;
-  overflow: auto;
+  overflow-y: scroll !important;
   box-shadow: 3px 3px 10px $black;
   border-radius: 6px;
   margin: 5px;
   font-family: $code-font2;
+}
+.CodeMirror-scroll {
+  overflow-y: scroll !important;
 }
 
 .result {
