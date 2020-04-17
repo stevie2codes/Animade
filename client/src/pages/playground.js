@@ -19,7 +19,6 @@ import NavBar from "../components/nav/nav";
 import Cookies from "js-cookie";
 import API from "../utils/API";
 
-
 class Playground extends Component {
   constructor() {
     super();
@@ -29,22 +28,21 @@ class Playground extends Component {
       js: "",
       activeUser: Cookies.get("name"),
       playmation_name: "",
-      code_id:  ""
+      code_id: ""
     };
   }
   //saving the code to the playground_code database
   saveCode = () => {
-    
-    if(this.props.match.params.id){
+    if (this.props.match.params.id) {
       API.updatePlaygroundCode({
         id: this.props.match.params.id,
         html: this.state.html,
         css: this.state.css,
         js: this.state.js
       })
-      .then(data=>{})
-      .catch(error => console.log(error));
-    }else {
+        .then(data => {})
+        .catch(error => console.log(error));
+    } else {
       API.savePlaygroundCode({
         username: this.state.activeUser,
         playmation_name: this.state.playmation_name,
@@ -52,41 +50,40 @@ class Playground extends Component {
         css: this.state.css,
         js: this.state.js
       })
-        .then(data => {})
+        .then(data => {
+          "/profile";
+        })
         .catch(error => console.log(error));
     }
- 
   };
 
-  componentDidMount(){
+  componentDidMount() {
     console.log(this.props.match.params.id);
-    if(this.props.match.params.id){
+    if (this.props.match.params.id) {
       API.getPlaygroundCode(this.state.activeUser).then(data => {
         console.log(data.data);
         let playgroundCode = data.data;
         playgroundCode.map(code => {
           console.log(code);
-          if(code._id === this.props.match.params.id){
+          if (code._id === this.props.match.params.id) {
             this.setState({
               playmation_name: code.playmation_name,
               html: code.html,
-              css: code.css, 
+              css: code.css,
               js: code.js
-            })
+            });
           }
-        })
-        
-      })
+        });
+      });
     }
   }
   componentDidUpdate() {
-    
     this.runCode();
   }
 
   runCode = () => {
     const { html, css, js } = this.state;
-    
+
     const iframe = this.iframe;
     const document = iframe.contentDocument;
     const documentContents = `
@@ -131,7 +128,11 @@ class Playground extends Component {
           <input
             type="text"
             className="userCodeInput"
-            placeholder={this.props.match.params.id ? this.state.playmation_name :  "Name Playmation"}
+            placeholder={
+              this.props.match.params.id
+                ? this.state.playmation_name
+                : "Name Playmation"
+            }
             onChange={event =>
               this.setState({ playmation_name: event.target.value })
             }

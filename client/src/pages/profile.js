@@ -3,10 +3,8 @@ import NavBar from "../components/nav/nav";
 import "../sass/profile.scss";
 import Cookies from "js-cookie";
 import API from "../utils/API";
-
 import { Link } from "react-router-dom";
 import Isolated from "../components/isolatedSvg";
-// import { link } from "fs";
 function Profile() {
   const [activeUser] = useState(Cookies.get("name"));
   const [userPlaygroundCode, setUserPlaygroundCode] = useState([]);
@@ -26,7 +24,11 @@ function Profile() {
         <NavBar name={activeUser} />
       </div>
       <h1 className="d-flex justify-content-center profileName">
-        {userPlaygroundCode.length} Playmations by {activeUser}
+        {userPlaygroundCode.length === 0 ? (
+          <a href="/playground">Go to Playground to save a playmation </a>
+        ) : (
+          `${userPlaygroundCode.length} Playmations by ${activeUser}`
+        )}
       </h1>
       ;
       <div className="profileContainer">

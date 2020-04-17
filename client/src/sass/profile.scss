@@ -4,12 +4,13 @@
   display: flex;
   justify-content: center;
   text-align: center;
+  flex-wrap: wrap;
 }
 
 .profileName {
   font-family: $primary-font;
   margin-left: 45px;
-  margin-bottom: 20px;
+  // margin-bottom: -20px;
   font-size: 5vmin;
   font-weight: bolder;
   color: $white;
@@ -25,8 +26,9 @@
   font-weight: bolder;
   font-family: $primary-font;
   letter-spacing: 3px;
-  font-size: 3vmin;
+  font-size: 2.5vmin;
   color: $white;
+
   &:hover {
     transform: scale(1.05);
     color: $Secondary-color;
@@ -35,8 +37,13 @@
 
 //this width of the icon is being shared with the amimations page
 .iconIsolated {
-  width: 25vmin;
+  width: 20vh;
   flex-wrap: wrap;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 10%;
+  box-shadow: 0px 0px 10px rgb(108, 59, 119);
+
   &:hover {
     transform: scale(1.1);
     transition: 500ms;

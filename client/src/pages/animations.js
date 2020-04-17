@@ -84,6 +84,7 @@ class animation extends Component {
                   id={animation.id}
                   onClick={() => this.handleSelection(animation)}
                 >
+                  {" "}
                   <Isolated />
                   <h3 className="previewName">{animation.name}</h3>
                 </div>

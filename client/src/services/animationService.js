@@ -57,7 +57,7 @@ const animations = [
     type: { _id: "1c", type: "Static" },
     code: `
     .over {
-      animation: fall 1s;
+      animation: over 1s;
     }
     @keyframes over {
       0% {
