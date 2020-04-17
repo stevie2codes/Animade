@@ -53,22 +53,25 @@ const animations = [
   },
   {
     id: 3,
-    name: "fall",
-    type: { _id: "1b", type: "Exit" },
+    name: "over",
+    type: { _id: "1c", type: "Static" },
     code: `
-    .fall{
-      animation: fall 1s;
+    .over {
+      animation: over 1s;
     }
-    @keyframes fall {
-        from {
-            transform: translateY(0px);
-            opacity: 1;
-        }
-    
-        to {
-            transform: translateY(300px);
-            opacity: 0;
-        }
+    @keyframes over {
+      0% {
+        transform: translateY(0) rotateX(0) scale(1);
+        transform-origin: 50% 0%;
+      }
+      50% {
+        transform: translateY(-50%) rotateX(-90deg) scale(2);
+        transform-origin: 50% 50%;
+      }
+      100% {
+        transform: translateY(-100%) rotateX(-180deg) scale(1);
+        transform-origin: 50% 100%;
+      }
     }`
   },
   {

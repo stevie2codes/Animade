@@ -1,35 +1,35 @@
 @import "./variables";
 
 .pagination {
-    display: flex;
-    width: 200px;
-    margin: 30px auto;
-
+  display: flex;
+  width: 200px;
+  margin: 30px auto;
 }
 
 .page-link {
-    color: $black;
-    box-shadow: -4px -4px 14px $Primary-color, 4px 4px 14px #00000091;
-    text-align: center;
-    font-family: $secondary-font;
-    font-weight: bolder;
-    border: 1px solid black;
-    background-image: $new-gradient;
-    margin: 0.5px;
-
+  color: $white;
+  box-shadow: -4px -4px 14px $Primary-color, 4px 4px 14px #00000091;
+  text-align: center;
+  font-family: $primary-font;
+  font-weight: bolder;
+  border: 0.5px solid $black;
+  border-radius: 10%;
+  background-image: $main-background-gradient;
+  padding: 15px;
+  margin: 1px;
 }
 
 .active .page-link {
-    background-image: $main-background-gradient !important;
-    color: $white !important;
-    border-color: $black !important;
-    transform: scale(1.1);
-    box-shadow: none;
-
+  background-image: $new-gradient;
+  color: $white;
+  border: 1px solid $black;
+  transform: scale(1.05);
+  box-shadow: none;
 }
 
 .page-item :hover {
-    background-image: $main-background-gradient !important;
-    transform: scale(1.11);
-    border-color: $black !important;
+  background-image: $new-gradient;
+  transform: scale(1.11);
+  border: 1px solid $black;
+  margin-left: 3px;
 }

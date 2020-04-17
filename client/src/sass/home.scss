@@ -11,7 +11,6 @@
 
   &:hover {
     cursor: auto !important;
-
   }
 }
 
@@ -27,7 +26,6 @@
   margin-left: 30px;
   letter-spacing: 5px;
   animation-name: bounceIn;
-
 }
 
 .readyText {
@@ -43,9 +41,7 @@
   -webkit-text-fill-color: transparent;
   font-size: 6vmin;
   letter-spacing: 5px;
-
 }
-
 
 .signInHome {
   display: block;
@@ -53,6 +49,7 @@
   font-family: $primary-font;
   letter-spacing: 3px;
   text-decoration: none;
+  font-size: 1.2rem;
   font-weight: bolder;
   margin: 0 auto;
   margin-bottom: 80px;
@@ -60,9 +57,9 @@
   background: $new-gradient;
   border-radius: 3px;
   border: none;
-  color: white;
+  color: $white;
   padding: 15px;
-  box-shadow: 0 3px 5px 2px rgba(255, 105, 135, .3);
+  box-shadow: 0 3px 5px 2px rgba(255, 105, 135, 0.3);
 
   &:hover {
     transform: scale(1.05);
@@ -70,7 +67,6 @@
     box-shadow: 0 3px 9px 2px rgba(255, 105, 135, 0.418);
     opacity: 0.9;
     text-decoration: none;
-
   }
 }
 
@@ -78,14 +74,11 @@ a:hover {
   text-decoration-color: transparent !important;
 }
 
-
-
 .homeContent {
   animation: fallIn 1s;
 }
 
 @keyframes fallIn {
-
   from {
     opacity: 0;
     transform: translate3d(0, -3000px, 0);
