@@ -155,7 +155,7 @@ class Playground extends Component {
                   autoCloseBrackets: true,
                   smartIndent: true,
                   autoCloseTags: true,
-                  showHint: true
+                  scrollbarStyle: "native"
                 }}
                 onBeforeChange={(editor, data, html) => {
                   this.setState({ html });
@@ -175,7 +175,8 @@ class Playground extends Component {
                   smartIndent: true,
                   matchBrackets: true,
                   showHint: true,
-                  spellcheck: true
+                  spellcheck: true,
+                  scrollbarStyle: "native"
                 }}
                 onBeforeChange={(editor, data, css) => {
                   this.setState({ css });
@@ -195,7 +196,8 @@ class Playground extends Component {
                   smartIndent: true,
                   autoCloseTags: true,
                   matchBrackets: true,
-                  spellcheck: true
+                  spellcheck: true,
+                  scrollbarStyle: "native"
                 }}
                 onBeforeChange={(editor, data, js) => {
                   this.setState({ js });
