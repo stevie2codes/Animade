@@ -58,13 +58,12 @@ class Playground extends Component {
   };
 
   componentDidMount() {
-    console.log(this.props.match.params.id);
     if (this.props.match.params.id) {
       API.getPlaygroundCode(this.state.activeUser).then(data => {
-        console.log(data.data);
+       
         let playgroundCode = data.data;
         playgroundCode.map(code => {
-          console.log(code);
+          
           if (code._id === this.props.match.params.id) {
             this.setState({
               playmation_name: code.playmation_name,

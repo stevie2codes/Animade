@@ -12,7 +12,7 @@ function Profile() {
   useEffect(() => {
     API.getPlaygroundCode(activeUser)
       .then(data => {
-        console.log(data.data);
+        
         setUserPlaygroundCode(data.data);
       })
       .catch(error => console.log(error));

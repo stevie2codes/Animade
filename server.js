@@ -1,8 +1,6 @@
 const express = require("express");
 const mongoose = require("mongoose");
-const admin_router = require("./routes/api/adminAPIRoute");
 const user_router = require("./routes/userRoutes");
-const profile_router = require("./routes/profileRoute");
 const playgroundAPI_router = require("./routes/api/savedPlaygroundCode");
 const path = require("path");
 const body_parser = require("body-parser");
@@ -48,7 +46,6 @@ app.use((req, res, next) => {
 
 //must check to see what environment we are in, to serve up the correct
 //filepath to the index.html for SPA's
-app.use(profile_router);
 app.use(playgroundAPI_router);
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
@@ -67,7 +64,7 @@ if (process.env.NODE_ENV === "production") {
 
 
 
-app.use(admin_router);
+
 app.use(user_router);
 
 

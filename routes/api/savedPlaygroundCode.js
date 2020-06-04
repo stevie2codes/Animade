@@ -20,7 +20,6 @@ playgroundApiRouter.post("/api/playground_code", async(req, res) => {
     try{
         let newSavedUserCode = new savedPlaygroundCode(req.body);
 
-        console.log(newSavedUserCode);
         newSavedUserCode.save();
         res.send(newSavedUserCode);
     }catch(error){
