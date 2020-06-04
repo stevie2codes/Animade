@@ -38,7 +38,7 @@ user_router.post("/signin", async(req, res) => {
             
             const sessionUser = sessionizeUser(user);
             req.session.user = sessionUser;
-            console.log(`Session user: ${req.session.user}`);
+           
             res.cookie("name", sessionUser.username, { secure: process.env.NODE_ENV === true}); 
             req.session.save;
             res.send(sessionUser);
