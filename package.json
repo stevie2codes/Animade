@@ -40,6 +40,6 @@
     "react-copy-to-clipboard": "^5.0.2",
     "react-router-dom": "^5.1.2",
     "react-widgets": "^4.5.0",
-    "three": "^0.115.0"
+    "three": "^0.125.0"
   }
 }
